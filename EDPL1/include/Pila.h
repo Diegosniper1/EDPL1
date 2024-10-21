@@ -7,7 +7,7 @@ class Pila
     public:
         Pila();
         virtual ~Pila();
-
+        int();
     protected:
 
     private:
