@@ -2,7 +2,7 @@
 
 Pila::Pila()
 {
-    //ctor cout<<"
+    //ctor
 }
 
 Pila::~Pila()

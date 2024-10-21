@@ -2,7 +2,7 @@
 
 Cola::Cola()
 {
-    //ctor dsds
+    //ctor
 }
 
 Cola::~Cola()
