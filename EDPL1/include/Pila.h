@@ -11,6 +11,7 @@ class Pila
         void apilar(int v);
         void desapilar();
         int mostrar();
+        void mostrar_entera();
 
     private:
         pnodo cima;

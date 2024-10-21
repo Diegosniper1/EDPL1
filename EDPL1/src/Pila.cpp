@@ -41,8 +41,37 @@ int Pila::mostrar(){
         cout << "Pila vacia"<<endl;
      }
      else{
-        cout << "Cima pila: "<< cima->valor<<endl;
+        cout << "Cima pila: "<< cima->pasajero<<endl;
      }
      return 0;
+
 }
+
+void mostrar_entera(){
+
+    pnodo aux;
+
+    if (esVacia()){
+
+        cout << "Pila vacia"<<endl;
+    }
+    else{
+
+        aux = cima;
+
+        while (aux != NULL) {
+
+             cout << aux -> pasajero <<"";
+
+             aux = aux ->siguiente;
+
+        }
+
+    }
+
+
+}
+
+
+
 
