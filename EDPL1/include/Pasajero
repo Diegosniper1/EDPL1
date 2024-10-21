@@ -1,0 +1,20 @@
+#ifndef PASAJERO_
+#define PASAJERO_
+
+
+class Pasajero
+{
+    public:
+        Pasajero();
+        virtual ~Pasajero();
+
+    protected:
+
+    private:
+};
+
+#endif // PASAJERO_
+
+
+
+
