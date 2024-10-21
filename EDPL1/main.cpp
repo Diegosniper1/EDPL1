@@ -34,16 +34,134 @@ int main()
     pila.apilar(p2);
     pila.apilar(p1);
 
-    return 0;
 
 
-    //Hola
+
+
 
 
 
     //Mostramos los elementos
 
 
+
+
+
+
+
+
+
+
+b1 = new Box([]);
+b2 = new Box([]);
+b3 = new Box([]);
+
+int hora = 0;
+
+c = new Cola();
+
+while (!esVacia(p)) && (!esVacia(c)) && (b1 != []) && (b2 != []) && (b3 != [])
+{
+
+pas = cima(p);
+
+cnodo = new NodoCola(primero(c),NodoCola *sig);
+
+if (b1 != [])
+{
+	b1[0].duracion--;
+}
+
+if (b2 != [])
+{
+	b2[0].duracion--;
+}
+
+if (b1 != [])
+{
+	b3[0].duracion--;
+}
+
+if (b1[0].duracion == 0)
+{
+	b1 = [];
+}
+
+if (b2[0].duracion == 0)
+{
+	b2 = [];
+}
+
+if (b3[0].duracion == 0)
+{
+	b3 = [];
+}
+
+if(hora == cima(p).hora_llegada)
+{
+	while (cnodo.sig != NULL)
+	{
+
+	}
+
+	if (b1 == [])
+	{
+	b1 = [cima(p)];
+	desapilar(p);
+	}
+
+	else
+	{
+		if (b2 == [])
+		{
+			b2 = [cima(p)];
+			desapilar(P);
+		}
+
+     		else
+		{
+			if (b3 == [])
+	     	{
+		b3 = [cima(p)];
+		desapilar(p);
+          	}
+
+		else
+	     	{
+		c.encolar(cima(p));
+		desapilar(p);
+	     	}
+	}
+
+}
+}
+
+
+
+
+hora++;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     return 0;
 
 
 
