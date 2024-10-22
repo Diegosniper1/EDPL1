@@ -9,9 +9,9 @@ Cola::Cola()
 }
 Cola::~Cola() { }
 
-void Cola::encolar(char elemento)
+void Cola::encolar(Pasajero pas)
 {
-    NodoCola *nuevo_nodo = new NodoCola(elemento);
+    NodoCola *nuevo_nodo = new NodoCola(pas);
     if(es_vacia())
     {
         primero = nuevo_nodo;
@@ -25,7 +25,7 @@ void Cola::encolar(char elemento)
     longitud++;
 }
 
-char Cola::desencolar()
+Pasajero Cola::desencolar()
 {
     if(!es_vacia())
     {

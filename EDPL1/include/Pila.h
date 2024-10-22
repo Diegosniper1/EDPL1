@@ -8,7 +8,7 @@ class Pila
         Pila();
         virtual ~Pila();
         bool esVacia();
-        void apilar(int v);
+        void apilar(Pasajero pas);
         void desapilar();
         int mostrar();
         void mostrar_entera();

@@ -7,10 +7,10 @@ class Cola
     public:
         Cola();
         ~Cola();
-        void encolar(char);
+        void encolar(Pasajero);
         Pasajero inicio();
         Pasajero fin();
-        char desencolar();
+        Pasajero desencolar();
         bool es_vacia();
 
     private:
