@@ -26,7 +26,7 @@ void mostrar_entera_pila(Pila p){
 
              cout << aux -> pasajero <<"";
 
-             aux = aux ->siguiente;
+             aux = aux ->siguiente;c
 
         }
 

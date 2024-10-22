@@ -8,7 +8,7 @@ class Aeropuerto
         Aeropuerto();
         virtual ~Aeropuerto();
         void mostrar_entera_Pila();
-        int mostrar();
+        int mostrar();c
 
     protected:
 

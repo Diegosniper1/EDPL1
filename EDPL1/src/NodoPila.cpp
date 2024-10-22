@@ -3,7 +3,7 @@
 
 NodoPila::NodoPila(){
 
-    pasajero=NULL; // Cambiar
+    pasajero=NULL;
     siguiente=NULL
 
     //ctor
@@ -11,7 +11,7 @@ NodoPila::NodoPila(){
 
 NodoPila::NodoPila(Pasajero p, NodoPila *sig){
 
-    pasajero=p; // Cambiar
+    pasajero=p;
     siguiente=sig;
 
     //ctor
