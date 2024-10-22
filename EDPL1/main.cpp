@@ -24,33 +24,18 @@ int main()
 
     //Apilamos los pasajeroa
 
-    pila.apilar(p9);
-    pila.apilar(p8);
-    pila.apilar(p7);
-    pila.apilar(p6);
-    pila.apilar(p5);
-    pila.apilar(p4);
-    pila.apilar(p3);
-    pila.apilar(p2);
-    pila.apilar(p1);
-
-
-
-
-
-
+    Aeropuerto.pila.apilar_por_orden(p9);
+    Aeropuerto.pila.apilar_por_orden(p8);
+    Aeropuerto.pila.apilar_por_orden(p7);
+    Aeropuerto.pila.apilar_por_orden(p6);
+    Aeropuerto.pila.apilar_por_orden(p5);
+    Aeropuerto.pila.apilar_por_orden(p4);
+    Aeropuerto.pila.apilar_por_orden(p3);
+    Aeropuerto.pila.apilar_por_orden(p2);
+    Aeropuerto.pila.apilar_por_orden(p1);
 
 
     //Mostramos los elementos
-
-
-
-
-
-
-
-
-
 
 b1 = new Box([]);
 b2 = new Box([]);

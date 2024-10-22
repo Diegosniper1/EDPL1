@@ -13,6 +13,9 @@ class Aeropuerto
     protected:
 
     private:
+        Pila pila;
+        Cola cola;
+        Box box;
 };
 
 #endif // AEROPUERTO_H

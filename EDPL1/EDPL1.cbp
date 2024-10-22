@@ -34,12 +34,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Aeropuerto.h" />
 		<Unit filename="include/Cola.h" />
+		<Unit filename="include/NodoCola.h" />
 		<Unit filename="include/NodoPila.h" />
 		<Unit filename="include/Pasajero.h" />
 		<Unit filename="include/Pila.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Aeropuerto.cpp" />
 		<Unit filename="src/Cola.cpp" />
+		<Unit filename="src/NodoCola.cpp" />
 		<Unit filename="src/NodoPila.cpp" />
 		<Unit filename="src/Pasajero.cpp" />
 		<Unit filename="src/Pila.cpp" />
