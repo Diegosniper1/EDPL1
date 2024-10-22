@@ -11,10 +11,6 @@ class NodoPila{
         NodoPila(Pasajero pasajero, NodoPila *sig = NULL);
         virtual ~NodoPila();
 
-
-
-    protected:
-
     private:
         Pasajero pasajero;
         NodoPila *siguiente;

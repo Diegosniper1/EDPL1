@@ -60,7 +60,7 @@ int hora = 0;
 
 c = new Cola();
 
-while (!esVacia(p)) && (!esVacia(c)) && (b1 != []) && (b2 != []) && (b3 != [])
+while (!esVacia(p) && !esVacia(c) && b1 != [] && b2 != [] && b3 != [])
 {
 
 pas = cima(p);
@@ -99,10 +99,11 @@ if (b3[0].duracion == 0)
 
 if(hora == cima(p).hora_llegada)
 {
-	while (cnodo.sig != NULL)
-	{
+	//while (cnodo.sig != NULL) Ordenación por prioridad
+	enc
 
-	}
+
+
 
 	if (b1 == [])
 	{

@@ -12,7 +12,7 @@ class Pila
         void desapilar();
         int mostrar();
         void mostrar_entera();
-
+        void ordenar_pila();
     private:
         pnodo cima;
 

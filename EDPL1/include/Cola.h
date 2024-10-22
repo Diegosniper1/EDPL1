@@ -6,11 +6,17 @@ class Cola
 {
     public:
         Cola();
-        virtual ~Cola();
-
-    protected:
+        ~Cola();
+        void encolar(char);
+        Pasajero inicio();
+        Pasajero fin();
+        char desencolar();
+        bool es_vacia();
 
     private:
+        NodoCola * primero;
+        NodoCola * ultimo;
+        int longitud;
 };
 
-#endif // COLA_H dssfdf
+#endif // COLA_H

@@ -5,7 +5,7 @@
 Pila::Pila()
 {
     cima = NULL;
-    //ctor fdssd
+    //ctor
 }
 
 Pila::~Pila()
@@ -36,7 +36,7 @@ void Pila::desapilar(){
      cima = nodo->siguiente;
      delete nodo;
 }
-int Pila::mostrar(){
+Pasajero Pila::mostrar(){
      if(esVacia()) {
         cout << "Pila vacia"<<endl;
      }
@@ -71,6 +71,7 @@ void mostrar_entera(){
 
 
 }
+
 
 
 

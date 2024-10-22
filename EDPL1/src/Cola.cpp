@@ -1,11 +1,75 @@
 #include "Cola.h"
 
+
+
 Cola::Cola()
 {
-    //ctor dsoifhdsf
+    primero = NULL; ultimo = NULL;
+    longitud = 0;
+}
+Cola::~Cola() { }
+
+void Cola::encolar(char elemento)
+{
+    NodoCola *nuevo_nodo = new NodoCola(elemento);
+    if(es_vacia())
+    {
+        primero = nuevo_nodo;
+        ultimo = nuevo_nodo;
+    }
+    else
+    {
+        ultimo->siguiente = nuevo_nodo;
+        ultimo = nuevo_nodo;
+    }
+    longitud++;
 }
 
-Cola::~Cola()
+char Cola::desencolar()
 {
-    //dtor
+    if(!es_vacia())
+    {
+        Pasajero pas = primero->pas;
+        NodoCola *aux = primero;
+        if((primero == ultimo) && (primero->siguiente == NULL))
+        {
+            primero = NULL;
+            ultimo = NULL;
+            aux->siguiente = NULL;
+            delete(aux);
+        }
+        else
+        {
+            primero = primero->siguiente;
+            aux->siguiente = NULL;
+            delete(aux);
+        }
+    longitud--;
+    return pas;
+    }
+}
+
+Pasajero Cola::inicio()
+{ if(!es_vacia())
+{
+    return primero->elemento;
+}
+
+}
+Pasajero Cola::fin()
+{
+    if(!es_vacia())
+    {
+    return ultimo->elemento;
+    }
+}
+
+int Cola::get_longitud()
+{
+    return longitud;
+}
+
+bool Cola::es_vacia()
+{
+    return ((primero == NULL) && (ultimo == NULL));
 }
