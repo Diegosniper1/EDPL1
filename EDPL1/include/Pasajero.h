@@ -12,8 +12,9 @@ class Pasajero
     protected:
 
     private:
-        int id, id_box,
+        int id, id_box, duracion, hora_inicio, prioridad;
         string destino;
+
 };
 
 #endif // PASAJERO_H

@@ -21,10 +21,20 @@ bool Pila::esVacia(){
 }
 
 
-void Pila::apilar(int p){
+void Pila::apilar(Pasajero pas){
     pnodo nuevo = new NodoPila(p, cima);
 
     cima = nuevo;
+
+}
+
+
+void Pila::apilar_por_prioridad(Pasajero pas){
+    if (!esVacia()){
+        while(pas.hora_inicio > cima.pasajero.hora_inicio){
+            S
+        }
+    }
 
 }
 
