@@ -80,7 +80,7 @@ void mostrar_entera(){
 
         while (aux != NULL) {
 
-             cout << aux -> pasajero <<"";
+             cout << aux -> pasajero << "";
 
              aux = aux ->siguiente;
 

@@ -8,10 +8,13 @@ class Cola
         Cola();
         ~Cola();
         void encolar(Pasajero);
+        Pasajero desencolar();
+        void mostrar();
         Pasajero inicio();
         Pasajero fin();
-        Pasajero desencolar();
+
         bool es_vacia();
+        int get_longitud();
 
     private:
         NodoCola * primero;

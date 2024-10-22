@@ -2,6 +2,8 @@
 #define PASAJERO_H
 
 
+using namespace std;
+
 class Pasajero
 {
     public:

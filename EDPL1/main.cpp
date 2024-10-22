@@ -7,9 +7,9 @@ int main()
     cout << "Creamos la pila Vacía" << endl;
 
     Pila pila;
-    pila.mostrar();ç
+    pila.mostrar();
 
-    // Creamos la lista de pasajeros
+    // Creamos la lista de pasajeros - apartado 1
 
     Pasajero p1 = Pasajero(1,6,"Indonesia",0,20);
     Pasajero p2 = Pasajero(2,1,"Portugal",0,15);
@@ -22,7 +22,7 @@ int main()
     Pasajero p9 = Pasajero(9,3,"Alemania",21,20);
 
 
-    //Apilamos los pasajeroa
+    //Apilamos los pasajeros
 
     Aeropuerto.pila.apilar_por_orden(p9);
     Aeropuerto.pila.apilar_por_orden(p8);
@@ -35,7 +35,12 @@ int main()
     Aeropuerto.pila.apilar_por_orden(p1);
 
 
-    //Mostramos los elementos
+    //Mostramos los elementos   - apartado 2
+
+    pila.mostrar_entera();
+
+
+    //
 
 b1 = new Box([]);
 b2 = new Box([]);

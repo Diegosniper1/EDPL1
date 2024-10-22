@@ -1,13 +1,15 @@
 #include "Cola.h"
-
+#include"NodoCola.h"
 
 
 Cola::Cola()
 {
-    primero = NULL; ultimo = NULL;
+    primero = NULL;
+    ultimo = NULL;
     longitud = 0;
 }
 Cola::~Cola() { }
+
 
 void Cola::encolar(Pasajero pas)
 {
@@ -24,6 +26,7 @@ void Cola::encolar(Pasajero pas)
     }
     longitud++;
 }
+
 
 Pasajero Cola::desencolar()
 {
@@ -49,13 +52,45 @@ Pasajero Cola::desencolar()
     }
 }
 
-Pasajero Cola::inicio()
-{ if(!es_vacia())
+
+
+
+void Cola::mostrar()
 {
+
+    if (es_vacia()) {
+        cout << "La cola está vacía." << endl;
+        return;
+    }
+
+
+    NodoCola* aux = primero;
+    int contador = 1;
+
+    // Recorrido de la cola
+    while (aux != nullptr) {
+        cout << "Pasajero " << contador << ":" << endl;
+        cout << "ID: " << aux->pasajero.id << endl;
+        cout << "Prioridad: " << aux->pasajero.prioridad << endl;
+        aux = aux->siguiente;
+        contador++;
+    }
+}
+
+
+
+
+
+Pasajero Cola::inicio(){
+    if(!es_vacia())
+    {
     return primero->elemento;
 }
 
 }
+
+
+
 Pasajero Cola::fin()
 {
     if(!es_vacia())
@@ -64,12 +99,39 @@ Pasajero Cola::fin()
     }
 }
 
+bool Cola::es_vacia()
+{
+    return ((primero == NULL) && (ultimo == NULL));
+}
+
+
 int Cola::get_longitud()
 {
     return longitud;
 }
 
-bool Cola::es_vacia()
-{
-    return ((primero == NULL) && (ultimo == NULL));
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
