@@ -29,11 +29,20 @@ void Pila::apilar(Pasajero pas){
 }
 
 
-void Pila::apilar_por_prioridad(Pasajero pas){
+void Pila::apilar_por_orden(Pasajero pas){
+    Pila paux = new Pila();
     if (!esVacia()){
         while(pas.hora_inicio > cima.pasajero.hora_inicio){
-            S
+            paux.apilar(cima.pasajero);
+            desapilar();
         }
+        apilar(pas);
+        while(!esVacia(paux)){
+            apilar(paux.cima.pasajero);
+        }
+    }
+    else{
+        apilar(pas);
     }
 
 }
