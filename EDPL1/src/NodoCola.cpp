@@ -2,15 +2,16 @@
 
 NodoCola::NodoCola(){
 
-    pasajero=NULL;
+
     siguiente=NULL;
+    prioridad = 0;
 }
 
 
 NodoCola::NodoCola(Pasajero p, NodoCola *sig){
     pasajero = p;
-    siguiente = NULL;
-    prioridad = p.prioridad;
+    siguiente = sig;
+    prioridad = p.getPrioridad;
 
 
 }

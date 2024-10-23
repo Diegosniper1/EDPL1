@@ -18,3 +18,9 @@ Pasajero::~Pasajero()
 {
     //dtor
 }
+
+
+Pasajero::getPrioridad(){
+
+    return prioridad;
+}

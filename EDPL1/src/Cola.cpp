@@ -28,6 +28,54 @@ void Cola::encolar(Pasajero pas)
 }
 
 
+
+
+
+
+
+
+
+
+
+void Cola::encolar(Pasajero pas)
+{
+    NodoCola *nuevo_nodo = new NodoCola(pas);  // Crear nuevo nodo con el pasajero
+
+    if (es_vacia()) {  // Si la cola está vacía
+        primero = nuevo_nodo;
+        ultimo = nuevo_nodo;
+    }
+    else {
+        NodoCola *aux = primero;
+        NodoCola *anterior = NULL;;
+
+        while (aux != nullptr && aux->pasajero.prioridad >= nuevo_nodo->pasajero.prioridad) {
+            anterior = aux;
+            aux = aux->siguiente;
+        }
+
+        if (anterior == nullptr) {
+            nuevo_nodo->siguiente = primero;
+            primero = nuevo_nodo;
+        } else {
+            nuevo_nodo->siguiente = anterior->siguiente;
+            anterior->siguiente = nuevo_nodo;
+        }
+
+        if (nuevo_nodo->siguiente == nullptr) {
+            ultimo = nuevo_nodo;
+        }
+    }
+
+    longitud++;
+}
+
+
+
+
+
+
+/////////
 Pasajero Cola::desencolar()
 {
     if(!es_vacia())

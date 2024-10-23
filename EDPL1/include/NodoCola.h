@@ -5,7 +5,7 @@
 class NodoCola
 {
 
-    friend class Cola;
+
     public:
         NodoCola();
         virtual ~NodoCola();
@@ -16,7 +16,8 @@ class NodoCola
     private:
         NodoCola *siguiente;
         Pasajero pasajero;
-        int prioridad
+        int prioridad;
+        friend class Cola;
 
 
 
