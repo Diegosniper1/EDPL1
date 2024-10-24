@@ -21,30 +21,48 @@ int main()
     Pasajero p8 = Pasajero(8,2,"Italia",18,14);
     Pasajero p9 = Pasajero(9,3,"Alemania",21,20);
 
-
-    //Apilamos los pasajeros
-
-    Aeropuerto.pila.apilar_por_orden(p9);
-    Aeropuerto.pila.apilar_por_orden(p8);
-    Aeropuerto.pila.apilar_por_orden(p7);
-    Aeropuerto.pila.apilar_por_orden(p6);
-    Aeropuerto.pila.apilar_por_orden(p5);
-    Aeropuerto.pila.apilar_por_orden(p4);
-    Aeropuerto.pila.apilar_por_orden(p3);
-    Aeropuerto.pila.apilar_por_orden(p2);
-    Aeropuerto.pila.apilar_por_orden(p1);
-
-
     //Mostramos los elementos   - apartado 2
 
     pila.mostrar_entera();
 
 
-    //
+Aeropuerto aeropuerto = new Aeropuerto();
 
-b1 = new Box([]);
-b2 = new Box([]);
-b3 = new Box([]);
+int a;
+
+cout << "           *** MENÚ ***"        >> endl;
+cout << "1: Crear pila de pasajeros." >> endl;
+cout << "2: Mostrar los pasajeros." >> endl;
+cout << "3: Borrar la pila de pasajeros" >> endl;
+cout << "4: Mostrar la cola de espera" >> endl;
+cout << "5: Mostrar los pasajeros atendidos en cada box" >> endl;
+cout << "6: Simulacro en N minutos" >> endl;
+cout << "7: Simulacro total" >> endl;
+
+cout << "Elija una opción:" >> endl;
+cin >> a;
+
+if (a == 1){
+    aeropuerto.crear_pila();
+}
+
+if (a == 2){
+    aeropuerto.mostrar_pila_entera();
+}
+
+if (a == 3){
+    aeropuerto.borrar_pila();
+    cout << "Pila borrada con éxito." >> endl;
+}
+
+if (a == 4){
+    aeropuerto.mostrar_cola();
+}
+
+if (a == 5){
+
+}
+
 
 int hora = 0;
 

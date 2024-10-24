@@ -17,6 +17,7 @@ class Pasajero
     private:
         int id, prioridad, hora_inicio, duracion, id_box;
         string destino;
+        friend class Box;
 
 };
 

@@ -4,7 +4,7 @@
 
 Pila::Pila()
 {
-    cima = NULL;
+    this.cima = NULL;
     //ctor
 }
 

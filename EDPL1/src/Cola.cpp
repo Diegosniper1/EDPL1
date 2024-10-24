@@ -117,7 +117,7 @@ void Cola::mostrar()
 
     // Recorrido de la cola
     while (aux != nullptr) {
-        cout << "Pasajero " << contador << ":" << endl;
+        cout << "Pasajero: " << contador << endl;
         cout << "ID: " << aux->pasajero.id << endl;
         cout << "Prioridad: " << aux->pasajero.prioridad << endl;
         aux = aux->siguiente;

@@ -15,6 +15,7 @@ class Pila
         void ordenar_pila();
     private:
         pnodo cima;
+        friend class Aeropuerto;
 
 
 

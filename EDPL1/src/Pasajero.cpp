@@ -7,11 +7,11 @@ Pasajero::Pasajero()
 
 Pasajero::Pasajero(int id, int prioridad, string destino, int hora_inicio, int duracion)
 {
-    id = id;
-    prioridad = prioridad;
-    destino = destino;
-    hora_inicio = hora_inicio;
-    duracion = duracion;
+    this->id = id;
+    this->prioridad = prioridad;
+    this->destino = destino;
+    this->hora_inicio = hora_inicio;
+    this->duracion = duracion;
 }
 
 Pasajero::~Pasajero()

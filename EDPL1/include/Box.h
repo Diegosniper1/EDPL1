@@ -11,6 +11,10 @@ class Box
     protected:
 
     private:
+        int id_box;
+        Pasajero pasajero;
+        friend class Aeropuerto;
+
 };
 
 #endif // BOX_H

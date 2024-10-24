@@ -20,6 +20,7 @@ class Cola
         NodoCola * primero;
         NodoCola * ultimo;
         int longitud;
+        friend class Aeropuerto;
 };
 
 #endif // COLA_H
