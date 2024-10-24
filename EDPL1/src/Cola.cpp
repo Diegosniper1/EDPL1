@@ -10,33 +10,6 @@ Cola::Cola()
 }
 Cola::~Cola() { }
 
-
-void Cola::encolar(Pasajero pas)
-{
-    NodoCola *nuevo_nodo = new NodoCola(pas);
-    if(es_vacia())
-    {
-        primero = nuevo_nodo;
-        ultimo = nuevo_nodo;
-    }
-    else
-    {
-        ultimo->siguiente = nuevo_nodo;
-        ultimo = nuevo_nodo;
-    }
-    longitud++;
-}
-
-
-
-
-
-
-
-
-
-
-
 void Cola::encolar(Pasajero pas)
 {
     NodoCola *nuevo_nodo = new NodoCola(pas);  // Crear nuevo nodo con el pasajero

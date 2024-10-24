@@ -78,7 +78,44 @@ do {
                 cout << "Introduce los minutos" << endl;
                 cin >> m;
                 for(t = 0; i <= m; t++){
-                    if
+                    if (t == aeropuerto.pila.cima.pasajero.hora_inicio){
+                        cout << "Minuto" << m << ":" << endl;
+
+                        cout << "Ha llegado un pasajero al aeropuerto:" << endl;
+                        cout << "Id:" << aeropuerto.pila.cima.pasajero.id << endl;
+                        aeropuerto.cola.encolar(aeropuerto.pila.cima.pasajero);
+                        aeropuerto.pila.desapilar();
+                    }
+                    if (aeropuerto.boxes[0].pasajero != NULL)
+                    {
+                        aeropuerto.boxes[0].pasajero.duracion--;
+                    }
+                    if (aeropuerto.boxes[1] != NULL)
+                    {
+                    aeropuerto.boxes[1].pasajero.duracion--;
+                    }
+                    if (aeropuerto.boxes[2].pasajero != NULL)
+                    {
+                    aeropuerto.boxes[2].pasajero.duracion--;
+                    }
+                    if (aeropuerto.boxes[0].pasajero.duracion == 0)
+                    {
+                        cout << "Ha salido el pasajero: Id ==" << aeropuerto.boxes[0].pasajero.id <<  ", del box con identificador:" << aeropuerto.boxes[0].id_box << end;
+                        aeropuerto.boxes[0].pasajero = aeropuerto.cola.desencolar();
+                        cout << "En su lugar ha entrado el pasajero: Id ==" << aeropuerto.boxes[0].pasajero.id <<  ", al box con identificador:" << aeropuerto.boxes[0].id_box << end;
+                    }
+                    if (aeropuerto.boxes[1].pasajero.duracion == 0)
+                    {
+                        cout << "Ha salido el pasajero: Id ==" << aeropuerto.boxes[1].pasajero.id <<  ", del box con identificador:" << aeropuerto.boxes[1].id_box << end;
+                        aeropuerto.boxes[1].pasajero = aeropuerto.cola.desencolar();
+                        cout << "En su lugar ha entrado el pasajero: Id ==" << aeropuerto.boxes[1].pasajero.id <<  ", al box con identificador:" << aeropuerto.boxes[1].id_box << end
+                    }
+                    if (aeropuerto.boxes[2].pasajero.duracion == 0)
+                    {
+                        cout << "Ha salido el pasajero: Id ==" << aeropuerto.boxes[2].pasajero.id <<  ", del box con identificador:" << aeropuerto.boxes[2].id_box << end;
+                        aeropuerto.boxes[2].pasajero = aeropuerto.cola.desencolar();
+                        cout << "En su lugar ha entrado el pasajero: Id ==" << aeropuerto.boxes[2].pasajero.id <<  ", al box con identificador:" << aeropuerto.boxes[2].id_box << end
+                    }
                 }
 		break;
          }

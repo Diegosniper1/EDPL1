@@ -8,7 +8,7 @@ using namespace std;
 
 Aeropuerto::Aeropuerto()
 {
-    std::vector<Box> boxes;
+    std::vector<> boxes = new Vector<Box>;
     this->pila = Pila();
     this->cola = Cola();
     //ctor
@@ -88,9 +88,9 @@ void Aeropuerto::mostrar_cola(this.cola)
 
 void Aeropuerto::mostrar_boxes(){
 
-    for(int i = 0; i < boxes.size(); i++) {
-        cout << "Box" << i << ":" << boxes[i].pasajero <<endl;
-            cout << "Id:" << boxes[i].pasajero.id << "Duración:" << boxes[i].pasajero.duracion << endl;
+    for(int i = 0; i < this.boxes.size(); i++) {
+        cout << "Box" << i << ":" << this.boxes[i].pasajero <<endl;
+            cout << "Id:" << this.boxes[i].pasajero.id << "Duración:" << this.boxes[i].pasajero.duracion << endl;
     }
 }
 
