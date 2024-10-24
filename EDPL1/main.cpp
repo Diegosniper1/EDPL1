@@ -30,39 +30,72 @@ Aeropuerto aeropuerto = new Aeropuerto();
 
 int a;
 
-cout << "           *** MENÚ ***"        >> endl;
-cout << "1: Crear pila de pasajeros." >> endl;
-cout << "2: Mostrar los pasajeros." >> endl;
-cout << "3: Borrar la pila de pasajeros" >> endl;
-cout << "4: Mostrar la cola de espera" >> endl;
-cout << "5: Mostrar los pasajeros atendidos en cada box" >> endl;
-cout << "6: Simulacro en N minutos" >> endl;
-cout << "7: Simulacro total" >> endl;
+cout << "           *** MENÚ ***"        << endl;
+cout << "1: Crear pila de pasajeros." << endl;
+cout << "2: Mostrar los pasajeros." << endl;
+cout << "3: Borrar la pila de pasajeros" << endl;
+cout << "4: Mostrar la cola de espera" << endl;
+cout << "5: Mostrar los pasajeros atendidos en cada box" << endl;
+cout << "6: Simulacro en N minutos" << endl;
+cout << "7: Simulacro total" << endl;
 
-cout << "Elija una opción:" >> endl;
-cin >> a;
+//////////////
 
-if (a == 1){
-    aeropuerto.crear_pila();
-}
+do {
+      cout<<"Elija una opción: "<<endl;
+      cin>>a;
+      switch(a) {
+         case 1: {
+            aeropuerto.crear_pila();
+	    cout<<"Pila de pasajeros creada con éxito: "<<endl;
+            break;
+         }
+         case 2: {
+	 	aeropuerto.mostrar_pila_entera();
+	 	break;
+         }
+         case 3: {
+            	aeropuerto.borrar_pila();
+    		cout << "Pila borrada con éxito." >> endl;
+		break;
+         }
 
-if (a == 2){
-    aeropuerto.mostrar_pila_entera();
-}
+	  case 4: {
+            	aeropuerto.mostrar_cola();
+		break;
+         }
 
-if (a == 3){
-    aeropuerto.borrar_pila();
-    cout << "Pila borrada con éxito." >> endl;
-}
+	 case 5: {
 
-if (a == 4){
-    aeropuerto.mostrar_cola();
-}
+		break;
+         }
 
-if (a == 5){
+	 case 6: {
 
-}
+		break;
+         }
 
+	 case 7: {
+
+		break;
+         }
+
+	 case 8: {
+            cout<<"Fin"<<endl;
+            break;
+         }
+         default: {
+            cout<<"No ha seleccionado una opción, inténtelo de nuevo: 	"<<endl;
+         }
+      }
+   }while(a!=8);
+
+
+
+
+
+
+////////////
 
 int hora = 0;
 
