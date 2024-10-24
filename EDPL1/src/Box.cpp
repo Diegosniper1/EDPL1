@@ -9,7 +9,7 @@ Box::Box()
 Box::Box(int id_box)
 {
     this->id_box = id_box;
-    this->pasajero = NULL;
+
     //ctor
 }
 

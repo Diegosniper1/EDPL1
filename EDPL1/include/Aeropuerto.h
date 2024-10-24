@@ -16,7 +16,7 @@ class Aeropuerto
     private:
         Pila pila;
         Cola cola;
-        Box box;
+        std::vector<Box> boxes; ;
 };
 
 #endif // AEROPUERTO_H

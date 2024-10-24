@@ -8,7 +8,7 @@ using namespace std;
 
 Aeropuerto::Aeropuerto()
 {
-    std::vector<> boxes = new Vector<Box>;
+    boxes = std::vector<Box>(3);
     this->pila = Pila();
     this->cola = Cola();
     //ctor
@@ -33,21 +33,21 @@ void Aeropuerto::crear_pila(){
 }
 
 
-void Aeropuerto::mostrar_pila_entera(this->pila){
+void Aeropuerto::mostrar_pila_entera(){
 
     pnodo aux;
 
-    if (esVacia()){
+    if (this.pila.esVacia()){
 
         cout << "Pila vacia"<<endl;
     }
     else{
 
-        aux = cima;
+        aux = this.pila.cima;
 
-        while (aux != NULL) {
+        while (aux != nullptr) {
 
-             cout << "Pasajero:" << aux -> pasajero << endl;
+             cout << "Pasajero:" << aux ->p asajero << endl;
 
              aux = aux ->siguiente;
 
@@ -58,21 +58,21 @@ void Aeropuerto::mostrar_pila_entera(this->pila){
 
 void Aeropuerto::borrar_pila(){
 
-    while(this->pila.cima != NULL){
+    while(this->pila.cima != nullptr){
         pila.desapilar;
     }
 }
 
-void Aeropuerto::mostrar_cola(this.cola)
+void Aeropuerto::mostrar_cola()
 {
 
-    if (es_vacia()) {
+    if (this.cola.es_vacia()) {
         cout << "La cola está vacía." << endl;
         return;
     }
 
 
-    NodoCola* aux = primero;
+    NodoCola* aux = this.cola.primero;
     int contador = 1;
 
     // Recorrido de la cola
@@ -86,7 +86,7 @@ void Aeropuerto::mostrar_cola(this.cola)
 }
 
 
-void Aeropuerto::mostrar_boxes(){
+void Aeropuerto::mostrar_boxes(){   // Revisar luego
 
     for(int i = 0; i < this.boxes.size(); i++) {
         cout << "Box" << i << ":" << this.boxes[i].pasajero <<endl;
