@@ -4,12 +4,13 @@
 #include"Box.h"
 #include <vector>
 
+using namespace std;
+
 Aeropuerto::Aeropuerto()
 {
-    vector<Box> boxes(3);
-    this->pila = NULL;
+    std::vector<Box> boxes;
+    this->pila = Pila();
     this->cola = Cola();
-
     //ctor
 }
 
@@ -19,7 +20,6 @@ Aeropuerto::~Aeropuerto()
 }
 
 void Aeropuerto::crear_pila(){
-    this->pila = Pila();
     this->pila.apilar_por_orden(p9);
     this->pila.apilar_por_orden(p8);
     this->pila.apilar_por_orden(p7);
@@ -47,7 +47,7 @@ void Aeropuerto::mostrar_pila_entera(this->pila){
 
         while (aux != NULL) {
 
-             cout << "Pasajero:" aux -> pasajero << endl;
+             cout << "Pasajero:" << aux -> pasajero << endl;
 
              aux = aux ->siguiente;
 
@@ -85,8 +85,16 @@ void Aeropuerto::mostrar_cola(this.cola)
     }
 }
 
+
 void Aeropuerto::mostrar_boxes(){
 
+    for(int i = 0; i < boxes.size(); i++) {
+        cout << "Box" << i << ":" << boxes[i].pasajero <<endl;
+            cout << "Id:" << boxes[i].pasajero.id << "Duración:" << boxes[i].pasajero.duracion << endl;
+    }
 }
+
+
+
 
 

@@ -7,6 +7,9 @@ class Aeropuerto
     public:
         Aeropuerto();
         virtual ~Aeropuerto();
+        mostrar_pila_entera();
+        mostrar_boxes();
+        mostrar_cola();
 
     protected:
 

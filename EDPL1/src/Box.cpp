@@ -1,7 +1,6 @@
 #include "Box.h"
 #include "Pasajero.h"
 
-
 Box::Box()
 {
     //ctor

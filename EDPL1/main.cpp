@@ -23,10 +23,14 @@ int main()
 
     //Mostramos los elementos   - apartado 2
 
-    pila.mostrar_entera();
+    Box b1 = new Box(1);
+    Box b2 = new Box(2);
+    Box b3 = new Box(3);
 
 
 Aeropuerto aeropuerto = new Aeropuerto();
+
+aeropuerto.boxes = {b1, b2, b3};
 
 int a;
 
@@ -38,7 +42,7 @@ cout << "4: Mostrar la cola de espera" << endl;
 cout << "5: Mostrar los pasajeros atendidos en cada box" << endl;
 cout << "6: Simulacro en N minutos" << endl;
 cout << "7: Simulacro total" << endl;
-
+cout << "8: Salir" << endl;
 //////////////
 
 do {
@@ -66,12 +70,16 @@ do {
          }
 
 	 case 5: {
-
+                aeropuerto.mostrar_boxes();
 		break;
          }
 
 	 case 6: {
-
+                cout << "Introduce los minutos" << endl;
+                cin >> m;
+                for(t = 0; i <= m; t++){
+                    if
+                }
 		break;
          }
 
@@ -84,7 +92,7 @@ do {
             cout<<"Fin"<<endl;
             break;
          }
-         default: {
+    default: {
             cout<<"No ha seleccionado una opción, inténtelo de nuevo: 	"<<endl;
          }
       }
