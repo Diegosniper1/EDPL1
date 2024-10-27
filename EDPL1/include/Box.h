@@ -6,7 +6,7 @@ class Box
 {
     public:
         Box();
-        Box::Box(int id_box);
+        Box(int id_box);
         virtual ~Box();
 
       protected:

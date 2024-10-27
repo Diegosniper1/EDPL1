@@ -1,6 +1,10 @@
 #ifndef PASAJERO_H
 #define PASAJERO_H
 
+#include"Pasajero.h"
+
+#include <string>
+
 
 using namespace std;
 

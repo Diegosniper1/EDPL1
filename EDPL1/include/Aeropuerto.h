@@ -1,6 +1,12 @@
 #ifndef AEROPUERTO_H
 #define AEROPUERTO_H
 
+#include"Pila.h"
+#include"Cola.h"
+
+#include <vector>
+
+using namespace std;
 
 class Aeropuerto
 {

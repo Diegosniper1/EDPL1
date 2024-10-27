@@ -1,6 +1,7 @@
 #ifndef NODOCOLA_H
 #define NODOCOLA_H
 
+#include"Pasajero.h"
 
 class NodoCola
 {

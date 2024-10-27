@@ -1,5 +1,9 @@
 #include "Pasajero.h"
 
+#include <string>
+
+using namespace std;
+
 Pasajero::Pasajero()
 {
     //ctor
@@ -17,10 +21,10 @@ Pasajero::Pasajero(int id, int prioridad, string destino, int hora_inicio, int d
 Pasajero::~Pasajero()
 {
     //dtor
+
 }
 
-
-Pasajero::getPrioridad(){
-
+int Pasajero::getPrioridad()
+{
     return prioridad;
 }
