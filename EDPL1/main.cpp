@@ -3,7 +3,7 @@
 #include"Aeropuerto.h"
 #include"Box.h"
 
-using namespace std;
+using namespace std; //espacio de nombres
 
 int main()
 {
