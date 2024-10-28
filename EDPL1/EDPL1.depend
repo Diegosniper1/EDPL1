@@ -1,16 +1,16 @@
 # depslib dependency file v1.0
-1729840877 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\box.cpp
+1730143241 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\box.cpp
 	"Box.h"
 	"Pasajero.h"
 
-1730128857 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\box.h
+1730143239 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\box.h
 	"Pasajero.h"
 
-1730129408 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\pasajero.h
+1730143051 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\pasajero.h
 	"Pasajero.h"
 	<string>
 
-1730131409 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pasajero.cpp
+1730143081 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pasajero.cpp
 	"Pasajero.h"
 	<string>
 
@@ -51,6 +51,31 @@
 	"Pasajero.h"
 
 1729577349 c:\users\diego\documents\github\edpl1\edpl1\include\nodopila.h
+	<iostream>
+	"Pasajero.h"
+
+1730138733 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\cola.cpp
+	"Cola.h"
+	"NodoCola.h"
+	"Pasajero.h"
+	<iostream>
+
+1730129185 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\cola.h
+	"Pasajero.h"
+	"NodoCola.h"
+
+1730130760 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodocola.h
+	"Pasajero.h"
+
+1730138733 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodocola.cpp
+	"NodoCola.h"
+	"Pasajero.h"
+
+1730140095 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodopila.cpp
+	"NodoPila.h"
+	"Pasajero.h"
+
+1730142444 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodopila.h
 	<iostream>
 	"Pasajero.h"
 

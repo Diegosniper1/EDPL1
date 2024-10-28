@@ -9,6 +9,8 @@ class Box
         Box();
         Box(int id_box);
         virtual ~Box();
+        Pasajero getPasajero();
+        int getIdBox();
 
       protected:
 

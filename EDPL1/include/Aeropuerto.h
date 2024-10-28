@@ -18,6 +18,9 @@ class Aeropuerto
         void mostrar_pila_entera();
         void mostrar_boxes();
         void mostrar_cola();
+        vector<Box> getBoxes();
+        Pila getPila();
+        Cola getCola();
 
     protected:
 

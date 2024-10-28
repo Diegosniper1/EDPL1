@@ -1,8 +1,6 @@
 #ifndef PASAJERO_H
 #define PASAJERO_H
-
 #include"Pasajero.h"
-
 #include <string>
 
 
@@ -15,7 +13,10 @@ class Pasajero
         Pasajero(int id, int prioridad, string destino, int hora_inicio, int duracion);
         virtual ~Pasajero();
         Pasajero getPrioridad();
+        int getHoraInicio();
+        int getDuracion();
         friend class Pila;
+        int getId();
 
     protected:
 

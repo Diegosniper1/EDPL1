@@ -94,6 +94,10 @@ void Pila::mostrar_entera(){
 
 }
 
+NodoPila Pila::getCima(){
+        this->cima = cima;
+    }
+
 
 
 

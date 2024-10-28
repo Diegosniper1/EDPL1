@@ -24,3 +24,15 @@ Pasajero::~Pasajero()
 
 }
 
+int Pasajero::getHoraInicio(){
+    this->hora_inicio = hora_inicio;
+}
+
+int Pasajero::getId(){
+    this->id = id;
+}
+
+int Pasajero::getDuracion(){
+    this->duracion = duracion;
+}
+

@@ -10,11 +10,13 @@ class NodoPila{
         NodoPila();
         NodoPila(Pasajero pasajero, NodoPila *sig = NULL);
         virtual ~NodoPila();
+        Pasajero getPasajero();
 
     private:
         Pasajero pasajero;
         NodoPila *siguiente;
         friend class Pila;
+
 };
 
 // Puntero tipo NodoPila

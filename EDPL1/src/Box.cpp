@@ -17,3 +17,11 @@ Box::~Box()
 {
     //dtor
 }
+
+Pasajero Box::getPasajero(){
+    this->pasajero = pasajero;
+}
+
+int Box::getIdBox(){
+    this->id_box = id_box;
+}

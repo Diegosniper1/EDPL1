@@ -15,11 +15,10 @@ class Pila
         Pasajero mostrar();
         void mostrar_entera();
         void ordenar_pila();
+        NodoPila getCima();
     private:
         pnodo cima;
         friend class Aeropuerto;
-
-
 
 };
 

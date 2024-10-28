@@ -20,6 +20,18 @@ Aeropuerto::~Aeropuerto()
 }
 
 void Aeropuerto::crear_pila(){
+     // Creamos la lista de pasajeros - apartado 1
+
+    Pasajero p1 = Pasajero(1,6,"Indonesia",0,20);
+    Pasajero p2 = Pasajero(2,1,"Portugal",0,15);
+    Pasajero p3 = Pasajero(3,7,"Australia",5,39);
+    Pasajero p4 = Pasajero(4,5,"Sudáfrica",7,39);
+    Pasajero p5 = Pasajero(5,6,"Indonesia",9,16);
+    Pasajero p6 = Pasajero(6,4,"Noruega",11,23);
+    Pasajero p7 = Pasajero(7,7,"Australia",14,31);
+    Pasajero p8 = Pasajero(8,2,"Italia",18,14);
+    Pasajero p9 = Pasajero(9,3,"Alemania",21,20);
+
     this->pila.apilar_por_orden(p9);
     this->pila.apilar_por_orden(p8);
     this->pila.apilar_por_orden(p7);
@@ -29,7 +41,6 @@ void Aeropuerto::crear_pila(){
     this->pila.apilar_por_orden(p3);
     this->pila.apilar_por_orden(p2);
     this->pila.apilar_por_orden(p1);
-
 }
 
 
@@ -93,6 +104,20 @@ void Aeropuerto::mostrar_boxes(){   // Revisar luego
             cout << "Id:" << this.boxes[i].pasajero.id << "Duración:" << this.boxes[i].pasajero.duracion << endl;
     }
 }
+
+vector<Box> Aeropuerto::getBoxes(){
+    this->boxes = boxes;
+}
+
+Pila Aeropuerto::getPila(){
+    this->pila = pila;
+}
+
+Cola Aeropuerto::getCola(){
+    this->cola = cola;
+}
+
+
 
 
 

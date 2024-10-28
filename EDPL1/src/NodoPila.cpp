@@ -21,3 +21,7 @@ NodoPila::~NodoPila()
 {
     //dtor
 }
+
+Pasajero NodoPila::getPasajero(){
+    this->pasajero = pasajero;
+}
