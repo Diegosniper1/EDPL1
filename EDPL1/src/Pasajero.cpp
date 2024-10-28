@@ -26,13 +26,16 @@ Pasajero::~Pasajero()
 
 int Pasajero::getHoraInicio(){
     this->hora_inicio = hora_inicio;
+    return hora_inicio;
 }
 
 int Pasajero::getId(){
     this->id = id;
+    return id;
 }
 
 int Pasajero::getDuracion(){
     this->duracion = duracion;
+    return duracion;
 }
 

@@ -105,16 +105,19 @@ void Aeropuerto::mostrar_boxes(){   // Revisar luego
     }
 }
 
-vector<Box> Aeropuerto::getBoxes(){
+vector<Box> & Aeropuerto::getBoxes(){
     this->boxes = boxes;
+    return boxes;
 }
 
 Pila Aeropuerto::getPila(){
     this->pila = pila;
+    return pila;
 }
 
 Cola Aeropuerto::getCola(){
     this->cola = cola;
+    return cola;
 }
 
 

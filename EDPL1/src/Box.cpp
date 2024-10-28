@@ -20,8 +20,10 @@ Box::~Box()
 
 Pasajero Box::getPasajero(){
     this->pasajero = pasajero;
+    return pasajero;
 }
 
 int Box::getIdBox(){
     this->id_box = id_box;
+    return id_box;
 }

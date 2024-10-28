@@ -3,7 +3,7 @@
 #include"Aeropuerto.h"
 #include"Box.h"
 
-using namespace std; //espacio de nombres
+using namespace std;
 
 int main()
 {
@@ -32,7 +32,7 @@ int main()
 
 Aeropuerto aeropuerto;
 
-aeropuerto.boxes = {b1, b2, b3};
+aeropuerto.getBoxes() = {b1, b2, b3};
 
 int a;
 int m = 0;
@@ -85,13 +85,13 @@ do {
                         cout << "Minuto" << m << ":" << endl;
 
                         cout << "Ha llegado un pasajero al aeropuerto:" << endl;
-                        cout << "Id:" << aeropuerto.getPila().getCima().getPasajero().getId() << endl;
-                        aeropuerto.getCola().encolar(aeropuerto.getPila().getCima().getPasajero());
+                        cout << "Id:" << aeropuerto.getPila().getCima()-> getPasajero().getId() << endl;
+                        aeropuerto.getCola().encolar(aeropuerto.getPila().getCima()-> getPasajero());
                         aeropuerto.getPila().desapilar();
                     }
-                    if (aeropuerto.boxes[0].getPasajero()!=NULL)
+                    if (aeropuerto.boxes()[0].getPasajero()!=NULL)
                     {
-                        aeropuerto.boxes[0].getPasajero().getDuracion()--;
+                        aeropuerto.boxes()[0].getPasajero().getDuracion()--;
                     }
                     else{
                         if (!aeropuerto.getCola().es_vacia()){
@@ -139,10 +139,10 @@ do {
                     }
                     if (aeropuerto.boxes[1].getPasajero().getDuracion() == 0)
                     {
-                        cout << "Ha salido el pasajero: Id ==" << aeropuerto.boxes[1].getPasajero().getId() <<  ", del box con identificador:" << aeropuerto.boxes[1].getIdBox() << end;
+                        cout << "Ha salido el pasajero: Id ==" << aeropuerto.boxes[1].getPasajero().getId() <<  ", del box con identificador:" << aeropuerto.boxes[1].getIdBox() << endl;
                         if (!aeropuerto.getCola().es_vacia()){
                             aeropuerto.boxes[1].getPasajero() = aeropuerto.getCola().desencolar();
-                            cout << "En su lugar ha entrado el pasajero: Id ==" << aeropuerto.boxes[1].getPasajero().getId() <<  ", al box con identificador:" << aeropuerto.boxes[1].getIdBox() << end;
+                            cout << "En su lugar ha entrado el pasajero: Id ==" << aeropuerto.boxes[1].getPasajero().getId() <<  ", al box con identificador:" << aeropuerto.boxes[1].getIdBox() << endl;
                             cout << "El box con Id:" << aeropuerto.boxes[1].getIdBox() << ", está  en funcionamiento" << endl;
                         }
                         else{
@@ -151,10 +151,10 @@ do {
                     }
                     if (aeropuerto.boxes[2].getPasajero().getDuracion() == 0)
                     {
-                        cout << "Ha salido el pasajero: Id ==" << aeropuerto.boxes[2].getPasajero().getId() <<  ", del box con identificador:" << aeropuerto.boxes[2].getIdBox() << end;
+                        cout << "Ha salido el pasajero: Id ==" << aeropuerto.boxes[2].getPasajero().getId() <<  ", del box con identificador:" << aeropuerto.boxes[2].getIdBox() << endl;
                         if (!aeropuerto.getCola().es_vacia()){
                             aeropuerto.boxes[2].getPasajero() = aeropuerto.getCola().desencolar();
-                            cout << "En su lugar ha entrado el pasajero: Id ==" << aeropuerto.boxes[2].getPasajero().getId() <<  ", al box con identificador:" << aeropuerto.boxes[2].getIdBox() << end;
+                            cout << "En su lugar ha entrado el pasajero: Id ==" << aeropuerto.boxes[2].getPasajero().getId() <<  ", al box con identificador:" << aeropuerto.boxes[2].getIdBox() << endl;
                             cout << "El box con Id:" << aeropuerto.boxes[2].getIdBox() << ", está  en funcionamiento" << endl;
                         }
                         else{
@@ -269,33 +269,6 @@ do {
    }while(a!=8);
 
 
-
-
-
-
-////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      return 0;
-
-
 
 }

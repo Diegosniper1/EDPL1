@@ -24,4 +24,5 @@ NodoPila::~NodoPila()
 
 Pasajero NodoPila::getPasajero(){
     this->pasajero = pasajero;
+    return pasajero;
 }
