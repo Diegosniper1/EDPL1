@@ -4,7 +4,8 @@
 
 Pila::Pila()
 {
-    this.cima = NULL;
+    cima = nullptr;
+    //this.cima = Null es lo que estaba antes
     //ctor
 }
 
@@ -21,7 +22,7 @@ bool Pila::esVacia(){
 }
 
 
-void Pila::apilar(Pasajero pas){
+void Pila::apilar(Pasajero p){
     pnodo nuevo = new NodoPila(p, cima);
 
     cima = nuevo;
@@ -30,15 +31,17 @@ void Pila::apilar(Pasajero pas){
 
 
 void Pila::apilar_por_orden(Pasajero pas){
-    Pila paux = new Pila();
+    Pila paux;
     if (!esVacia()){
         while(pas.hora_inicio > cima.pasajero.hora_inicio){
             paux.apilar(cima.pasajero);
             desapilar();
+            //if (esVacia())break;
         }
         apilar(pas);
-        while(!esVacia(paux)){
+        while(!paux.esVacia()){
             apilar(paux.cima.pasajero);
+            //paux.desapilar();
         }
     }
     else{
@@ -66,7 +69,7 @@ Pasajero Pila::mostrar(){
 
 }
 
-void mostrar_entera(){
+void Pila::mostrar_entera(){
 
     pnodo aux;
 

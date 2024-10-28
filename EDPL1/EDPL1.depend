@@ -14,3 +14,43 @@
 	"Pasajero.h"
 	<string>
 
+1729791800 source:c:\users\diego\documents\github\edpl1\edpl1\src\box.cpp
+	"Box.h"
+	"Pasajero.h"
+
+1730132445 c:\users\diego\documents\github\edpl1\edpl1\include\box.h
+	"Pasajero.h"
+
+1730136309 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
+	"Pasajero.h"
+	<string>
+
+1730132445 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
+	"Pasajero.h"
+	<string>
+
+1730133400 source:c:\users\diego\documents\github\edpl1\edpl1\src\cola.cpp
+	"Cola.h"
+	"NodoCola.h"
+	"Pasajero.h"
+	<iostream>
+
+1730132445 c:\users\diego\documents\github\edpl1\edpl1\include\cola.h
+	"Pasajero.h"
+	"NodoCola.h"
+
+1730132445 c:\users\diego\documents\github\edpl1\edpl1\include\nodocola.h
+	"Pasajero.h"
+
+1730133478 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodocola.cpp
+	"NodoCola.h"
+	"Pasajero.h"
+
+1730133736 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodopila.cpp
+	"NodoPila.h"
+	"Pasajero.h"
+
+1729577349 c:\users\diego\documents\github\edpl1\edpl1\include\nodopila.h
+	<iostream>
+	"Pasajero.h"
+

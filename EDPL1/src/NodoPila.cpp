@@ -3,8 +3,8 @@
 
 NodoPila::NodoPila(){
 
-    pasajero=NULL;
     siguiente=NULL;
+    //Pasajero = NULL; ES LO QUE ESTABA PREVIAMENTE
 
     //ctor
 ;}

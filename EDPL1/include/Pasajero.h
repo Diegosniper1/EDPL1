@@ -15,6 +15,7 @@ class Pasajero
         Pasajero(int id, int prioridad, string destino, int hora_inicio, int duracion);
         virtual ~Pasajero();
         Pasajero getPrioridad();
+        friend class Pila;
 
     protected:
 

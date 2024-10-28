@@ -1,4 +1,7 @@
 #include <iostream>
+#include"Pila.h"
+#include"Aeropuerto.h"
+#include"Box.h"
 
 using namespace std;
 
@@ -23,12 +26,11 @@ int main()
 
     //Mostramos los elementos   - apartado 2
 
-    Box b1 = new Box(1);
-    Box b2 = new Box(2);
-    Box b3 = new Box(3);
+    Box b1(1);
+    Box b2(2);
+    Box b3(3);
 
-
-Aeropuerto aeropuerto = new Aeropuerto();
+Aeropuerto aeropuerto;
 
 aeropuerto.boxes = {b1, b2, b3};
 

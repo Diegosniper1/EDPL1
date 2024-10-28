@@ -10,7 +10,7 @@ NodoCola::NodoCola(){
 NodoCola::NodoCola(Pasajero p, NodoCola *sig){
     pasajero = p;
     siguiente = sig;
-    int prioridad = p.getPrioridad;
+
 
 
 }

@@ -1,6 +1,7 @@
 #include "Cola.h"
 #include"NodoCola.h"
 #include "Pasajero.h"
+#include <iostream>
 
 using namespace std;
 
@@ -56,7 +57,7 @@ Pasajero Cola::desencolar()
 {
     if(!es_vacia())
     {
-        Pasajero pas = primero->pas;
+        Pasajero pasajero = primero->pasajero;
         NodoCola *aux = primero;
         if((primero == ultimo) && (primero->siguiente == NULL))
         {
@@ -72,7 +73,7 @@ Pasajero Cola::desencolar()
             delete(aux);
         }
     longitud--;
-    return pas;
+    return pasajero;
     }
 }
 

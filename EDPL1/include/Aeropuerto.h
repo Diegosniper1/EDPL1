@@ -13,9 +13,11 @@ class Aeropuerto
     public:
         Aeropuerto();
         virtual ~Aeropuerto();
-        mostrar_pila_entera();
-        mostrar_boxes();
-        mostrar_cola();
+        void crear_pila();
+        void borrar_pila();
+        void mostrar_pila_entera();
+        void mostrar_boxes();
+        void mostrar_cola();
 
     protected:
 
