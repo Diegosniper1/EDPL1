@@ -48,17 +48,17 @@ void Aeropuerto::mostrar_pila_entera(){
 
     pnodo aux;
 
-    if (this.pila.esVacia()){
+    if (this->pila.esVacia()){
 
         cout << "Pila vacia"<<endl;
     }
     else{
 
-        aux = this.pila.cima;
+        aux = this->pila.cima;
 
         while (aux != nullptr) {
 
-             cout << "Pasajero:" << aux ->p asajero << endl;
+             cout << "Pasajero:" << aux ->getPasajero() << endl;
 
              aux = aux ->siguiente;
 
@@ -90,7 +90,7 @@ void Aeropuerto::mostrar_cola()
     while (aux != nullptr) {
         cout << "Pasajero: " << contador << endl;
         cout << "ID: " << aux->pasajero.id << endl;
-        cout << "Prioridad: " << aux->pasajero.prioridad << endl;
+        cout << "Prioridad: " << aux->.getPasajero().getPrioridad() << endl;
         aux = aux->siguiente;
         contador++;
     }
@@ -99,9 +99,9 @@ void Aeropuerto::mostrar_cola()
 
 void Aeropuerto::mostrar_boxes(){   // Revisar luego
 
-    for(int i = 0; i < this.boxes.size(); i++) {
-        cout << "Box" << i << ":" << this.boxes[i].pasajero <<endl;
-            cout << "Id:" << this.boxes[i].pasajero.id << "Duración:" << this.boxes[i].pasajero.duracion << endl;
+    for(int i = 0; i < this->boxes.size(); i++) {
+        cout << "Box" << i << ":" << this->boxes[i].getPasajero() <<endl;
+            cout << "Id:" << this->boxes[i].getPasajero().getId() << "Duración:" << this->boxes[i].getPasajero().getDuracion() << endl;
     }
 }
 

@@ -10,6 +10,8 @@ class NodoCola
         NodoCola();
         virtual ~NodoCola();
         NodoCola(Pasajero pasajero, NodoCola*sig = NULL);
+        Pasajero getPasajero();
+        NodoCola getSiguiente();
 
     protected:
 

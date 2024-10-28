@@ -22,6 +22,16 @@ NodoCola::~NodoCola()
     //dtor
 }
 
+Pasajero NodoCola::getPasajero(){
+    this->pasajero=pasajero;
+    return pasajero;
+}
+
+NodoCola NodoCola::getSiguiente(){
+    this->siguiente=siguiente;
+    return siguiente;
+}
+
 
 
 

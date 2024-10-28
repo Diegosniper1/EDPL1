@@ -65,7 +65,7 @@ Pasajero Pila::mostrar(){
      else{
         cout << "Cima pila: "<< cima->pasajero<<endl;
      }
-     return 0;
+     return pasajero;
 
 }
 
@@ -96,6 +96,7 @@ void Pila::mostrar_entera(){
 
 NodoPila Pila::getCima(){
         this->cima = cima;
+        return cima;
     }
 
 

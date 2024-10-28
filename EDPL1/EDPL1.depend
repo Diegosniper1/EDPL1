@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1730143241 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\box.cpp
+1730153460 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\box.cpp
 	"Box.h"
 	"Pasajero.h"
 
@@ -10,7 +10,7 @@
 	"Pasajero.h"
 	<string>
 
-1730143081 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pasajero.cpp
+1730153460 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pasajero.cpp
 	"Pasajero.h"
 	<string>
 
@@ -71,7 +71,7 @@
 	"NodoCola.h"
 	"Pasajero.h"
 
-1730140095 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodopila.cpp
+1730153460 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodopila.cpp
 	"NodoPila.h"
 	"Pasajero.h"
 
