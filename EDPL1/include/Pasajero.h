@@ -22,6 +22,7 @@ class Pasajero
         int id, prioridad, hora_inicio, duracion, id_box;
         string destino;
         friend class Box;
+        friend class Cola;
 
 };
 

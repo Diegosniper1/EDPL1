@@ -1,13 +1,14 @@
 #ifndef COLA_H
 #define COLA_H
-
+#include"Pasajero.h"
+#include "NodoCola.h"
 
 class Cola
 {
     public:
         Cola();
         ~Cola();
-        void encolar(Pasajero);
+        void encolar(Pasajero pasajero);
         Pasajero desencolar();
         void mostrar();
         Pasajero inicio();

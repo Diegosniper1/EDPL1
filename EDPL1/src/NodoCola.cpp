@@ -1,17 +1,16 @@
 #include "NodoCola.h"
+#include "Pasajero.h"
 
 NodoCola::NodoCola(){
 
-
     siguiente=NULL;
-    prioridad = 0;
 }
 
 
 NodoCola::NodoCola(Pasajero p, NodoCola *sig){
     pasajero = p;
     siguiente = sig;
-    prioridad = p.getPrioridad;
+    int prioridad = p.getPrioridad;
 
 
 }

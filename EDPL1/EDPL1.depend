@@ -1,6 +1,16 @@
 # depslib dependency file v1.0
-1729758195 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\box.cpp
+1729840877 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\box.cpp
 	"Box.h"
+	"Pasajero.h"
 
-1729758373 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\box.h
+1730128857 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\box.h
+	"Pasajero.h"
+
+1730129408 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\pasajero.h
+	"Pasajero.h"
+	<string>
+
+1730131409 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pasajero.cpp
+	"Pasajero.h"
+	<string>
 

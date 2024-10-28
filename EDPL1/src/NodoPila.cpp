@@ -4,10 +4,10 @@
 NodoPila::NodoPila(){
 
     pasajero=NULL;
-    siguiente=NULL
+    siguiente=NULL;
 
     //ctor
-}
+;}
 
 NodoPila::NodoPila(Pasajero p, NodoPila *sig){
 

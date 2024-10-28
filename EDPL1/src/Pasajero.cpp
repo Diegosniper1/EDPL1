@@ -24,7 +24,3 @@ Pasajero::~Pasajero()
 
 }
 
-int Pasajero::getPrioridad()
-{
-    return prioridad;
-}

@@ -1,5 +1,8 @@
 #include "Cola.h"
 #include"NodoCola.h"
+#include "Pasajero.h"
+
+using namespace std;
 
 
 Cola::Cola()
@@ -105,7 +108,7 @@ void Cola::mostrar()
 Pasajero Cola::inicio(){
     if(!es_vacia())
     {
-    return primero->elemento;
+    return primero->pasajero;
 }
 
 }
@@ -116,7 +119,7 @@ Pasajero Cola::fin()
 {
     if(!es_vacia())
     {
-    return ultimo->elemento;
+    return ultimo->pasajero;
     }
 }
 

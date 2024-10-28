@@ -1,6 +1,5 @@
 #ifndef NODOCOLA_H
 #define NODOCOLA_H
-
 #include"Pasajero.h"
 
 class NodoCola
@@ -17,7 +16,6 @@ class NodoCola
     private:
         NodoCola *siguiente;
         Pasajero pasajero;
-        int prioridad;
         friend class Cola;
 
 

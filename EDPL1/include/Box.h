@@ -1,5 +1,6 @@
 #ifndef BOX_H
 #define BOX_H
+#include"Pasajero.h"
 
 
 class Box
