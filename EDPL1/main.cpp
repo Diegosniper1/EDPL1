@@ -98,7 +98,7 @@ do {
                             aeropuerto.getBoxes[0].getPasajero() = aeropuerto.getCola().desencolar();
                             }
                         else{
-                            cout << "El box con Id:" << aeropuerto.getBoxes()[0].getIdBox << ", no está  en funcionamiento" << endl;
+                            cout << "El box con Id:" << aeropuerto.getBoxes()[0].getIdBox() << ", no está  en funcionamiento" << endl;
                         }
                     }
                     if (aeropuerto.getBoxes()[1].getPasajero() != NULL)
