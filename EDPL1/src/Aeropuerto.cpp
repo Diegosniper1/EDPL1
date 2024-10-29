@@ -60,7 +60,7 @@ void Aeropuerto::mostrar_pila_entera(){
 
              cout << "Pasajero:" << aux ->getPasajero() << endl;
 
-             aux = aux ->siguiente;
+.             aux = aux >getSiguiente();
 
         }
 
@@ -118,6 +118,15 @@ Pila Aeropuerto::getPila(){
 Cola Aeropuerto::getCola(){
     this->cola = cola;
     return cola;
+}
+
+vector<Box> & Aeropuerto::setBoxes(Box b1,Box b2,Box b3){
+    this->boxes = {b1, b2, b3};
+    return boxes;
+}
+
+Box Aeropuerto::getBox(int i){
+    return this->getBoxes()[i];
 }
 
 

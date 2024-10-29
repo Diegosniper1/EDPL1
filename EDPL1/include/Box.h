@@ -11,6 +11,7 @@ class Box
         virtual ~Box();
         Pasajero getPasajero();
         int getIdBox();
+        bool esVacio();
 
       protected:
 

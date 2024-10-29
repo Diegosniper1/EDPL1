@@ -32,7 +32,7 @@ int main()
 
 Aeropuerto aeropuerto;
 
-aeropuerto.getBoxes() = {b1, b2, b3};
+aeropuerto.setBoxes(b1, b2, b3);
 
 int a;
 int m = 0;
@@ -85,13 +85,13 @@ do {
                         cout << "Minuto" << m << ":" << endl;
 
                         cout << "Ha llegado un pasajero al aeropuerto:" << endl;
-                        cout << "Id:" << aeropuerto.getPila().getCima()-> getPasajero().getId() << endl;
-                        aeropuerto.getCola().encolar(aeropuerto.getPila().getCima()-> getPasajero());
+                        cout << "Id:" << aeropuerto.getPila().getCima().getPasajero().getId() << endl;
+                        aeropuerto.getCola().encolar(aeropuerto.getPila().getCima().getPasajero());
                         aeropuerto.getPila().desapilar();
                     }
-                    if (aeropuerto.getBoxes()[0].getPasajero()!=NULL)
+                    if (!aeropuerto.getBox(0).esVacio())
                     {
-                        aeropuerto.getBoxes()[0].getPasajero().getDuracion()--;
+                        aeropuerto.getBoxes()[0].getPasajero().disminuirDuracion();
                     }
                     else{
                         if (!aeropuerto.getCola().es_vacia()){
@@ -101,9 +101,9 @@ do {
                             cout << "El box con Id:" << aeropuerto.getBoxes()[0].getIdBox() << ", no está  en funcionamiento" << endl;
                         }
                     }
-                    if (aeropuerto.getBoxes()[1].getPasajero() != NULL)
+                    if (!aeropuerto.getBox(1).esVacio())
                     {
-                    aeropuerto.getBoxes()[1].getPasajero().getDuracion()--;
+                    aeropuerto.getBoxes()[1].getPasajero().disminuirDuracion();
                     }
                     else{
                         if (!aeropuerto.getCola().es_vacia()){
@@ -113,9 +113,9 @@ do {
                             cout << "El box con Id:" << aeropuerto.getBoxes()[1].getIdBox() << ", no está  en funcionamiento" << endl;
                         }
                     }
-                    if (aeropuerto.getBoxes()[2].getPasajero() != NULL)
+                    if (!aeropuerto.getBox(1).esVacio())
                     {
-                    aeropuerto.getBoxes()[2].getPasajero().getDuracion()--;
+                    aeropuerto.getBoxes()[2].getPasajero().disminuirDuracion();
                     }
                     else{
                         if (!aeropuerto.getCola().es_vacia()){
@@ -142,7 +142,7 @@ do {
                         cout << "Ha salido el pasajero: Id ==" << aeropuerto.getBoxes()[1].getPasajero().getId() <<  ", del box con identificador:" << aeropuerto.getBoxes()[1].getIdBox() << endl;
                         if (!aeropuerto.getCola().es_vacia()){
                             aeropuerto.getBoxes()[1].getPasajero() = aeropuerto.getCola().desencolar();
-                            cout << "En su lugar ha entrado el pasajero: Id ==" << aeropuerto.getBoxes()[1].getPasajero().getId() <<  ", al box con identificador:" << aeropuerto.getBoxes()[1].getIdBox() << endl;
+                            cout << "En su lugar ha entrado el pasajero Id ==" << aeropuerto.getBoxes()[1].getPasajero().getId() <<  ", al box con identificador:" << aeropuerto.getBoxes()[1].getIdBox() << endl;
                             cout << "El box con Id:" << aeropuerto.getBoxes()[1].getIdBox() << ", está  en funcionamiento" << endl;
                         }
                         else{
@@ -180,7 +180,7 @@ do {
                         aeropuerto.getPila().desapilar();
                     }
                     if (aeropuerto.getBoxes()[0].getPasajero() != nullptr){
-                        aeropuerto.getBoxes()[0].getPasajero().getDuracion()--;
+                        aeropuerto.getBoxes()[0].getPasajero().disminuirDuracion();
                         tiempo_box1++;
                     }
                     else{
@@ -192,7 +192,7 @@ do {
                         }
                     }
                     if (aeropuerto.getBoxes()[1] != nullptr){
-                        aeropuerto.getBoxes()[1].getPasajero().getDuracion()--;
+                        aeropuerto.getBoxes()[1].getPasajero().disminuirDuracion();
                         tiempo_box2++;
                     }
                     else{
@@ -204,7 +204,7 @@ do {
                         }
                     }
                     if (aeropuerto.getBoxes()[2].getPasajero() != nullptr){
-                        aeropuerto.getBoxes()[2].getPasajero().getDuracion()--;
+                        aeropuerto.getBoxes()[2].getPasajero().disminuirDuracion();
                         tiempo_box3++;
                     }
                     else{

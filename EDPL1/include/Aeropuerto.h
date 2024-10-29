@@ -19,6 +19,8 @@ class Aeropuerto
         void mostrar_boxes();
         void mostrar_cola();
         vector<Box> getBoxes();
+        Box getBox();
+        vector<Box> setBoxes(Box a, Box b, Box c);
         Pila getPila();
         Cola getCola();
 

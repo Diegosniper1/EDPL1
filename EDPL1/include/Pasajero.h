@@ -15,6 +15,7 @@ class Pasajero
         Pasajero getPrioridad();
         int getHoraInicio();
         int getDuracion();
+        int disminuirDuracion();
         friend class Pila;
         int getId();
 

@@ -6,7 +6,7 @@ using namespace std;
 
 Pasajero::Pasajero()
 {
-    //ctor
+    this->id = -1;
 }
 
 Pasajero::Pasajero(int id, int prioridad, string destino, int hora_inicio, int duracion)
@@ -36,6 +36,11 @@ int Pasajero::getId(){
 
 int Pasajero::getDuracion(){
     this->duracion = duracion;
+    return duracion;
+}
+
+int Pasajero::disminuirDuracion(){
+    this->duracion = duracion--;
     return duracion;
 }
 

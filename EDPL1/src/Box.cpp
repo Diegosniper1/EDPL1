@@ -27,3 +27,10 @@ int Box::getIdBox(){
     this->id_box = id_box;
     return id_box;
 }
+
+bool Box::esVacio(){
+    if (this->pasajero.getId() == -1){
+        return true;
+    }
+    return false;
+}
