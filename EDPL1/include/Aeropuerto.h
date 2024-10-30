@@ -18,9 +18,9 @@ class Aeropuerto
         void mostrar_pila_entera();
         void mostrar_boxes();
         void mostrar_cola();
-        vector<Box> getBoxes();
-        Box getBox();
-        vector<Box> setBoxes(Box a, Box b, Box c);
+        vector<Box>& getBoxes();
+        Box getBox(int);
+        vector<Box>& setBoxes(Box a, Box b, Box c);
         Pila getPila();
         Cola getCola();
 
@@ -29,7 +29,7 @@ class Aeropuerto
     private:
         Pila pila;
         Cola cola;
-        std::vector<Box> boxes; ;
+        std::vector<Box> boxes;
 };
 
 #endif // AEROPUERTO_H

@@ -12,11 +12,10 @@ class Pasajero
         Pasajero();
         Pasajero(int id, int prioridad, string destino, int hora_inicio, int duracion);
         virtual ~Pasajero();
-        Pasajero getPrioridad();
+        int getPrioridad();
         int getHoraInicio();
         int getDuracion();
         int disminuirDuracion();
-        friend class Pila;
         int getId();
 
     protected:
@@ -26,6 +25,9 @@ class Pasajero
         string destino;
         friend class Box;
         friend class Cola;
+        friend class Pila;
+
+    friend std::ostream& operator<<(std::ostream& os, const Pasajero& p);
 
 };
 

@@ -11,6 +11,7 @@ class NodoPila{
         NodoPila(Pasajero pasajero, NodoPila *sig = NULL);
         virtual ~NodoPila();
         Pasajero getPasajero();
+        NodoPila* getSiguiente();
 
     private:
         Pasajero pasajero;

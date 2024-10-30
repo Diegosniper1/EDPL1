@@ -23,12 +23,10 @@ NodoCola::~NodoCola()
 }
 
 Pasajero NodoCola::getPasajero(){
-    this->pasajero=pasajero;
     return pasajero;
 }
 
-NodoCola NodoCola::getSiguiente(){
-    this -> siguiente = siguiente;
+NodoCola* NodoCola::getSiguiente(){
     return siguiente;
 }
 

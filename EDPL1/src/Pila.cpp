@@ -1,5 +1,6 @@
 #include "Pila.h"
 #include "NodoPila.h"
+#include "Pasajero.h"
 
 
 Pila::Pila()
@@ -94,8 +95,7 @@ void Pila::mostrar_entera(){
 
 }
 
-NodoPila Pila::getCima(){
-        this->cima = cima;
+NodoPila* Pila::getCima(){
         return cima;
     }
 

@@ -1,5 +1,7 @@
 #include "Aeropuerto.h"
 #include"Pila.h"
+#include"NodoPila.h"
+#include"NodoCola.h"
 #include"Cola.h"
 #include"Box.h"
 #include <vector>
@@ -60,7 +62,7 @@ void Aeropuerto::mostrar_pila_entera(){
 
              cout << "Pasajero:" << aux ->getPasajero() << endl;
 
-.             aux = aux >getSiguiente();
+             aux = aux ->getSiguiente();
 
         }
 
@@ -70,28 +72,28 @@ void Aeropuerto::mostrar_pila_entera(){
 void Aeropuerto::borrar_pila(){
 
     while(this->pila.cima != nullptr){
-        pila.desapilar;
+        this->pila.desapilar();
     }
 }
 
 void Aeropuerto::mostrar_cola()
 {
 
-    if (this.cola.es_vacia()) {
+    if (this->cola.es_vacia()) {
         cout << "La cola está vacía." << endl;
         return;
     }
 
 
-    NodoCola* aux = this.cola.primero;
+    NodoCola* aux = this->cola.primero;
     int contador = 1;
 
     // Recorrido de la cola
     while (aux != nullptr) {
         cout << "Pasajero: " << contador << endl;
-        cout << "ID: " << aux->pasajero.id << endl;
-        cout << "Prioridad: " << aux->.getPasajero().getPrioridad() << endl;
-        aux = aux->siguiente;
+        cout << "ID: " << aux->getPasajero().getId() << endl;
+        cout << "Prioridad: " << aux->getPasajero().getPrioridad() << endl;
+        aux = aux->getSiguiente();
         contador++;
     }
 }
@@ -100,13 +102,11 @@ void Aeropuerto::mostrar_cola()
 void Aeropuerto::mostrar_boxes(){   // Revisar luego
 
     for(int i = 0; i < this->boxes.size(); i++) {
-        cout << "Box" << i << ":" << this->boxes[i].getPasajero() <<endl;
-            cout << "Id:" << this->boxes[i].getPasajero().getId() << "Duración:" << this->boxes[i].getPasajero().getDuracion() << endl;
+        cout << "Box" << i << ": Id:" << this->boxes[i].getPasajero().getId() << "Duración:" << this->boxes[i].getPasajero().getDuracion() << endl;
     }
 }
 
-vector<Box> & Aeropuerto::getBoxes(){
-    this->boxes = boxes;
+vector<Box>& Aeropuerto::getBoxes(){
     return boxes;
 }
 

@@ -1,5 +1,5 @@
 #include "Pasajero.h"
-
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -25,22 +25,27 @@ Pasajero::~Pasajero()
 }
 
 int Pasajero::getHoraInicio(){
-    this->hora_inicio = hora_inicio;
     return hora_inicio;
 }
 
 int Pasajero::getId(){
-    this->id = id;
     return id;
 }
 
 int Pasajero::getDuracion(){
-    this->duracion = duracion;
     return duracion;
 }
 
+int Pasajero::getPrioridad(){
+    return prioridad;
+}
+
 int Pasajero::disminuirDuracion(){
-    this->duracion = duracion--;
     return duracion;
+}
+
+std::ostream& operator<<(std::ostream& os, const Pasajero& p) {
+    os << "Id: " << p.id << ", Prioridad: " << p.prioridad << ", Destino: " << p.destino;  // Ejemplo de salida
+    return os;
 }
 

@@ -23,6 +23,9 @@ NodoPila::~NodoPila()
 }
 
 Pasajero NodoPila::getPasajero(){
-    this->pasajero = pasajero;
     return pasajero;
+}
+
+NodoPila* NodoPila::getSiguiente(){
+    return siguiente;
 }

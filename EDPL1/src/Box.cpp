@@ -24,12 +24,11 @@ Pasajero Box::getPasajero(){
 }
 
 int Box::getIdBox(){
-    this->id_box = id_box;
     return id_box;
 }
 
 bool Box::esVacio(){
-    if (this->pasajero.getId() == -1){
+    if (this->pasajero.getId() == NULL){
         return true;
     }
     return false;
