@@ -6,9 +6,10 @@ Box::Box()
     //ctor
 }
 
-Box::Box(int id_box)
+Box::Box(int id_box, bool ocupado)
 {
     this->id_box = id_box;
+    this ->ocupado = false;
 
     //ctor
 }
@@ -23,13 +24,16 @@ Pasajero Box::getPasajero(){
     return pasajero;
 }
 
+void Box::setPasajero(Pasajero p) {
+    pasajero = p;
+    ocupado = true;
+}
+
 int Box::getIdBox(){
     return id_box;
 }
 
 bool Box::esVacio(){
-    if (this->pasajero.getId() == NULL){
-        return true;
-    }
-    return false;
+
+    return !ocupado;
 }

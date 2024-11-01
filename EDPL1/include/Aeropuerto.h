@@ -13,14 +13,14 @@ class Aeropuerto
     public:
         Aeropuerto();
         virtual ~Aeropuerto();
-        void crear_pila();
-        void borrar_pila();
-        void mostrar_pila_entera();
+        Pila crear_pila();
+        void borrar_pila(Pila& p);
+        void mostrar_pila_entera(Pila p);
         void mostrar_boxes();
-        void mostrar_cola();
+        void mostrar_cola(Cola& c);
         vector<Box>& getBoxes();
         Box getBox(int);
-        vector<Box>& setBoxes(Box a, Box b, Box c);
+        void setBoxes(Box a, Box b, Box c);
         Pila getPila();
         Cola getCola();
 

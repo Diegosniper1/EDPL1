@@ -21,8 +21,9 @@ Aeropuerto::~Aeropuerto()
     //dtor
 }
 
-void Aeropuerto::crear_pila(){
-     // Creamos la lista de pasajeros - apartado 1
+Pila Aeropuerto::crear_pila(){
+
+    Pila p;
 
     Pasajero p1 = Pasajero(1,6,"Indonesia",0,20);
     Pasajero p2 = Pasajero(2,1,"Portugal",0,15);
@@ -34,29 +35,30 @@ void Aeropuerto::crear_pila(){
     Pasajero p8 = Pasajero(8,2,"Italia",18,14);
     Pasajero p9 = Pasajero(9,3,"Alemania",21,20);
 
-    this->pila.apilar_por_orden(p9);
-    this->pila.apilar_por_orden(p8);
-    this->pila.apilar_por_orden(p7);
-    this->pila.apilar_por_orden(p6);
-    this->pila.apilar_por_orden(p5);
-    this->pila.apilar_por_orden(p4);
-    this->pila.apilar_por_orden(p3);
-    this->pila.apilar_por_orden(p2);
-    this->pila.apilar_por_orden(p1);
+    p.apilar_por_orden(p9);
+    p.apilar_por_orden(p8);
+    p.apilar_por_orden(p7);
+    p.apilar_por_orden(p6);
+    p.apilar_por_orden(p5);
+    p.apilar_por_orden(p4);
+    p.apilar_por_orden(p3);
+    p.apilar_por_orden(p2);
+    p.apilar_por_orden(p1);
+    return p;
 }
 
 
-void Aeropuerto::mostrar_pila_entera(){
+void Aeropuerto::mostrar_pila_entera(Pila p){
 
     pnodo aux;
 
-    if (this->pila.esVacia()){
+    if (p.esVacia()){
 
         cout << "Pila vacia"<<endl;
     }
     else{
 
-        aux = this->pila.cima;
+        aux = p.cima;
 
         while (aux != nullptr) {
 
@@ -69,23 +71,26 @@ void Aeropuerto::mostrar_pila_entera(){
     }
 }
 
-void Aeropuerto::borrar_pila(){
+void Aeropuerto::borrar_pila(Pila& p){
 
-    while(this->pila.cima != nullptr){
-        this->pila.desapilar();
+    while(p.cima != nullptr){
+        p.desapilar();
     }
 }
 
-void Aeropuerto::mostrar_cola()
+
+
+
+void Aeropuerto::mostrar_cola(Cola& c)
 {
 
-    if (this->cola.es_vacia()) {
-        cout << "La cola está vacía." << endl;
+    if (c.es_vacia()) {
+        cout << "La cola esta vacia." << endl;
         return;
     }
 
 
-    NodoCola* aux = this->cola.primero;
+    NodoCola* aux = c.primero;
     int contador = 1;
 
     // Recorrido de la cola
@@ -99,10 +104,16 @@ void Aeropuerto::mostrar_cola()
 }
 
 
-void Aeropuerto::mostrar_boxes(){   // Revisar luego
+void Aeropuerto::mostrar_boxes(){
 
-    for(int i = 0; i < this->boxes.size(); i++) {
-        cout << "Box" << i << ": Id:" << this->boxes[i].getPasajero().getId() << "Duración:" << this->boxes[i].getPasajero().getDuracion() << endl;
+    for (int i = 0; i < boxes.size(); i++) {
+        cout << "Box ID: " << boxes[i].getIdBox() << endl;
+        if (!boxes[i].esVacio()) {
+            cout << "  Pasajero ID: " << boxes[i].getPasajero().getId() << endl;
+            cout << "  Duración: " << boxes[i].getPasajero().getDuracion() << endl;
+        } else {
+            cout << "  Esta vacío." << endl;
+        }
     }
 }
 
@@ -111,7 +122,6 @@ vector<Box>& Aeropuerto::getBoxes(){
 }
 
 Pila Aeropuerto::getPila(){
-    this->pila = pila;
     return pila;
 }
 
@@ -120,9 +130,8 @@ Cola Aeropuerto::getCola(){
     return cola;
 }
 
-vector<Box> & Aeropuerto::setBoxes(Box b1,Box b2,Box b3){
+void Aeropuerto::setBoxes(Box b1,Box b2,Box b3){
     this->boxes = {b1, b2, b3};
-    return boxes;
 }
 
 Box Aeropuerto::getBox(int i){

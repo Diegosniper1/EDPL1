@@ -7,9 +7,10 @@ class Box
 {
     public:
         Box();
-        Box(int id_box);
+        Box(int id_box, bool ocupado);
         virtual ~Box();
         Pasajero getPasajero();
+        void setPasajero(Pasajero p);
         int getIdBox();
         bool esVacio();
 
@@ -19,6 +20,7 @@ class Box
         int id_box;
         Pasajero pasajero;
         friend class Aeropuerto;
+        bool ocupado;
 
 };
 
