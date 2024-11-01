@@ -69,7 +69,7 @@ int main()
 
 
             case 6: {
-                cout << "Introduce los minutos" << endl;
+                cout << "Introduce los minutos" << endl; ///
                 cin >> m;
                 for(int t = 0; t <= m; t++){
                     if (t == pila.getCima()->getPasajero().getHoraInicio()){
