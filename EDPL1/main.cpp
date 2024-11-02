@@ -141,7 +141,7 @@ case 6: {
 
      case 7: {
     int tiempo_total = 0;
-    int pasajeros_atendidos = 0;
+    int pasajeros_atendidos = 0; //
     int tiempo_actual = 0;
     int max_tiempo = 1000; // Límite de seguridad
 
