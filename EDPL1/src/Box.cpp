@@ -1,39 +1,39 @@
 #include "Box.h"
 #include "Pasajero.h"
 
-Box::Box()
-{
-    //ctor
+Box::Box() {
+    id_box = 0;
+    ocupado = false;
 }
 
-Box::Box(int id_box, bool ocupado)
-{
+Box::Box(int id_box, bool ocupado) {
     this->id_box = id_box;
-    this ->ocupado = false;
-
-    //ctor
+    this->ocupado = ocupado;
 }
 
-Box::~Box()
-{
-    //dtor
+Box::~Box() {
 }
 
-Pasajero Box::getPasajero(){
-    this->pasajero = pasajero;
+Pasajero& Box::getPasajero() {
     return pasajero;
 }
 
-void Box::setPasajero(Pasajero p) {
-    pasajero = p;
+void Box::setPasajero(Pasajero& pasajero) {
+    this->pasajero = pasajero;
     ocupado = true;
 }
 
-int Box::getIdBox(){
+int Box::getIdBox() {
     return id_box;
 }
 
-bool Box::esVacio(){
-
+bool Box::esVacio() {
     return !ocupado;
 }
+
+void Box::limpiarPasajero() {
+    ocupado = false;
+    pasajero = Pasajero();
+}
+
+

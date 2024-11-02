@@ -7,6 +7,9 @@ using namespace std;
 Pasajero::Pasajero()
 {
     this->id = -1;
+    this->duracion = 0;
+    this->hora_inicio = 0;
+    this->prioridad = 0;
 }
 
 Pasajero::Pasajero(int id, int prioridad, string destino, int hora_inicio, int duracion)
@@ -41,6 +44,9 @@ int Pasajero::getPrioridad(){
 }
 
 int Pasajero::disminuirDuracion(){
+    if (duracion > 0) {
+        duracion--;
+    }
     return duracion;
 }
 

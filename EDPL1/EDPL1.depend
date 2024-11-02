@@ -15,18 +15,18 @@
 	<iostream>
 	<string>
 
-1730466116 source:c:\users\diego\documents\github\edpl1\edpl1\src\box.cpp
+1730509308 source:c:\users\diego\documents\github\edpl1\edpl1\src\box.cpp
 	"Box.h"
 	"Pasajero.h"
 
-1730466125 c:\users\diego\documents\github\edpl1\edpl1\include\box.h
+1730509320 c:\users\diego\documents\github\edpl1\edpl1\include\box.h
 	"Pasajero.h"
 
 1730309313 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
 	"Pasajero.h"
 	<string>
 
-1730309313 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
+1730509048 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
 	"Pasajero.h"
 	<iostream>
 	<string>
@@ -112,7 +112,7 @@
 	"Box.h"
 	<vector>
 
-1730478577 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
+1730504624 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
 	"Aeropuerto.h"
 	"Pila.h"
 	"NodoPila.h"
@@ -136,7 +136,7 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1730484006 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
+1730509135 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"
