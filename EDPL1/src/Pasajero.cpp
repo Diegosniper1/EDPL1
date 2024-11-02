@@ -43,6 +43,10 @@ int Pasajero::getPrioridad(){
     return prioridad;
 }
 
+string Pasajero::getDestino(){
+    return destino;
+}
+
 int Pasajero::disminuirDuracion(){
     if (duracion > 0) {
         duracion--;

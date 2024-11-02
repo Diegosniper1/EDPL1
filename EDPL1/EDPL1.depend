@@ -22,11 +22,11 @@
 1730509320 c:\users\diego\documents\github\edpl1\edpl1\include\box.h
 	"Pasajero.h"
 
-1730309313 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
+1730541112 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
 	"Pasajero.h"
 	<string>
 
-1730509048 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
+1730541048 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
 	"Pasajero.h"
 	<iostream>
 	<string>
@@ -136,7 +136,7 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1730509135 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
+1730540989 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"

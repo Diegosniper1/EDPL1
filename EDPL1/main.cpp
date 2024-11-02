@@ -97,9 +97,10 @@ case 6: {
 
     for (int t = 0; t <= m; t++) {
         // Procesar llegadas de pasajeros
-        if (!pila.esVacia() && t == pila.getCima()->getPasajero().getHoraInicio()) {
+        while (!pila.esVacia() && t == pila.getCima()->getPasajero().getHoraInicio()) {
             Pasajero pasajero = pila.getCima()->getPasajero();
-            cout << "Minuto " << t << ": Llegada del pasajero ID=" << pasajero.getId() << endl;
+            cout << "Minuto " << t << ": Llegada del pasajero ID=" << pasajero.getId()
+                 << " desde " << pasajero.getDestino() << endl;
             cola.encolar(pasajero);
             pila.desapilar();
         }
@@ -107,23 +108,27 @@ case 6: {
         // Procesar boxes
         for (int i = 0; i < 3; i++) {
             Box& box = aeropuerto.getBoxes()[i];
+
+            // Si el box está ocupado, procesar el pasajero actual
             if (!box.esVacio()) {
-                // Procesar pasajero actual
-                if (box.getPasajero().disminuirDuracion() == 0) {
+                if (box.getPasajero().getDuracion() == 0) {
                     cout << "Minuto " << t << ": Sale pasajero ID=" << box.getPasajero().getId()
                          << " del box " << box.getIdBox() << endl;
                     box.limpiarPasajero();
 
-                    // Intentar asignar nuevo pasajero
+                    // Intentar asignar nuevo pasajero del queue
                     if (!cola.es_vacia()) {
                         Pasajero nuevo = cola.desencolar();
                         box.setPasajero(nuevo);
                         cout << "Minuto " << t << ": Entra pasajero ID=" << nuevo.getId()
                              << " al box " << box.getIdBox() << endl;
                     }
+                } else {
+                    box.getPasajero().disminuirDuracion();
                 }
-            } else if (!cola.es_vacia()) {
-                // Box vacío y hay pasajeros en cola
+            }
+            // Si el box está vacío y hay pasajeros en cola
+            else if (!cola.es_vacia()) {
                 Pasajero nuevo = cola.desencolar();
                 box.setPasajero(nuevo);
                 cout << "Minuto " << t << ": Entra pasajero ID=" << nuevo.getId()
@@ -131,41 +136,29 @@ case 6: {
             }
         }
 
-        // Mostrar estado de los boxes
         cout << "\nEstado de los boxes en minuto " << t << ":" << endl;
         aeropuerto.mostrar_boxes();
         cout << endl;
     }
     break;
-         }
+}
 
-     case 7: {
+
+case 7: {
     int tiempo_total = 0;
-    int pasajeros_atendidos = 0; //
+    int pasajeros_atendidos = 0;
     int tiempo_actual = 0;
-    int max_tiempo = 1000; // Límite de seguridad
+    map<int, int> tiempos_llegada; // Para registrar cuando llega cada pasajero
 
-    // Primero, asegurarse de que hay pasajeros para procesar
-    if (pila.esVacia() && cola.es_vacia() &&
-        aeropuerto.getBoxes()[0].esVacio() &&
-        aeropuerto.getBoxes()[1].esVacio() &&
-        aeropuerto.getBoxes()[2].esVacio()) {
-        cout << "No hay pasajeros para procesar." << endl;
-        break;
-    }
+    while (!pila.esVacia() || !cola.es_vacia() ||
+           !aeropuerto.getBoxes()[0].esVacio() ||
+           !aeropuerto.getBoxes()[1].esVacio() ||
+           !aeropuerto.getBoxes()[2].esVacio()) {
 
-    while ((!pila.esVacia() || !cola.es_vacia() ||
-            !aeropuerto.getBoxes()[0].esVacio() ||
-            !aeropuerto.getBoxes()[1].esVacio() ||
-            !aeropuerto.getBoxes()[2].esVacio()) &&
-           tiempo_actual < max_tiempo) {
-
-        bool hubo_cambios = false;
-
-        // Procesar llegadas
-        if (!pila.esVacia() && tiempo_actual >= pila.getCima()->getPasajero().getHoraInicio()) {
-            hubo_cambios = true;
+        // Registrar llegadas
+        while (!pila.esVacia() && tiempo_actual >= pila.getCima()->getPasajero().getHoraInicio()) {
             Pasajero pasajero = pila.getCima()->getPasajero();
+            tiempos_llegada[pasajero.getId()] = tiempo_actual;
             cout << "Minuto " << tiempo_actual << ": Llegada del pasajero ID=" << pasajero.getId() << endl;
             cola.encolar(pasajero);
             pila.desapilar();
@@ -175,53 +168,43 @@ case 6: {
         for (int i = 0; i < 3; i++) {
             Box& box = aeropuerto.getBoxes()[i];
             if (!box.esVacio()) {
-                hubo_cambios = true;
                 if (box.getPasajero().getDuracion() == 0) {
+                    int id_pasajero = box.getPasajero().getId();
+                    int tiempo_estancia = tiempo_actual - tiempos_llegada[id_pasajero];
+                    tiempo_total += tiempo_estancia;
                     pasajeros_atendidos++;
-                    cout << "Minuto " << tiempo_actual << ": Sale pasajero ID="
-                         << box.getPasajero().getId() << " del box " << box.getIdBox() << endl;
+
+                    cout << "Minuto " << tiempo_actual << ": Sale pasajero ID=" << id_pasajero
+                         << " del box " << box.getIdBox()
+                         << " (Tiempo de estancia: " << tiempo_estancia << " minutos)" << endl;
+
                     box.limpiarPasajero();
 
                     if (!cola.es_vacia()) {
                         Pasajero nuevo = cola.desencolar();
                         box.setPasajero(nuevo);
-                        cout << "Minuto " << tiempo_actual << ": Entra pasajero ID="
-                             << nuevo.getId() << " al box " << box.getIdBox() << endl;
                     }
                 } else {
                     box.getPasajero().disminuirDuracion();
                 }
             } else if (!cola.es_vacia()) {
-                hubo_cambios = true;
                 Pasajero nuevo = cola.desencolar();
                 box.setPasajero(nuevo);
-                cout << "Minuto " << tiempo_actual << ": Entra pasajero ID="
-                     << nuevo.getId() << " al box " << box.getIdBox() << endl;
             }
-        }
-
-        if (!hubo_cambios) {
-            cout << "No hay mas cambios que procesar." << endl;
-            break;
         }
 
         tiempo_actual++;
     }
 
-    if (tiempo_actual >= max_tiempo) {
-        cout << "La simulacion se detuvo por exceder el tiempo maximo." << endl;
-    }
-
     if (pasajeros_atendidos > 0) {
         double tiempo_medio = (double)tiempo_total / pasajeros_atendidos;
-        cout << "Simulacion completada" << endl;
-        cout << "Tiempo total: " << tiempo_actual << " minutos" << endl;
+        cout << "\nSimulación completada:" << endl;
+        cout << "Tiempo total acumulado: " << tiempo_total << " minutos" << endl;
         cout << "Pasajeros atendidos: " << pasajeros_atendidos << endl;
         cout << "Tiempo medio de estancia: " << tiempo_medio << " minutos" << endl;
     }
     break;
 }
-
 
             case 8: {
                 cout << "Fin" << endl;

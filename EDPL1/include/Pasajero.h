@@ -15,6 +15,7 @@ class Pasajero
         int getPrioridad();
         int getHoraInicio();
         int getDuracion();
+        string getDestino();
         int disminuirDuracion();
         int getId();
 
