@@ -36,4 +36,7 @@ void Box::limpiarPasajero() {
     pasajero = Pasajero();
 }
 
-
+int Box::setIdBox(int idBox) {
+    this->id_box = idBox;
+    return id_box;
+}

@@ -1,6 +1,6 @@
 #ifndef BOX_H
 #define BOX_H
-
+#include "Cola.h"
 #include "Pasajero.h"
 
 class Box {
@@ -8,6 +8,7 @@ private:
     int id_box;
     bool ocupado;
     Pasajero pasajero;
+    Cola cola;
 
 public:
     Box();
@@ -19,6 +20,7 @@ public:
     int getIdBox();
     bool esVacio();
     void limpiarPasajero();
+    int setIdBox(int idBox);
 };
 
 #endif

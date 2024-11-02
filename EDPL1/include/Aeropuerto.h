@@ -3,7 +3,7 @@
 #include "Box.h"
 #include "Pila.h"
 #include "Cola.h"
-
+#include "Lista.h"
 #include <vector>
 
 using namespace std;
@@ -29,6 +29,7 @@ class Aeropuerto
     private:
         Pila pila;
         Cola cola;
+        Lista lista;
         std::vector<Box> boxes;
 };
 
