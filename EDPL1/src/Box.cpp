@@ -55,6 +55,9 @@ int Box::getTotalPasajeros(){
     return total;
 }
 
-Cola Box::getCola() {
+Cola& Box::getCola() {
     return cola;
+}
+void Box::encolarPasajero(Pasajero& p) {
+    cola.encolar(p);
 }

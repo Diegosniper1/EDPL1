@@ -1,31 +1,26 @@
 #include "Aeropuerto.h"
-#include"Pila.h"
-#include"NodoPila.h"
-#include"NodoCola.h"
-#include"Cola.h"
-#include"Box.h"
-#include"Lista.h"
+#include "Pila.h"
+#include "NodoPila.h"
+#include "NodoCola.h"
+#include "Cola.h"
+#include "Box.h"
+#include "Lista.h"
 #include <vector>
 
 using namespace std;
 
-Aeropuerto::Aeropuerto()
-{
+Aeropuerto::Aeropuerto() {
     boxes = std::vector<Box>(3);
     this->pila = Pila();
     this->cola = Cola();
-    //ctor
+    lista = Lista();  // Initialize lista for menu 2
 }
 
-Aeropuerto::~Aeropuerto()
-{
-    //dtor
+Aeropuerto::~Aeropuerto() {
 }
 
-Pila Aeropuerto::crear_pila(){
-
+Pila Aeropuerto::crear_pila() {
     Pila p;
-
     Pasajero p1 = Pasajero(1,6,"Indonesia",0,20);
     Pasajero p2 = Pasajero(2,1,"Portugal",0,15);
     Pasajero p3 = Pasajero(3,7,"Australia",5,39);
@@ -48,53 +43,33 @@ Pila Aeropuerto::crear_pila(){
     return p;
 }
 
-
-void Aeropuerto::mostrar_pila_entera(Pila p){
-
+void Aeropuerto::mostrar_pila_entera(Pila p) {
     pnodo aux;
-
-    if (p.esVacia()){
-
-        cout << "Pila vacia"<<endl;
-    }
-    else{
-
+    if (p.esVacia()) {
+        cout << "Pila vacia" << endl;
+    } else {
         aux = p.cima;
-
         while (aux != nullptr) {
-
-             cout << "Pasajero:" << aux ->getPasajero() << endl;
-
-             aux = aux ->getSiguiente();
-
+            cout << "Pasajero:" << aux->getPasajero() << endl;
+            aux = aux->getSiguiente();
         }
-
     }
 }
 
-void Aeropuerto::borrar_pila(Pila& p){
-
-    while(p.cima != nullptr){
+void Aeropuerto::borrar_pila(Pila& p) {
+    while(p.cima != nullptr) {
         p.desapilar();
     }
 }
 
-
-
-
-void Aeropuerto::mostrar_cola(Cola& c)
-{
-
+void Aeropuerto::mostrar_cola(Cola& c) {
     if (c.es_vacia()) {
         cout << "La cola esta vacia." << endl;
         return;
     }
 
-
     NodoCola* aux = c.primero;
     int contador = 1;
-
-    // Recorrido de la cola
     while (aux != nullptr) {
         cout << "Pasajero: " << contador << endl;
         cout << "ID: " << aux->getPasajero().getId() << endl;
@@ -104,9 +79,7 @@ void Aeropuerto::mostrar_cola(Cola& c)
     }
 }
 
-
-void Aeropuerto::mostrar_boxes(){
-
+void Aeropuerto::mostrar_boxes() {
     for (int i = 0; i < boxes.size(); i++) {
         cout << "Box ID: " << boxes[i].getIdBox() << endl;
         if (!boxes[i].esVacio()) {
@@ -118,32 +91,52 @@ void Aeropuerto::mostrar_boxes(){
     }
 }
 
-vector<Box>& Aeropuerto::getBoxes(){
+vector<Box>& Aeropuerto::getBoxes() {
     return boxes;
 }
 
-Pila Aeropuerto::getPila(){
+Pila Aeropuerto::getPila() {
     return pila;
 }
 
-Cola Aeropuerto::getCola(){
-    this->cola = cola;
+Cola Aeropuerto::getCola() {
     return cola;
 }
 
-Lista Aeropuerto::getLista(){
-    return lista;
-}
-void Aeropuerto::setBoxes(Box b1,Box b2,Box b3){
+void Aeropuerto::setBoxes(Box b1, Box b2, Box b3) {
     this->boxes = {b1, b2, b3};
 }
 
-Box Aeropuerto::getBox(int i){
+Box Aeropuerto::getBox(int i) {
     return this->getBoxes()[i];
 }
 
+// New methods for menu 2
+Lista& Aeropuerto::getLista() {
+    return lista;
+}
 
+void Aeropuerto::mostrar_boxes_lista() {
+    lista.mostrarBoxes();
+}
 
+void Aeropuerto::procesarLlegada(Pasajero& p) {
+    NodoLista* boxMenorCola = lista.getPrimero();
+    NodoLista* aux = lista.getPrimero();
+
+    while (aux != nullptr) {
+        if (aux->getBox().getTotalPasajeros() < boxMenorCola->getBox().getTotalPasajeros()) {
+            boxMenorCola = aux;
+        }
+        aux = aux->getSiguiente();
+    }
+
+    if (boxMenorCola->getBox().esVacio()) {
+        boxMenorCola->getBox().setPasajero(p);
+    } else {
+        boxMenorCola->getBox().encolarPasajero(p);
+    }
+}
 
 
 

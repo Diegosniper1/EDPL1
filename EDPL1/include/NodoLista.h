@@ -8,7 +8,7 @@ class NodoLista
         NodoLista();
         NodoLista(Box b, NodoLista *sig = NULL, NodoLista *ant = NULL);
         virtual ~NodoLista();
-        Box getBox();
+        Box& getBox();
         NodoLista* getSiguiente();
         NodoLista* getAnterior();
 

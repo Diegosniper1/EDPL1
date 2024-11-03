@@ -1,37 +1,39 @@
 #ifndef AEROPUERTO_H
 #define AEROPUERTO_H
-#include "Box.h"
+
 #include "Pila.h"
 #include "Cola.h"
+#include "Box.h"
 #include "Lista.h"
 #include <vector>
 
-using namespace std;
+class Aeropuerto {
+private:
+    std::vector<Box> boxes;  // Para menú 1
+    Lista lista;             // Para menú 2
+    Pila pila;
+    Cola cola;
 
-class Aeropuerto
-{
-    public:
-        Aeropuerto();
-        virtual ~Aeropuerto();
-        Pila crear_pila();
-        void borrar_pila(Pila& p);
-        void mostrar_pila_entera(Pila p);
-        void mostrar_boxes();
-        void mostrar_cola(Cola& c);
-        vector<Box>& getBoxes();
-        Box getBox(int);
-        void setBoxes(Box a, Box b, Box c);
-        Pila getPila();
-        Cola getCola();
-        Lista getLista();
+public:
+    Aeropuerto();
+    ~Aeropuerto();
 
-    protected:
+    // Métodos para menú 1
+    Pila crear_pila();
+    void mostrar_pila_entera(Pila p);
+    void borrar_pila(Pila& p);
+    void mostrar_cola(Cola& c);
+    void mostrar_boxes();
+    vector<Box>& getBoxes();
+    Pila getPila();
+    Cola getCola();
+    void setBoxes(Box b1, Box b2, Box b3);
+    Box getBox(int i);
 
-    private:
-        Pila pila;
-        Cola cola;
-        Lista lista;
-        std::vector<Box> boxes;
+    // Métodos para menú 2
+    Lista& getLista();
+    void mostrar_boxes_lista();
+    void procesarLlegada(Pasajero& p);
 };
 
-#endif // AEROPUERTO_H
+#endif

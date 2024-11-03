@@ -17,6 +17,7 @@ class Lista
         NodoLista* getPrimero();
         NodoLista* getUltimo();
         void mostrarBoxes();
+        bool hayPasajerosEnSistema();
 
     private:
         NodoLista *primero;

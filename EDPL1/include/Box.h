@@ -22,8 +22,11 @@ public:
     void limpiarPasajero();
     int setIdBox(int idBox);
     int getTotalPasajeros();
-    Cola getCola();
+    Cola& getCola();
+    void encolarPasajero(Pasajero& p);
+    bool tienePasajerosEnCola();
 };
 
 #endif
+
 

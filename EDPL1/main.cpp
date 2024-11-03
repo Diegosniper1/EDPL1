@@ -5,21 +5,21 @@
 #include <vector>
 #include <map>
 
-
 using namespace std;
 
-int main()
-{
+// Declaración de funciones
+void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola);
+void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista);
+
+int main() {
     Aeropuerto aeropuerto;
     Pila pila = aeropuerto.getPila();
     Cola cola = aeropuerto.getCola();
     Lista lista = aeropuerto.getLista();
-    /*
-    //Pila pila;
+
     Box b1(1,false);
     Box b2(2,false);
     Box b3(3,false);
-
     aeropuerto.setBoxes(b1,b2,b3);
 
     int opcion;
@@ -33,10 +33,10 @@ int main()
 
         switch(opcion) {
             case 1:
-                ejecutarMenu1();
+                ejecutarMenu1(aeropuerto, pila, cola);
                 break;
             case 2:
-                ejecutarMenu2());
+                ejecutarMenu2(aeropuerto, pila, lista);
                 break;
             case 3:
                 cout << "Programa finalizado." << endl;
@@ -46,10 +46,13 @@ int main()
         }
     } while(opcion != 3);
 
+    return 0;
+}
 
 
 
-    void ejecutarMenu1(){
+
+void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
 
         cout << "           *** MENU ***" << endl;
         cout << "1: Crear pila de pasajeros." << endl;
@@ -247,7 +250,7 @@ int main()
 
 
 
-void ejecutarMenu2(){ */
+void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista){
 
 
     ///Parte 2
@@ -376,96 +379,98 @@ void ejecutarMenu2(){ */
                 cout << "El numero de boxes operativos es:" << lista.getBoxesOperativos() << endl;
                 break;
             }
+case 8: {
+    // Initialize first box with ID 1
+    lista.nuevoBox();
+    lista.getPrimero()->getBox().setIdBox(1);
 
-             case 8: {
-                int tiempoTotal = 0;
-                int pasajerosProcesados = 0;
-                bool hayPasajeros = true;
+    int tiempoTotal = 0;
+    int pasajerosProcesados = 0;
+    int tiempoEstanciaTotal = 0;
 
-                while (hayPasajeros) {
-                    cout << "\n=== Minuto " << tiempoTotal << ":" << endl;
-                    // Procesar nuevas llegadas desde la pila
-                    while (!pila.esVacia() && pila.getCima()->getPasajero().getHoraInicio() == tiempoTotal) {
-                        Pasajero nuevo = pila.getCima()->getPasajero();
-                        pila.desapilar();
-                        lista.nuevoBox();
-                        // Buscar box con menor cola
-                        NodoLista* boxMenorCola = lista.getPrimero();
-                        NodoLista* aux = lista.getPrimero();
+    while (!pila.esVacia() || lista.hayPasajerosEnSistema()) {
+        cout << "\n=== Minuto " << tiempoTotal << ":" << endl;
 
-                        while (aux != nullptr) {
-                            if (aux->getBox().getTotalPasajeros() < boxMenorCola->getBox().getTotalPasajeros()) {
-                                boxMenorCola = aux;
-                            }
-                            aux = aux->getSiguiente();
-                        }
+        // Process new arrivals
+        while (!pila.esVacia() && pila.getCima()->getPasajero().getHoraInicio() == tiempoTotal) {
+            Pasajero nuevo = pila.getCima()->getPasajero();
+            cout << "LLEGADA - Pasajero " << nuevo.getId() << " al sistema" << endl;
 
-                        // Asignar pasajero al box
-                        if (boxMenorCola->getBox().esVacio() && boxMenorCola->getBox().getCola().es_vacia()) {
-                            boxMenorCola->getBox().setPasajero(nuevo);
-                            cout << "LLEGADA - Pasajero " << nuevo.getId() << " entra al Box " << boxMenorCola->getBox().getIdBox() << endl;
-                        } else {
-                            boxMenorCola->getBox().getCola().encolar(nuevo);
-                            cout << "LLEGADA - Pasajero " << nuevo.getId() << " entra a la cola del Box " << boxMenorCola->getBox().getIdBox() << endl;
-                        }
-
-                        lista.mostrarBoxes();
-                    }
-
-                    // Procesar boxes actuales
-                    NodoLista* aux = lista.getPrimero();
-                    if (aeropuerto.getPila().esVacia()){
-                    hayPasajeros = false; // Asumimos que no hay pasajeros hasta que encontremos uno
-                    }
-                    while (aux != nullptr) {
-                        // Verificar si hay pasajeros en el sistema
-                        if (!aux->getBox().esVacio() || aux->getBox().getCola().get_longitud() > 0) {
-                        hayPasajeros = true;
-                        }
-
-                        if (!aux->getBox().esVacio()) {
-                            aux->getBox().getPasajero().disminuirDuracion();
-
-                            if (aux->getBox().getPasajero().getDuracion() == 0) {
-                                Pasajero sale = aux->getBox().getPasajero();
-                                pasajerosProcesados++;
-
-                                // Calcular tiempo total de estancia
-                                int tiempoEstancia = tiempoTotal - sale.getHoraInicio();
-
-                                cout << "\nSALIDA - Pasajero " << sale.getId() << " sale del Box " << aux->getBox().getIdBox() << " (Tiempo total en sistema: " << tiempoEstancia << " minutos)" << endl;
-
-                                // Atender siguiente de la cola si existe
-                                if (aux->getBox().getCola().get_longitud() > 0) {
-                                    Pasajero siguiente = aux->getBox().getCola().desencolar();
-                                    aux->getBox().setPasajero(siguiente);
-                                    cout << "ENTRADA - Pasajero " << siguiente.getId() << " entra al Box " << aux->getBox().getIdBox() << endl;
-                                }
-
-                                lista.mostrarBoxes();
-                            }
-                        }
-                        aux = aux->getSiguiente();
-                 }
-
-
-                    lista.borrarBoxes(); // Eliminar boxes vacíos si hay más de dos vacios
-                }
-
-                // Mostrar estadísticas finales
-                double tiempoMedioEstancia = pasajerosProcesados > 0 ? static_cast<double>(tiempoTotal) / pasajerosProcesados : 0;
-
-                cout << "\n=== Estadísticas Finales ===" << endl;
-                cout << "Tiempo total de simulación: " << tiempoTotal << " minutos" << endl;
-                cout << "Pasajeros procesados: " << pasajerosProcesados << endl;
-                cout << "Tiempo medio de estancia: " << tiempoMedioEstancia << " minutos" << endl;
-
-                tiempoTotal++;
-
-                break;
+            // Check if we need a new box
+            if (lista.getPrimero()->getBox().getTotalPasajeros() > 2) {
+                lista.nuevoBox();
             }
 
-             case 9: {
+            // Find least occupied box
+            NodoLista* boxMenorCola = lista.getPrimero();
+            NodoLista* aux = lista.getPrimero();
+            while (aux != nullptr) {
+                if (aux->getBox().getTotalPasajeros() < boxMenorCola->getBox().getTotalPasajeros()) {
+                    boxMenorCola = aux;
+                }
+                aux = aux->getSiguiente();
+            }
+
+            // Assign passenger to box
+            if (boxMenorCola->getBox().esVacio()) {
+                boxMenorCola->getBox().setPasajero(nuevo);
+                cout << "Pasajero " << nuevo.getId() << " asignado al Box "
+                     << boxMenorCola->getBox().getIdBox() << endl;
+            } else {
+                boxMenorCola->getBox().encolarPasajero(nuevo);
+                cout << "Pasajero " << nuevo.getId() << " en cola del Box "
+                     << boxMenorCola->getBox().getIdBox() << endl;
+            }
+
+            pila.desapilar();
+        }
+
+        // Process boxes
+        NodoLista* aux = lista.getPrimero();
+        while (aux != nullptr) {
+            Box& boxActual = aux->getBox();
+
+            if (!boxActual.esVacio()) {
+                Pasajero& pasajeroActual = boxActual.getPasajero();
+                pasajeroActual.disminuirDuracion();
+
+                if (pasajeroActual.getDuracion() == 0) {
+                    cout << "SALIDA - Pasajero " << pasajeroActual.getId()
+                         << " del Box " << boxActual.getIdBox() << endl;
+
+                    pasajerosProcesados++;
+                    tiempoEstanciaTotal += (tiempoTotal - pasajeroActual.getHoraInicio());
+
+                    if (boxActual.getCola().get_longitud() > 0) {
+                        Pasajero siguiente = boxActual.getCola().desencolar();
+                        boxActual.setPasajero(siguiente);
+                        cout << "ENTRADA - Pasajero " << siguiente.getId()
+                             << " al Box " << boxActual.getIdBox() << endl;
+                    } else {
+                        boxActual.limpiarPasajero();
+                    }
+                }
+            }
+            aux = aux->getSiguiente();
+        }
+
+        lista.mostrarBoxes();
+        if (tiempoTotal % 5 == 0) {  // Check every 5 minutes if we can remove boxes
+            lista.borrarBoxes();
+        }
+
+        tiempoTotal++;
+    }
+
+    cout << "\n=== Estadísticas Finales ===" << endl;
+    cout << "Tiempo total de simulación: " << tiempoTotal << " minutos" << endl;
+    cout << "Pasajeros procesados: " << pasajerosProcesados << endl;
+    cout << "Tiempo medio de estancia: " <<
+            (pasajerosProcesados > 0 ? tiempoEstanciaTotal/pasajerosProcesados : 0)
+         << " minutos" << endl;
+    break;
+}
+           case 9: {
                 cout << "Fin" << endl;
                 break;
             }
@@ -475,11 +480,11 @@ void ejecutarMenu2(){ */
             }
     }
 
-// }
+
 
 }while (b != 9);
 
-return 0;
+
 }
 
 

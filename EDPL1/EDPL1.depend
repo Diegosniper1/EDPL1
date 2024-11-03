@@ -17,11 +17,12 @@
 	<iostream>
 	<string>
 
-1730509308 source:c:\users\diego\documents\github\edpl1\edpl1\src\box.cpp
+1730663471 source:c:\users\diego\documents\github\edpl1\edpl1\src\box.cpp
 	"Box.h"
 	"Pasajero.h"
+	"Cola.h"
 
-1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\box.h
+1730663473 c:\users\diego\documents\github\edpl1\edpl1\include\box.h
 	"Cola.h"
 	"Pasajero.h"
 
@@ -34,7 +35,7 @@
 	<iostream>
 	<string>
 
-1730188345 source:c:\users\diego\documents\github\edpl1\edpl1\src\cola.cpp
+1730595104 source:c:\users\diego\documents\github\edpl1\edpl1\src\cola.cpp
 	"Cola.h"
 	"NodoCola.h"
 	"Pasajero.h"
@@ -47,11 +48,11 @@
 1730309313 c:\users\diego\documents\github\edpl1\edpl1\include\nodocola.h
 	"Pasajero.h"
 
-1730309313 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodocola.cpp
+1730659047 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodocola.cpp
 	"NodoCola.h"
 	"Pasajero.h"
 
-1730309313 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodopila.cpp
+1730595125 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodopila.cpp
 	"NodoPila.h"
 	"Pasajero.h"
 
@@ -118,19 +119,20 @@
 	"Lista.h"
 	<vector>
 
-1730504624 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
+1730663293 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
 	"Aeropuerto.h"
 	"Pila.h"
 	"NodoPila.h"
 	"NodoCola.h"
 	"Cola.h"
 	"Box.h"
+	"Lista.h"
 	<vector>
 
-1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\aeropuerto.h
-	"Box.h"
+1730663296 c:\users\diego\documents\github\edpl1\edpl1\include\aeropuerto.h
 	"Pila.h"
 	"Cola.h"
+	"Box.h"
 	"Lista.h"
 	<vector>
 
@@ -138,17 +140,18 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1730309313 source:c:\users\diego\documents\github\edpl1\edpl1\src\pila.cpp
+1730595140 source:c:\users\diego\documents\github\edpl1\edpl1\src\pila.cpp
 	"Pila.h"
 	"NodoPila.h"
 	"Pasajero.h"
 
-1730540989 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
+1730665109 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"
 	"Box.h"
 	<vector>
+	<map>
 
 1730650189 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodolista.cpp
 	"NodoLista.h"
@@ -166,9 +169,19 @@
 1730653204 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\lista.h
 	"NodoLista.h"
 
-1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\lista.h
+1730664768 c:\users\diego\documents\github\edpl1\edpl1\include\lista.h
 	"NodoLista.h"
 
-1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\nodolista.h
+1730665222 c:\users\diego\documents\github\edpl1\edpl1\include\nodolista.h
+	"Box.h"
+
+1730664487 source:c:\users\diego\documents\github\edpl1\edpl1\src\lista.cpp
+	"Lista.h"
+	"NodoLista.h"
+	"Box.h"
+	<iostream>
+
+1730665194 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodolista.cpp
+	"NodoLista.h"
 	"Box.h"
 

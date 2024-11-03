@@ -22,7 +22,7 @@ NodoLista::~NodoLista()
     //dtor
 }
 
-Box NodoLista::getBox(){
+Box& NodoLista::getBox() {
     return box;
 }
 

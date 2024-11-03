@@ -167,18 +167,15 @@ int Lista::boxMasOcupado()
     return boxMayor;
 }
 
-int Lista::getBoxesOperativos()
-{
+int Lista::getBoxesOperativos() {
     int boxesOperativos = 0;
     NodoLista* aux = primero;
-
-    while (aux != nullptr || aux->getBox().getCola().get_longitud() > 0 ) {
-        if (!aux->getBox().esVacio()) {
+    while (aux != nullptr) {
+        if (!aux->getBox().esVacio() || aux->getBox().getCola().get_longitud() > 0) {
             boxesOperativos++;
         }
         aux = aux->getSiguiente();
     }
-
     return boxesOperativos;
 }
 
@@ -192,7 +189,16 @@ NodoLista* Lista::getUltimo(){
 
 }
 
-
+bool Lista::hayPasajerosEnSistema() {
+    NodoLista* aux = primero;
+    while (aux != nullptr) {
+        if (!aux->getBox().esVacio() || aux->getBox().getCola().get_longitud() > 0) {
+            return true;
+        }
+        aux = aux->siguiente;
+    }
+    return false;
+}
 
 
 
