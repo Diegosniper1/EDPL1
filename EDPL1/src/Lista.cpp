@@ -30,10 +30,10 @@ void Lista::mostrarBoxes(){
     else{
         NodoLista* aux = primero;
         while (aux != nullptr){
-            cout << "\nBox ID: " << aux->box.getIdBox() << endl;
-            if (!aux->box.esVacio()) {
-                cout << "Pasajero Actual: " << aux->box.getPasajero().getId() << endl;
-                cout << "Tiempo Restante: " << aux->box.getPasajero().getDuracion() << endl;
+            cout << "\nBox ID: " << aux->getBox().getIdBox() << endl;
+            if (!aux->getBox().esVacio()) {
+                cout << "Pasajero Actual: " << aux->getBox().getPasajero().getId() << endl;
+                cout << "Tiempo Restante: " << aux->getBox().getPasajero().getDuracion() << endl;
             }
             else {
                 cout << "Pasajero Actual: Ninguno" << endl;
@@ -57,7 +57,7 @@ void Lista::nuevoBox(){
     if (longitud == 0) {
         primero = l;
         ultimo = l;
-        primero->box.setIdBox(1);
+        primero->getBox().setIdBox(1);
         longitud = 1;
     }
     // 3. Lista con elementos
@@ -78,7 +78,7 @@ void Lista::nuevoBox(){
             ultimo->siguiente = l;
             l->anterior = ultimo;
             ultimo = l;
-            ultimo->box.setIdBox(longitud + 1);
+            ultimo->getBox().setIdBox(longitud + 1);
             longitud++;
         }
         // 6. Si no lo necesitamos, liberamos memoria
@@ -132,7 +132,7 @@ int Lista::boxMenosOcupado() {
 
     NodoLista* aux = primero;
     int minPasajeros = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
-    int boxMenor = aux->box.getIdBox();
+    int boxMenor = aux->getBox().getIdBox();
 
     while (aux != nullptr) {
         int pasajerosActuales = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
@@ -140,7 +140,7 @@ int Lista::boxMenosOcupado() {
             minPasajeros = pasajerosActuales;
             boxMenor = aux->getBox().getIdBox();
         }
-        aux = aux->siguiente;
+        aux = aux->getSiguiente();
     }
     return boxMenor;
 }
@@ -176,7 +176,7 @@ int Lista::getBoxesOperativos()
         if (!aux->getBox().esVacio()) {
             boxesOperativos++;
         }
-        aux = aux->siguiente;
+        aux = aux->getSiguiente();
     }
 
     return boxesOperativos;
@@ -184,6 +184,11 @@ int Lista::getBoxesOperativos()
 
 NodoLista* Lista::getPrimero(){
     return primero;
+
+}
+
+NodoLista* Lista::getUltimo(){
+    return ultimo;
 
 }
 

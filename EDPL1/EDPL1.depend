@@ -72,7 +72,7 @@
 1730302969 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodocola.h
 	"Pasajero.h"
 
-1730630850 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodocola.cpp
+1730653147 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodocola.cpp
 	"NodoCola.h"
 	"Pasajero.h"
 
@@ -93,12 +93,13 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1730307980 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\main.cpp
+1730654418 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"
 	"Box.h"
 	<vector>
+	<map>
 
 1730633583 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\aeropuerto.h
 	"Box.h"
@@ -156,13 +157,13 @@
 1730650045 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodolista.h
 	"Box.h"
 
-1730651585 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\lista.cpp
+1730654849 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\lista.cpp
 	"Lista.h"
 	"NodoLista.h"
 	"Box.h"
 	<iostream>
 
-1730648990 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\lista.h
+1730653204 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\lista.h
 	"NodoLista.h"
 
 1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\lista.h
