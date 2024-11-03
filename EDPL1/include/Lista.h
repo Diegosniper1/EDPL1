@@ -9,7 +9,7 @@ class Lista
     public:
         Lista();
         ~Lista();
-        void añadirBox();
+        void nuevoBox();
         void borrarBoxes();
         int boxMenosOcupado();
         int boxMasOcupado();

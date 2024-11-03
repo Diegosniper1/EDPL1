@@ -4,6 +4,8 @@
 #include "Box.h"
 #include <vector>
 #include <map>
+#include <ejecutarMenu1>
+#include <ejecutarMenu2>
 
 using namespace std;
 
@@ -304,7 +306,7 @@ void ejecutarMenu2(){
                 // Procesar nuevas llegadas desde la pila
                 while (!pila.esVacia() && pila.getCima().getHoraLlegada() == actual) {
                     Pasajero nuevo = pila.desapilar();
-                    lista.añadirBox();
+                    lista.nuevoBox();
                 // Buscar box con menor cola
                 NodoLista* boxMenorCola = primero;
                 NodoLista* aux = primero;
@@ -382,7 +384,7 @@ void ejecutarMenu2(){
                     // Procesar nuevas llegadas desde la pila
                     while (!pila.esVacia() && pila.getCima().getHoraLlegada() == actual) {
                         Pasajero nuevo = pila.desapilar();
-                        lista.añadirBox();
+                        lista.nuevoBox();
                         // Buscar box con menor cola
                         NodoLista* boxMenorCola = primero;
                         NodoLista* aux = primero;
@@ -474,6 +476,10 @@ void ejecutarMenu2(){
 
     return 0;
 }
+
+
+
+
 
 
 

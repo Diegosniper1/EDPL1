@@ -6,7 +6,7 @@ class NodoLista
 {
     public:
         NodoLista();
-        NodoLista(Pasajero pasajero, NodoLista *sig = NULL, NodoLista *ant = NULL);
+        NodoLista(Box b, NodoLista *sig = NULL, NodoLista *ant = NULL);
         virtual ~NodoLista();
         Box getBox();
         NodoLista* getSiguiente();
@@ -20,6 +20,8 @@ class NodoLista
         NodoLista *siguiente;
         NodoLista *anterior;
         Box box;
+        friend class Lista;
+
 };
 
 #endif // NODOLISTA_H

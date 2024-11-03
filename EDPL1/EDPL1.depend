@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1730540295 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\box.cpp
+1730650230 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\box.cpp
 	"Box.h"
 	"Pasajero.h"
+	"Cola.h"
 
-1730542351 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\box.h
+1730650838 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\box.h
 	"Cola.h"
 	"Pasajero.h"
 
@@ -99,19 +100,21 @@
 	"Box.h"
 	<vector>
 
-1730498296 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\aeropuerto.h
+1730633583 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\aeropuerto.h
 	"Box.h"
 	"Pila.h"
 	"Cola.h"
+	"Lista.h"
 	<vector>
 
-1730540295 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\aeropuerto.cpp
+1730648624 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\aeropuerto.cpp
 	"Aeropuerto.h"
 	"Pila.h"
 	"NodoPila.h"
 	"NodoCola.h"
 	"Cola.h"
 	"Box.h"
+	"Lista.h"
 	<vector>
 
 1730504624 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
@@ -146,15 +149,20 @@
 	"Box.h"
 	<vector>
 
-1730542061 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodolista.cpp
+1730650189 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodolista.cpp
 	"NodoLista.h"
+	"Box.h"
 
-1730542351 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodolista.h
+1730650045 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodolista.h
+	"Box.h"
 
-1730542047 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\lista.cpp
+1730651585 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\lista.cpp
 	"Lista.h"
+	"NodoLista.h"
+	"Box.h"
+	<iostream>
 
-1730542417 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\lista.h
+1730648990 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\lista.h
 	"NodoLista.h"
 
 1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\lista.h

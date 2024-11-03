@@ -12,7 +12,7 @@ private:
 
 public:
     Box();
-    Box(int id_box, bool ocupado, Cola cola);
+    Box(int id_box, bool ocupado);
     ~Box();
 
     Pasajero& getPasajero();

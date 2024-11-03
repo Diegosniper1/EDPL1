@@ -4,6 +4,7 @@
 #include"NodoCola.h"
 #include"Cola.h"
 #include"Box.h"
+#include"Lista.h"
 #include <vector>
 
 using namespace std;

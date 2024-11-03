@@ -6,7 +6,6 @@ NodoLista::NodoLista()
 {
     siguiente = nullptr;
     anterior = nullptr;
-    box = NULL;
     //ctor
 }
 

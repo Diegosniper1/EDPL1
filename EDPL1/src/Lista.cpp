@@ -1,6 +1,8 @@
 #include "Lista.h"
 #include "NodoLista.h"
 #include "Box.h"
+#include <iostream>
+
 
 
 
@@ -30,7 +32,7 @@ void Lista::mostrarBoxes(){
         while (aux != nullptr){
             cout << "\nBox ID: " << aux->box.getIdBox() << endl;
             if (!aux->box.esVacio()) {
-                cout << "Pasajero Actual: " << aux->box.getPasajero().getNombre() << endl;
+                cout << "Pasajero Actual: " << aux->box.getPasajero().getId() << endl;
                 cout << "Tiempo Restante: " << aux->box.getPasajero().getDuracion() << endl;
             }
             else {
@@ -38,18 +40,18 @@ void Lista::mostrarBoxes(){
                 cout << "Tiempo Restante: 0" << endl;
             }
             cout << "Pasajeros en Espera:" << endl;
-            if (aux->box.cola.get_longitud() > 0) {
-                aux->box.cola.mostrar();
+            if (aux->getBox().getCola().get_longitud() > 0) {
+                aux->getBox().getCola().mostrar();
             }
             else {
                 cout << "- No hay pasajeros en espera" << endl;
             }
-            aux = aux->siguiente;
+            aux = aux->getSiguiente();
         }
     }
 }
 
-void Lista::añadirBox(){
+void Lista::nuevoBox(){
     NodoLista* l = new NodoLista(); /// Creamos el nodo con new ya que es un puntero -> new para punteros (mem dinamica)
    // 2. Caso lista vacía
     if (longitud == 0) {
@@ -64,11 +66,11 @@ void Lista::añadirBox(){
         bool necesitaNuevoBox = true;
         NodoLista* aux = primero;
         while (aux != nullptr) {
-            if (aux->box.cola.get_longitud() <= 2) {
+            if (aux->getBox().getCola().get_longitud() <= 2) {
                 necesitaNuevoBox = false;
                 break;
             }
-            aux = aux->siguiente;
+            aux = aux->getSiguiente();
         }
 
         // 5. Si necesitamos nuevo box, lo añadimos
@@ -93,7 +95,7 @@ void Lista::borrarBoxes(){
     int boxesVacios = 0;
     NodoLista* aux = primero;
     while(aux != nullptr){
-        if(aux->box.cola.get_longitud() == 0 && aux->box.esVacio()){
+        if(aux->getBox().getCola().get_longitud() == 0 && aux->getBox().esVacio()){
             boxesVacios++;
         }
         aux = aux->siguiente;
@@ -104,7 +106,7 @@ void Lista::borrarBoxes(){
         while (aux != nullptr && longitud > 1) {
             NodoLista* siguiente = aux->siguiente;
 
-            if (aux->box.cola.get_longitud() == 0 && aux->box.esVacio()) {
+            if (aux->getBox().getCola().get_longitud() == 0 && aux->getBox().esVacio()) {
                 if (aux == primero) {
                     primero = siguiente;
                     if (primero){
@@ -123,49 +125,55 @@ void Lista::borrarBoxes(){
             aux = siguiente;
         }
     }
+}
 
 int Lista::boxMenosOcupado() {
     if (longitud == 0) return 0;
 
     NodoLista* aux = primero;
-    int minPasajeros = aux->box.cola.get_longitud() + (!aux->box.esVacio() ? 1 : 0);
+    int minPasajeros = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
     int boxMenor = aux->box.getIdBox();
 
     while (aux != nullptr) {
-        int pasajerosActuales = aux->box.cola.get_longitud() + (!aux->box.esVacio() ? 1 : 0);
+        int pasajerosActuales = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
         if (pasajerosActuales < minPasajeros) {
             minPasajeros = pasajerosActuales;
-            boxMenor = aux->box.getIdBox();
+            boxMenor = aux->getBox().getIdBox();
         }
         aux = aux->siguiente;
     }
     return boxMenor;
 }
 
-int Lista::boxMasOcupado(){
-    if (longitud == 0) return 0;
+int Lista::boxMasOcupado()
+{
+    int boxMayor;
+    if (longitud == 0){
+       boxMayor = 0;
+    }
 
     NodoLista* aux = primero;
-    int maxPasajeros = aux->box.cola.get_longitud() + (!aux->box.esVacio() ? 1 : 0);
-    int boxMayor = aux->box.getIdBox();
+    int maxPasajeros = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
+    boxMayor = aux->getBox().getIdBox();
 
     while (aux != nullptr) {
-        int pasajerosActuales = aux->box.cola.get_longitud() + (!aux->box.esVacio() ? 1 : 0);
+        int pasajerosActuales = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
         if (pasajerosActuales > maxPasajeros) {
             maxPasajeros = pasajerosActuales;
-            boxMayor = aux->box.getIdBox();
+            boxMayor = aux->getBox().getIdBox();
         }
-        aux = aux->siguiente;
+        aux = aux->getSiguiente();
     }
     return boxMayor;
 }
 
-int Lista::getBoxesOperativos() {
+int Lista::getBoxesOperativos()
+{
     int boxesOperativos = 0;
     NodoLista* aux = primero;
 
-    while (aux != nullptr || aux->box.cola.get_longitud() > 0 ) {
-        if (!aux->box.esVacio()) {
+    while (aux != nullptr || aux->getBox().getCola().get_longitud() > 0 ) {
+        if (!aux->getBox().esVacio()) {
             boxesOperativos++;
         }
         aux = aux->siguiente;
@@ -174,15 +182,12 @@ int Lista::getBoxesOperativos() {
     return boxesOperativos;
 }
 
-NodoLista* getPrimero(){
+NodoLista* Lista::getPrimero(){
     return primero;
 
 }
 
 
-
-
-}
 
 
 
