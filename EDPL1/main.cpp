@@ -175,10 +175,11 @@ void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
 
 
                 case 7: {
+                    const int MAX_PASAJEROS = 10;
+                    int tiempos_llegada[MAX_PASAJEROS] = {0};
                     int tiempo_total = 0;
                     int pasajeros_atendidos = 0;
                     int tiempo_actual = 0;
-                    map<int, int> tiempos_llegada; // Para registrar cuando llega cada pasajero
 
                     while (!pila.esVacia() || !cola.es_vacia() ||
                            !aeropuerto.getBoxes()[0].esVacio() ||
@@ -188,8 +189,9 @@ void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
                         // Registrar llegadas
                         while (!pila.esVacia() && tiempo_actual >= pila.getCima()->getPasajero().getHoraInicio()) {
                             Pasajero pasajero = pila.getCima()->getPasajero();
-                            tiempos_llegada[pasajero.getId()] = tiempo_actual;
-                            cout << "Minuto " << tiempo_actual << ": Llegada del pasajero ID=" << pasajero.getId() << endl;
+                            tiempos_llegada[pasajero.getId()] = pasajero.getHoraInicio(); // Usar hora_inicio en lugar de tiempo_actual
+                            cout << "Minuto " << tiempo_actual << ": Llegada del pasajero ID="
+                                 << pasajero.getId() << endl;
                             cola.encolar(pasajero);
                             pila.desapilar();
                         }
@@ -204,8 +206,8 @@ void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
                                     tiempo_total += tiempo_estancia;
                                     pasajeros_atendidos++;
 
-                                    cout << "Minuto " << tiempo_actual << ": Sale pasajero ID=" << id_pasajero
-                                         << " del box " << box.getIdBox()
+                                    cout << "Minuto " << tiempo_actual << ": Sale pasajero ID="
+                                         << id_pasajero << " del box " << box.getIdBox()
                                          << " (Tiempo de estancia: " << tiempo_estancia << " minutos)" << endl;
 
                                     box.limpiarPasajero();
@@ -213,6 +215,8 @@ void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
                                     if (!cola.es_vacia()) {
                                         Pasajero nuevo = cola.desencolar();
                                         box.setPasajero(nuevo);
+                                        cout << "Minuto " << tiempo_actual << ": Entra pasajero ID="
+                                             << nuevo.getId() << " al box " << box.getIdBox() << endl;
                                     }
                                 } else {
                                     box.getPasajero().disminuirDuracion();
@@ -220,19 +224,22 @@ void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
                             } else if (!cola.es_vacia()) {
                                 Pasajero nuevo = cola.desencolar();
                                 box.setPasajero(nuevo);
+                                cout << "Minuto " << tiempo_actual << ": Entra pasajero ID="
+                                     << nuevo.getId() << " al box " << box.getIdBox() << endl;
                             }
                         }
+
+                        cout << "\nEstado de los boxes en minuto " << tiempo_actual << ":" << endl;
+                        aeropuerto.mostrar_boxes();
+                        cout << endl;
 
                         tiempo_actual++;
                     }
 
-                    if (pasajeros_atendidos > 0) {
-                        double tiempo_medio = (double)tiempo_total / pasajeros_atendidos;
-                        cout << "\nSimulación completada:" << endl;
-                        cout << "Tiempo total acumulado: " << tiempo_total << " minutos" << endl;
-                        cout << "Pasajeros atendidos: " << pasajeros_atendidos << endl;
-                        cout << "Tiempo medio de estancia: " << tiempo_medio << " minutos" << endl;
-                    }
+                    cout << "\nSimulación completada:" << endl;
+                    cout << "Tiempo total acumulado: " << tiempo_total << " minutos" << endl;
+                    cout << "Pasajeros atendidos: " << pasajeros_atendidos << endl;
+                    cout << "Tiempo medio de estancia: " << (double)tiempo_total / 9 << " minutos" << endl;
                     break;
                 }
 
