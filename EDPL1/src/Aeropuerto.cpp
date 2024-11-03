@@ -13,7 +13,7 @@ Aeropuerto::Aeropuerto() {
     boxes = std::vector<Box>(3);
     this->pila = Pila();
     this->cola = Cola();
-    lista = Lista();  // Initialize lista for menu 2
+    lista = Lista();  // Lista menu 2
 }
 
 Aeropuerto::~Aeropuerto() {
@@ -111,7 +111,7 @@ Box Aeropuerto::getBox(int i) {
     return this->getBoxes()[i];
 }
 
-// New methods for menu 2
+// Metodos parte 2
 Lista& Aeropuerto::getLista() {
     return lista;
 }

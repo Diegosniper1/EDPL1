@@ -131,11 +131,21 @@ int Lista::boxMenosOcupado() {
     if (longitud == 0) return 0;
 
     NodoLista* aux = primero;
-    int minPasajeros = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
+    int minPasajeros;
+
+    minPasajeros = aux->getBox().getCola().get_longitud();
+    if (!aux->getBox().esVacio()) {
+        minPasajeros += 1;
+    }
+
     int boxMenor = aux->getBox().getIdBox();
 
     while (aux != nullptr) {
-        int pasajerosActuales = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
+        int pasajerosActuales = aux->getBox().getCola().get_longitud();
+        if (!aux->getBox().esVacio()) {
+            pasajerosActuales += 1;
+        }
+
         if (pasajerosActuales < minPasajeros) {
             minPasajeros = pasajerosActuales;
             boxMenor = aux->getBox().getIdBox();
@@ -145,19 +155,29 @@ int Lista::boxMenosOcupado() {
     return boxMenor;
 }
 
-int Lista::boxMasOcupado()
-{
+int Lista::boxMasOcupado() {
     int boxMayor;
-    if (longitud == 0){
-       boxMayor = 0;
+    if (longitud == 0) {
+        boxMayor = 0;
+        return boxMayor;
     }
 
     NodoLista* aux = primero;
-    int maxPasajeros = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
+    int maxPasajeros;
+
+    maxPasajeros = aux->getBox().getCola().get_longitud();
+    if (!aux->getBox().esVacio()) {
+        maxPasajeros += 1;
+    }
+
     boxMayor = aux->getBox().getIdBox();
 
     while (aux != nullptr) {
-        int pasajerosActuales = aux->getBox().getCola().get_longitud() + (!aux->getBox().esVacio() ? 1 : 0);
+        int pasajerosActuales = aux->getBox().getCola().get_longitud();
+        if (!aux->getBox().esVacio()) {
+            pasajerosActuales += 1;
+        }
+
         if (pasajerosActuales > maxPasajeros) {
             maxPasajeros = pasajerosActuales;
             boxMayor = aux->getBox().getIdBox();
@@ -166,6 +186,7 @@ int Lista::boxMasOcupado()
     }
     return boxMayor;
 }
+
 
 int Lista::getBoxesOperativos() {
     int boxesOperativos = 0;

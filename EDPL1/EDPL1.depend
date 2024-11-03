@@ -119,7 +119,7 @@
 	"Lista.h"
 	<vector>
 
-1730663293 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
+1730671045 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
 	"Aeropuerto.h"
 	"Pila.h"
 	"NodoPila.h"
@@ -145,7 +145,7 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1730665109 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
+1730671002 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"
@@ -175,7 +175,7 @@
 1730665222 c:\users\diego\documents\github\edpl1\edpl1\include\nodolista.h
 	"Box.h"
 
-1730664487 source:c:\users\diego\documents\github\edpl1\edpl1\src\lista.cpp
+1730671370 source:c:\users\diego\documents\github\edpl1\edpl1\src\lista.cpp
 	"Lista.h"
 	"NodoLista.h"
 	"Box.h"

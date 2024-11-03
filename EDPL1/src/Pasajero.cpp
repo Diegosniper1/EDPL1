@@ -55,7 +55,7 @@ int Pasajero::disminuirDuracion(){
 }
 
 std::ostream& operator<<(std::ostream& os, const Pasajero& p) {
-    os << "Id: " << p.id << ", Prioridad: " << p.prioridad << ", Destino: " << p.destino;  // Ejemplo de salida
+    os << "Id: " << p.id << ", Prioridad: " << p.prioridad << ", Destino: " << p.destino;
     return os;
 }
 

@@ -36,12 +36,10 @@ void Pila::apilar_por_orden(Pasajero pas){
         while(pas.hora_inicio > cima -> pasajero.hora_inicio){
             paux.apilar(cima -> pasajero);
             desapilar();
-            //if (esVacia())break;
         }
         apilar(pas);
         while(!paux.esVacia()){
             apilar(paux.cima-> pasajero);
-            //paux.desapilar();
         }
     }
     else{

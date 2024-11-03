@@ -4,8 +4,7 @@
 NodoPila::NodoPila(){
 
     siguiente=nullptr;
-    //Pasajero = NULL; ES LO QUE ESTABA PREVIAMENTE
-
+    //Usar nullptr es mas recomendable que NULL
     //ctor
 ;}
 

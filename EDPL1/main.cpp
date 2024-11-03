@@ -25,10 +25,10 @@ int main() {
     int opcion;
     do {
         cout << "\n=== SISTEMA DE CONTROL DE ADUANAS ===" << endl;
-        cout << "1. Simulación básica" << endl;
-        cout << "2. Simulación con boxes dinámicos" << endl;
+        cout << "1. Simulacion basica" << endl;
+        cout << "2. Simulacion con boxes dinamicos" << endl;
         cout << "3. Salir" << endl;
-        cout << "Seleccione una opción: ";
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch(opcion) {
@@ -42,7 +42,7 @@ int main() {
                 cout << "Programa finalizado." << endl;
                 break;
             default:
-                cout << "Opción no válida." << endl;
+                cout << "Opcion no válida." << endl;
         }
     } while(opcion != 3);
 
@@ -146,7 +146,7 @@ void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
                                          << " del box " << box.getIdBox() << endl;
                                     box.limpiarPasajero();
 
-                                    // Intentar asignar nuevo pasajero del queue
+                                    // Intentar asignar nuevo pasajero de la cola
                                     if (!cola.es_vacia()) {
                                         Pasajero nuevo = cola.desencolar();
                                         box.setPasajero(nuevo);
@@ -236,7 +236,7 @@ void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
                         tiempo_actual++;
                     }
 
-                    cout << "\nSimulación completada:" << endl;
+                    cout << "\nSimulacion completada:" << endl;
                     cout << "Tiempo total acumulado: " << tiempo_total << " minutos" << endl;
                     cout << "Pasajeros atendidos: " << pasajeros_atendidos << endl;
                     cout << "Tiempo medio de estancia: " << (double)tiempo_total / 9 << " minutos" << endl;
@@ -387,7 +387,6 @@ void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista){
                 break;
             }
 case 8: {
-    // Initialize first box with ID 1
     lista.nuevoBox();
     lista.getPrimero()->getBox().setIdBox(1);
 
@@ -398,17 +397,17 @@ case 8: {
     while (!pila.esVacia() || lista.hayPasajerosEnSistema()) {
         cout << "\n=== Minuto " << tiempoTotal << ":" << endl;
 
-        // Process new arrivals
+        // Prrocesar llegadas
         while (!pila.esVacia() && pila.getCima()->getPasajero().getHoraInicio() == tiempoTotal) {
             Pasajero nuevo = pila.getCima()->getPasajero();
             cout << "LLEGADA - Pasajero " << nuevo.getId() << " al sistema" << endl;
 
-            // Check if we need a new box
+
             if (lista.getPrimero()->getBox().getTotalPasajeros() > 2) {
                 lista.nuevoBox();
             }
 
-            // Find least occupied box
+            // Encontrar box menos ocupado
             NodoLista* boxMenorCola = lista.getPrimero();
             NodoLista* aux = lista.getPrimero();
             while (aux != nullptr) {
@@ -418,7 +417,7 @@ case 8: {
                 aux = aux->getSiguiente();
             }
 
-            // Assign passenger to box
+            // Meter pasajero en box
             if (boxMenorCola->getBox().esVacio()) {
                 boxMenorCola->getBox().setPasajero(nuevo);
                 cout << "Pasajero " << nuevo.getId() << " asignado al Box "
@@ -432,7 +431,7 @@ case 8: {
             pila.desapilar();
         }
 
-        // Process boxes
+        // Procesar boxes
         NodoLista* aux = lista.getPrimero();
         while (aux != nullptr) {
             Box& boxActual = aux->getBox();
@@ -461,16 +460,17 @@ case 8: {
             aux = aux->getSiguiente();
         }
 
+        //Comprobamos cada 5 mins si podemos borrar boxes
         lista.mostrarBoxes();
-        if (tiempoTotal % 5 == 0) {  // Check every 5 minutes if we can remove boxes
+        if (tiempoTotal % 5 == 0) {
             lista.borrarBoxes();
         }
 
         tiempoTotal++;
     }
 
-    cout << "\n=== Estadísticas Finales ===" << endl;
-    cout << "Tiempo total de simulación: " << tiempoTotal << " minutos" << endl;
+    cout << "\n=== Estadisticas Finales ===" << endl;
+    cout << "Tiempo total de simulacion: " << tiempoTotal << " minutos" << endl;
     cout << "Pasajeros procesados: " << pasajerosProcesados << endl;
     cout << "Tiempo medio de estancia: " <<
             (pasajerosProcesados > 0 ? tiempoEstanciaTotal/pasajerosProcesados : 0)
