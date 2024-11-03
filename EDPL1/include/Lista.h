@@ -8,13 +8,13 @@ class Lista
 {
     public:
         Lista();
-        virtual ~Lista();
+        ~Lista();
         void añadirBox();
         void borrarBoxes();
         int boxMenosOcupado();
         int boxMasOcupado();
         int getBoxesOperativos();
-    protected:
+        NodoLista* getPrimero();
 
     private:
         NodoLista *primero;

@@ -3,7 +3,7 @@
 
 NodoCola::NodoCola(){
 
-    siguiente=NULL;
+    siguiente=nullptr;
 }
 
 

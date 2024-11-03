@@ -8,8 +8,8 @@ using namespace std;
 
 Cola::Cola()
 {
-    primero = NULL;
-    ultimo = NULL;
+    primero = nullptr;
+    ultimo = nullptr;
     longitud = 0;
 }
 Cola::~Cola() { }

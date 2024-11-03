@@ -6,7 +6,6 @@
 Pila::Pila()
 {
     cima = nullptr;
-    //this.cima = Null es lo que estaba antes
     //ctor
 }
 

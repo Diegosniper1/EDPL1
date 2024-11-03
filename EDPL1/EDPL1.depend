@@ -20,7 +20,8 @@
 	"Box.h"
 	"Pasajero.h"
 
-1730509320 c:\users\diego\documents\github\edpl1\edpl1\include\box.h
+1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\box.h
+	"Cola.h"
 	"Pasajero.h"
 
 1730541112 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
@@ -122,10 +123,11 @@
 	"Box.h"
 	<vector>
 
-1730478279 c:\users\diego\documents\github\edpl1\edpl1\include\aeropuerto.h
+1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\aeropuerto.h
 	"Box.h"
 	"Pila.h"
 	"Cola.h"
+	"Lista.h"
 	<vector>
 
 1730309313 c:\users\diego\documents\github\edpl1\edpl1\include\pila.h
@@ -154,4 +156,10 @@
 
 1730542417 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\lista.h
 	"NodoLista.h"
+
+1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\lista.h
+	"NodoLista.h"
+
+1730574135 c:\users\diego\documents\github\edpl1\edpl1\include\nodolista.h
+	"Box.h"
 

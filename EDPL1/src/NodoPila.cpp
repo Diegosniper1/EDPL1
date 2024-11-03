@@ -3,7 +3,7 @@
 
 NodoPila::NodoPila(){
 
-    siguiente=NULL;
+    siguiente=nullptr;
     //Pasajero = NULL; ES LO QUE ESTABA PREVIAMENTE
 
     //ctor
