@@ -130,6 +130,9 @@ Cola Aeropuerto::getCola(){
     return cola;
 }
 
+Lista Aeropuerto::getLista(){
+    return lista;
+}
 void Aeropuerto::setBoxes(Box b1,Box b2,Box b3){
     this->boxes = {b1, b2, b3};
 }

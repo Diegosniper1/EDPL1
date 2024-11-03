@@ -1,15 +1,20 @@
 #include "Box.h"
 #include "Pasajero.h"
+#include "Cola.h"
 
 Box::Box() {
     id_box = 0;
     ocupado = false;
+    cola = NULL;
 }
 
 Box::Box(int id_box, bool ocupado) {
     this->id_box = id_box;
     this->ocupado = ocupado;
+    this->cola = NULL;
 }
+
+
 
 Box::~Box() {
 }
@@ -39,4 +44,19 @@ void Box::limpiarPasajero() {
 int Box::setIdBox(int idBox) {
     this->id_box = idBox;
     return id_box;
+}
+
+int Box::getTotalPasajeros(){
+    int total = 0;
+    if (!this->esVacio()) {
+        total++;
+    }
+
+    total += this->getCola().get_longitud();
+
+    return total;
+}
+
+Cola Box::getCola() {
+    return cola;
 }

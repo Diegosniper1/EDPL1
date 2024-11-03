@@ -12,7 +12,7 @@ private:
 
 public:
     Box();
-    Box(int id_box, bool ocupado);
+    Box(int id_box, bool ocupado, Cola cola);
     ~Box();
 
     Pasajero& getPasajero();
@@ -21,6 +21,8 @@ public:
     bool esVacio();
     void limpiarPasajero();
     int setIdBox(int idBox);
+    int getTotalPasajeros();
+    Cola getCola();
 };
 
 #endif

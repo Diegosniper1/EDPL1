@@ -15,6 +15,7 @@ class Lista
         int boxMasOcupado();
         int getBoxesOperativos();
         NodoLista* getPrimero();
+        void mostrarBoxes();
 
     private:
         NodoLista *primero;

@@ -23,6 +23,7 @@ class Aeropuerto
         void setBoxes(Box a, Box b, Box c);
         Pila getPila();
         Cola getCola();
+        Lista getLista();
 
     protected:
 

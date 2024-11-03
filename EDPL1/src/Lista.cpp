@@ -1,5 +1,8 @@
 #include "Lista.h"
 #include "NodoLista.h"
+#include "Box.h"
+
+
 
 Lista::Lista()
 {
@@ -16,6 +19,34 @@ Lista::~Lista(){
             delete actual;
             actual = siguiente;
         }
+}
+
+void Lista::mostrarBoxes(){
+    if (longitud == 0){
+        cout << "Lista vacia" << endl;
+    }
+    else{
+        NodoLista* aux = primero;
+        while (aux != nullptr){
+            cout << "\nBox ID: " << aux->box.getIdBox() << endl;
+            if (!aux->box.esVacio()) {
+                cout << "Pasajero Actual: " << aux->box.getPasajero().getNombre() << endl;
+                cout << "Tiempo Restante: " << aux->box.getPasajero().getDuracion() << endl;
+            }
+            else {
+                cout << "Pasajero Actual: Ninguno" << endl;
+                cout << "Tiempo Restante: 0" << endl;
+            }
+            cout << "Pasajeros en Espera:" << endl;
+            if (aux->box.cola.get_longitud() > 0) {
+                aux->box.cola.mostrar();
+            }
+            else {
+                cout << "- No hay pasajeros en espera" << endl;
+            }
+            aux = aux->siguiente;
+        }
+    }
 }
 
 void Lista::añadirBox(){

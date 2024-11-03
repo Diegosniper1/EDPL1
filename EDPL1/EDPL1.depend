@@ -58,7 +58,7 @@
 	<iostream>
 	"Pasajero.h"
 
-1730188274 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\cola.cpp
+1730630850 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\cola.cpp
 	"Cola.h"
 	"NodoCola.h"
 	"Pasajero.h"
@@ -71,11 +71,11 @@
 1730302969 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodocola.h
 	"Pasajero.h"
 
-1730302310 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodocola.cpp
+1730630850 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodocola.cpp
 	"NodoCola.h"
 	"Pasajero.h"
 
-1730307010 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodopila.cpp
+1730630850 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodopila.cpp
 	"NodoPila.h"
 	"Pasajero.h"
 
@@ -83,7 +83,7 @@
 	<iostream>
 	"Pasajero.h"
 
-1730540292 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pila.cpp
+1730630850 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pila.cpp
 	"Pila.h"
 	"NodoPila.h"
 	"Pasajero.h"
