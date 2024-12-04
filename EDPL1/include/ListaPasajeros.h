@@ -11,6 +11,10 @@ class ListaPasajeros
     protected:
 
     private:
+<<<<<<< HEAD
+=======
+        friend class Nodo_ABB;
+>>>>>>> 1838bd398ea312c72f46310117467df7023775ad
 };
 
 #endif // LISTAPASAJEROS_H
