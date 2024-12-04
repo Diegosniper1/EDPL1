@@ -30,7 +30,7 @@
 	"Pasajero.h"
 	<string>
 
-1730541048 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
+1730672004 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
 	"Pasajero.h"
 	<iostream>
 	<string>
@@ -52,7 +52,7 @@
 	"NodoCola.h"
 	"Pasajero.h"
 
-1730595125 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodopila.cpp
+1730671605 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodopila.cpp
 	"NodoPila.h"
 	"Pasajero.h"
 
@@ -119,7 +119,7 @@
 	"Lista.h"
 	<vector>
 
-1730671045 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
+1731395981 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
 	"Aeropuerto.h"
 	"Pila.h"
 	"NodoPila.h"
@@ -140,12 +140,12 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1730595140 source:c:\users\diego\documents\github\edpl1\edpl1\src\pila.cpp
+1730671804 source:c:\users\diego\documents\github\edpl1\edpl1\src\pila.cpp
 	"Pila.h"
 	"NodoPila.h"
 	"Pasajero.h"
 
-1730671002 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
+1731395990 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"
@@ -175,7 +175,7 @@
 1730665222 c:\users\diego\documents\github\edpl1\edpl1\include\nodolista.h
 	"Box.h"
 
-1730671370 source:c:\users\diego\documents\github\edpl1\edpl1\src\lista.cpp
+1731360962 source:c:\users\diego\documents\github\edpl1\edpl1\src\lista.cpp
 	"Lista.h"
 	"NodoLista.h"
 	"Box.h"

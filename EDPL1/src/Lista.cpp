@@ -165,7 +165,7 @@ int Lista::boxMasOcupado() {
     NodoLista* aux = primero;
     int maxPasajeros;
 
-    maxPasajeros = aux->getBox().getCola().get_longitud();
+        maxPasajeros = aux->getBox().getCola().get_longitud();
     if (!aux->getBox().esVacio()) {
         maxPasajeros += 1;
     }
