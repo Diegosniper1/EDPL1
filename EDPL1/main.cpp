@@ -263,15 +263,23 @@ void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista){
     ///Parte 2
 
     cout << "           *** MENU ***" << endl;
-    cout << "1: Crear pila de pasajeros." << endl;
-    cout << "2: Mostrar los pasajeros." << endl;
+    cout << "1: Crear pila de pasajeros" << endl;
+    cout << "2: Mostrar los pasajeros" << endl;
     cout << "3: Borrar la pila de pasajeros" << endl;
     cout << "4: Simulacro en N minutos" << endl;
     cout << "5: Mostrar los datos de la lista de boxes" << endl;
     cout << "6: Consultar box mas ocupado y box menos ocupado" << endl;
     cout << "7: Consultar el número de boxes operativos" << endl;
     cout << "8: Simulacro" << endl;
-    cout << "9: Salir" << endl;
+    cout << "9: Añadir un pasajero directamente al Árbol Binario de Búsqueda, leyendo sus datos de teclado" << endl;
+    cout << "10:  Mostrar los datos almacenados en el Árbol Binario de Búsqueda, ordenados por nombre de país" << endl;
+    cout << "11: Mostrar los pasajeros con destino a un país dado" << endl;
+    cout << "12: Mostrar los nombres de todos los países que han sido destino de al menos un pasajero, en orden alfabético" << endl;
+    cout << "13: Mostrar el país destino de mayor número de pasajeros y el de menor número" << endl;
+    cout << "14: Mostrar el tiempo medio de estancia en el aeropuerto de los pasajeros con destino a un país dado" << endl;
+    cout << "15: mostrar el tiempo medio de estancia en el aeropuerto de los pasajeros con destino a cada uno de los países (preorden)" << endl;
+    cout << "16: Salir" << endl;
+
 
     int b;
     do {
