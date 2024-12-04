@@ -1,0 +1,23 @@
+#ifndef NODO_ABB_H
+#define NODO_ABB_H
+
+
+class Nodo_ABB
+{
+    public:
+        Nodo_ABB();
+        virtual ~Nodo_ABB();
+        ListaPasajeros& getListaPasajeros();
+        Nodo_ABB* getIzq();
+        Nodo_ABB* getDer();
+
+    protected:
+
+    private:
+        string paisDestino;
+        ListaPasajeros listaP;
+        Nodo_ABB* izq;
+        Nodo_ABB* der;
+};
+
+#endif // NODO_ABB_H

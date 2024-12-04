@@ -11,6 +11,7 @@ class ListaPasajeros
     protected:
 
     private:
+        friend class Nodo_ABB;
 };
 
 #endif // LISTAPASAJEROS_H

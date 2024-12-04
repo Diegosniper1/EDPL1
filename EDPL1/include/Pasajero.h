@@ -22,7 +22,7 @@ class Pasajero
     protected:
 
     private:
-        int id, prioridad, hora_inicio, duracion, id_box;
+        int id, prioridad, hora_inicio, duracion, id_box, tiempo_estancia;
         string destino;
         friend class Box;
         friend class Cola;
