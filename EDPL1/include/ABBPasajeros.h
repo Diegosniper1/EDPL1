@@ -7,8 +7,8 @@ class ABBPasajeros
     public:
         ABBPasajeros();
         virtual ~ABBPasajeros();
-        void insertar(string pais, Pasajero p, int tiempoEstancia);
-        bool buscar(string pais);
+        void insertar(Nodo_ABB* nodo, string pais, Pasajero p);
+        bool buscar(Nodo_ABB* nodo, string pais);
         Nodo_ABB* getRaiz()
         ABBPasajeros* getIzquierdo();
         ABBPasajeros* getDerecho();

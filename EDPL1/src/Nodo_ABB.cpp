@@ -1,15 +1,17 @@
 #include "Nodo_ABB.h"
+#include "Pasajero.h"
+
 
 Nodo_ABB::Nodo_ABB()
 {
     //ctor
 }
 
-Nodo_ABB::Nodo_ABB(string p)
+Nodo_ABB::Nodo_ABB(string pais, Pasajero p)
 {
         this->pais = pais;
         this->listaPasajeros = new ListaPasajeros();
-        this->listaPasajeros->insertarPasajero(p, tiempoEstancia);
+        this->listaPasajeros.insertarPasajero(p);
         this->izq = nullptr;
         this->der = nullptr;
 

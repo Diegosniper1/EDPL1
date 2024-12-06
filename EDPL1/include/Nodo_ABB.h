@@ -6,7 +6,7 @@ class Nodo_ABB
 {
     public:
         Nodo_ABB();
-        Nodo_ABB();
+        Nodo_ABB(string pais, Pasajero p);
         virtual ~Nodo_ABB();
         ListaPasajeros& getListaPasajeros();
         Nodo_ABB* getIzq();
@@ -18,7 +18,7 @@ class Nodo_ABB
     private:
 
         string paisDestino;
-        ListaPasajeros* listaP;
+        ListaPasajeros listaP;
         Nodo_ABB* izq;
         Nodo_ABB* der;
 

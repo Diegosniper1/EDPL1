@@ -38,13 +38,18 @@ int ListaPasajeros::getLongitud()
 
 void ListaPasajeros::insertarPasajero(Pasajero p)
 {
-    NodoListaPasajeros* aux = primero;
-    NodoListaPasajeros* nuevoNodo;
-    nuevoNodo->pasajero = p;
-    while ( aux != nullptr)
-    {
-        aux = aux->siguiente;
+    NodoListaPasajeros* nuevoNodo = new NodoListaPasajeros(p);
+
+    if (primero == nullptr) {
+        // Lista vacía
+        primero = nuevoNodo;
+        ultimo = nuevoNodo;
+    } else {
+        // Insertar al final
+        ultimo->siguiente = nuevoNodo;
+        nuevoNodo->anterior = ultimo;
+        ultimo = nuevoNodo;
     }
-    aux->siguiente = nuevoNodo;
+    longitud++;
 }
 

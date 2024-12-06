@@ -12,33 +12,37 @@ ABBPasajeros::~ABBPasajeros()
 }
 
 
-void ABBPasajeros::insertar(string pais, Pasajero p, int tiempoEstancia) {
+void ABBPasajeros::insertar(Nodo_ABB* raiz, string pais, Pasajero p) {
     if (esVacio()) {
-        raiz = new Nodo_ABB(pais, p, tiempoEstancia);
+        raiz = new Nodo_ABB(pais, p);
     }
     else {
-        if (pais <= raiz->pais) {
+        if (pais < raiz->paisDestino) {
             if (raiz->izquierdo == nullptr) {
-                raiz->izquierdo = new Nodo_ABB(pais, p, tiempoEstancia);
+                raiz->izquierdo = new Nodo_ABB(pais, p);
             }
             else {
-                insertar(raiz->izquierdo, pais, p, tiempoEstancia);
+                insertar(raiz->izquierdo, pais, p);
             }
         }
-        else {
+        if (pais > raiz->paisDestino){
             if (raiz->derecho == nullptr) {
-                raiz->derecho = new Nodo_ABB(pais, p, tiempoEstancia);
+                raiz->derecho = new Nodo_ABB(pais, p);
             }
             else {
-                insertar(raiz->derecho, pais, p, tiempoEstancia);
+                insertar(raiz->derecho, pais, p);
             }
+        }
+
+        if (pais == raiz->paisDestino){
+            nodo->getListaPasajeros().insertarPasajero(p);
         }
     }
 }
 
 
 
-bool ABBPasajeros::buscar(string pais) {
+bool ABBPasajeros::buscar(Nodo_ABB* raiz, string pais) {
     if (esVacio()) {
         return false;
     }
