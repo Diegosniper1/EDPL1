@@ -8,6 +8,8 @@
 
 using namespace std;
 
+*\
+
 // Declaración de funciones
 void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola);
 void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista);
