@@ -2,6 +2,7 @@
 #include "Pila.h"
 #include "Aeropuerto.h"
 #include "Box.h"
+#include "ABBPasajeros.h"
 #include <vector>
 #include <map>
 
@@ -37,7 +38,7 @@ int main() {
                 ejecutarMenu1(aeropuerto, pila, cola);
                 break;
             case 2:
-                ejecutarMenu2(aeropuerto, pila, lista);
+                ejecutarMenu2(aeropuerto, pila, lista, abb);
                 break;
             case 3:
                 cout << "Programa finalizado." << endl;
@@ -258,7 +259,7 @@ void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola){
 
 
 
-void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista){
+void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista, ABBPasajeros& abb){
 
 
     ///Parte 2
@@ -362,6 +363,7 @@ void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista){
                     cout << "\nSALIDA - Pasajero " << sale.getId() << " sale del Box " << aux->getBox().getIdBox() << endl;
                     int tiempoEst =  actual - sale.getHoraInicio();
                     sale.setTiempoEstancia(tiempoEst);
+                    abb.insertar(abb.raiz, sale.destino, sale)
 
 
 
@@ -456,8 +458,11 @@ case 8: {
                     cout << "SALIDA - Pasajero " << pasajeroActual.getId()
                          << " del Box " << boxActual.getIdBox() << endl;
 
+                    int tiempoEst =  tiempoTotal - pasajeroActual.getHoraInicio();
+                    pasajeroActual.setTiempoEstancia(tiempoEst);
+                    abb.insertar(abb.raiz, pasajeroActual.destino, pasajeroActual);
                     pasajerosProcesados++;
-                    tiempoEstanciaTotal += (tiempoTotal - pasajeroActual.getHoraInicio());
+                    tiempoEstanciaTotal += tiempoEst;
 
                     if (boxActual.getCola().get_longitud() > 0) {
                         Pasajero siguiente = boxActual.getCola().desencolar();
