@@ -11,10 +11,11 @@ class ListaPasajeros
     protected:
 
     private:
-<<<<<<< HEAD
-=======
+
+        NodoListaPasajeros *primero;
+        NodoListaPasajeros *ultimo;
+        int longitud;
         friend class Nodo_ABB;
->>>>>>> 1838bd398ea312c72f46310117467df7023775ad
 };
 
 #endif // LISTAPASAJEROS_H
