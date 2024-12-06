@@ -1,4 +1,5 @@
 #include "ListaPasajeros.h"
+#include "Pasajero.h"
 
 ListaPasajeros::ListaPasajeros()
 {
@@ -12,9 +13,38 @@ ListaPasajeros::ListaPasajeros()
 
 ListaPasajeros::~ListaPasajeros()
 {
-     while(primero != nullptr) {
-        NodoPasajero* aux = primero;
-        primero = primero->siguiente;
-        delete aux;
-    }
+     NodoListaPasajeros* actual = primero;
+        while (actual != nullptr) {
+            NodoListaPasajeros* siguiente = actual->siguiente;
+            delete actual;
+            actual = siguiente;
+        }
 }
+
+NodoListaPasajeros* ListaPasajeros::getPrimero()
+{
+    return primero;
+}
+
+NodoListaPasajeros* ListaPasajeros::getUltimo()
+{
+    return ultimo;
+}
+
+int ListaPasajeros::getLongitud()
+{
+    return longitud;
+}
+
+void ListaPasajeros::insertarPasajero(Pasajero p)
+{
+    NodoListaPasajeros* aux = primero;
+    NodoListaPasajeros* nuevoNodo;
+    nuevoNodo->pasajero = p;
+    while ( aux != nullptr)
+    {
+        aux = aux->siguiente;
+    }
+    aux->siguiente = nuevoNodo;
+}
+

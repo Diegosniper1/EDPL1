@@ -6,7 +6,12 @@ class NodoListaPasajeros
 {
     public:
         NodoListaPasajeros();
+        NodoListaPasajeros(Pasajero p);
         virtual ~NodoListaPasajeros();
+        NodoListaPasajeros* getSiguiente();
+        NodoListaPasajeros* getAnterior();
+        Pasajero& getPasajero();
+
 
     protected:
 
@@ -14,7 +19,6 @@ class NodoListaPasajeros
         NodoListaPasajeros *siguiente;
         NodoListPasajeros *anterior;
         Pasajero pasajero;
-        int tiempoEstancia;
         friend class ListaPasajeros;
 };
 

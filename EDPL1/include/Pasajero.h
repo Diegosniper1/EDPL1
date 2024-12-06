@@ -18,11 +18,12 @@ class Pasajero
         string getDestino();
         int disminuirDuracion();
         int getId();
+        int getTiempoEstancia();
 
     protected:
 
     private:
-        int id, prioridad, hora_inicio, duracion, id_box;
+        int id, prioridad, hora_inicio, duracion, id_box, tiempoEstancia;
         string destino;
         friend class Box;
         friend class Cola;

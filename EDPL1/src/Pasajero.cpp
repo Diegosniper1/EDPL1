@@ -19,6 +19,7 @@ Pasajero::Pasajero(int id, int prioridad, string destino, int hora_inicio, int d
     this->destino = destino;
     this->hora_inicio = hora_inicio;
     this->duracion = duracion;
+    this->tiempoEstancia = 0;
 }
 
 Pasajero::~Pasajero()
@@ -52,6 +53,10 @@ int Pasajero::disminuirDuracion(){
         duracion--;
     }
     return duracion;
+}
+
+int Pasajero::getTiempoEstancia(){
+    return tiempoEstancia;
 }
 
 std::ostream& operator<<(std::ostream& os, const Pasajero& p) {

@@ -6,10 +6,12 @@ class Nodo_ABB
 {
     public:
         Nodo_ABB();
+        Nodo_ABB();
         virtual ~Nodo_ABB();
         ListaPasajeros& getListaPasajeros();
         Nodo_ABB* getIzq();
         Nodo_ABB* getDer();
+        string getPaisDestino();
 
     protected:
 
