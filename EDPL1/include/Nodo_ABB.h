@@ -1,13 +1,13 @@
 #ifndef NODO_ABB_H
 #define NODO_ABB_H
-
+#include "ListaPasajeros.h"
 
 class Nodo_ABB
 {
     public:
         Nodo_ABB();
         Nodo_ABB(string pais, Pasajero p);
-        virtual ~Nodo_ABB();
+        ~Nodo_ABB();
         ListaPasajeros& getListaPasajeros();
         Nodo_ABB* getIzq();
         Nodo_ABB* getDer();
@@ -19,8 +19,8 @@ class Nodo_ABB
 
         string paisDestino;
         ListaPasajeros listaP;
-        Nodo_ABB* izq;
-        Nodo_ABB* der;
+        Nodo_ABB* izquierdo;
+        Nodo_ABB* derecho;
 
         friend class ABBPasajeros;
 

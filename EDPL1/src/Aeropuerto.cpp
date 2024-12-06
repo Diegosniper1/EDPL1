@@ -14,6 +14,7 @@ Aeropuerto::Aeropuerto() {
     this->pila = Pila();
     this->cola = Cola();
     lista = Lista();  // Lista menu 2
+    abb = ABBPasajeros();
 }
 
 Aeropuerto::~Aeropuerto() {
@@ -121,6 +122,10 @@ Box Aeropuerto::getBox(int i) {
 // Metodos parte 2
 Lista& Aeropuerto::getLista() {
     return lista;
+}
+
+ABBPasajeros& Aeropuerto::getABBPasajeros() {
+    return abb;
 }
 
 void Aeropuerto::mostrar_boxes_lista() {

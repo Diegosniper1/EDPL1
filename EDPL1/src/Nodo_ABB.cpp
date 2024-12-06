@@ -9,16 +9,22 @@ Nodo_ABB::Nodo_ABB()
 
 Nodo_ABB::Nodo_ABB(string pais, Pasajero p)
 {
-        this->pais = pais;
-        this->listaPasajeros = new ListaPasajeros();
-        this->listaPasajeros.insertarPasajero(p);
-        this->izq = nullptr;
-        this->der = nullptr;
-
+        this->paisDestino = pais;
+        this->listaP = ListaPasajeros();
+        this->listaP.insertarPasajero(p);
+        this->izquierdo = nullptr;
+        this->derecho = nullptr;
+}
 
 
 Nodo_ABB::~Nodo_ABB()
 {
+     if (izquierdo != nullptr) {
+        delete izquierdo;
+    }
+    if (derecho != nullptr) {
+        delete derecho;
+    }
     //dtor
 }
 
@@ -27,12 +33,12 @@ Nodo_ABB::~Nodo_ABB()
 
 Nodo_ABB* Nodo_ABB::getIzq()
 {
-    return izq;
+    return izquierdo;
 }
 
 Nodo_ABB* Nodo_ABB::getDer()
 {
-   return der;
+   return derecho;
 }
 
 ListaPasajeros& Nodo_ABB::getListaPasajeros()

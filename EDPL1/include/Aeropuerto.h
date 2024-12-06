@@ -5,6 +5,7 @@
 #include "Cola.h"
 #include "Box.h"
 #include "Lista.h"
+#include "ABBPasajeros.h"
 #include <vector>
 
 class Aeropuerto {
@@ -13,6 +14,7 @@ private:
     Lista lista;             // Para menú 2
     Pila pila;
     Cola cola;
+    ABBPasajeros abb;
 
 public:
     Aeropuerto();
@@ -32,6 +34,7 @@ public:
 
     // Métodos para menú 2
     Lista& getLista();
+    ABBPasajeros& getABBPasajeros();
     void mostrar_boxes_lista();
     void procesarLlegada(Pasajero& p);
 };

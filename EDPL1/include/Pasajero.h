@@ -19,6 +19,7 @@ class Pasajero
         int disminuirDuracion();
         int getId();
         int getTiempoEstancia();
+        void setTiempoEstancia(int tiempoEst);
 
     protected:
 

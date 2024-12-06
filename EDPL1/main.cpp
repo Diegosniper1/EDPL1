@@ -16,6 +16,7 @@ int main() {
     Pila pila = aeropuerto.getPila();
     Cola cola = aeropuerto.getCola();
     Lista lista = aeropuerto.getLista();
+    ABBPasajeros abb = aeropuerto.getABBPasajeros();
 
     Box b1(1,false);
     Box b2(2,false);
@@ -271,7 +272,14 @@ void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista){
     cout << "6: Consultar box mas ocupado y box menos ocupado" << endl;
     cout << "7: Consultar el número de boxes operativos" << endl;
     cout << "8: Simulacro" << endl;
-    cout << "9: Salir" << endl;
+    cout << "9: Añadir un pasajero directamente al Arbol Binario de Busqueda, leyendo sus datos de teclado" << endl;
+    cout << "10: Mostrar los datos almacenados en el Arbol Binario de Busqueda, ordenados por nombre de pais" << endl;
+    cout << "11: Mostrar los pasajeros con destino a un pais dado" << endl;
+    cout << "12: Mostrar los nombres de todos los paises que han sido destino de al menos un pasajero, en orden alfabetico" << endl;
+    cout << "13: Mostrar el pais destino de mayor numero de pasajeros y el de menor numero" << endl;
+    cout << "14: Mostrar el tiempo medio de estancia en el aeropuerto de los pasajeros con destino a un pais dado" << endl;
+    cout << "15: Mostrar el tiempo medio de estancia en el aeropuerto de los pasajeros con destino a cada uno de los paises (preorden)" << endl;
+    cout << "16: Salir" << endl;
 
     int b;
     do {
@@ -352,6 +360,10 @@ void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista){
                 if (aux->getBox().getPasajero().getDuracion() == 0) {
                     Pasajero sale = aux->getBox().getPasajero();
                     cout << "\nSALIDA - Pasajero " << sale.getId() << " sale del Box " << aux->getBox().getIdBox() << endl;
+                    int tiempoEst =  actual - sale.getHoraInicio();
+                    sale.setTiempoEstancia(tiempoEst);
+
+
 
                     if (aux->getBox().getCola().get_longitud() > 0) {
                         Pasajero siguiente = aux->getBox().getCola().desencolar();

@@ -1,6 +1,6 @@
 #ifndef NODOLISTAPASAJEROS_H
 #define NODOLISTAPASAJEROS_H
-
+#include "Pasajero.h"
 
 class NodoListaPasajeros
 {
@@ -17,7 +17,7 @@ class NodoListaPasajeros
 
     private:
         NodoListaPasajeros *siguiente;
-        NodoListPasajeros *anterior;
+        NodoListaPasajeros *anterior;
         Pasajero pasajero;
         friend class ListaPasajeros;
 };

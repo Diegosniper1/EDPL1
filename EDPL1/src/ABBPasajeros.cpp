@@ -4,6 +4,7 @@ ABBPasajeros::ABBPasajeros()
 {
     //ctor
     raiz = nullptr;
+    raiz->paisDestino = "MM";
 }
 
 ABBPasajeros::~ABBPasajeros()
@@ -35,7 +36,7 @@ void ABBPasajeros::insertar(Nodo_ABB* raiz, string pais, Pasajero p) {
         }
 
         if (pais == raiz->paisDestino){
-            nodo->getListaPasajeros().insertarPasajero(p);
+            raiz->getListaPasajeros().insertarPasajero(p);
         }
     }
 }
@@ -47,11 +48,11 @@ bool ABBPasajeros::buscar(Nodo_ABB* raiz, string pais) {
         return false;
     }
     else {
-        if (pais == raiz->pais) {
+        if (pais == raiz->paisDestino) {
             return true;
         }
         else {
-            if (pais < raiz->pais) {
+            if (pais < raiz->paisDestino) {
                 return buscar(raiz->izquierdo, pais);
             }
             else {
@@ -88,7 +89,7 @@ bool ABBPasajeros::esVacio() {
     return raiz == nullptr;
 }
 
-int ABBPasajeros::getAltura() {
+int ABBPasajeros::getAltura(Nodo_ABB* nodo) {
     if (esVacio()) {
         return 0;
     }

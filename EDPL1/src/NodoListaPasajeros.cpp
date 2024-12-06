@@ -1,7 +1,6 @@
 #include "NodoListaPasajeros.h"
 
 NodoListaPasajeros::NodoListaPasajeros() {
-    pasajero = NULL;
     siguiente = nullptr;
     anterior = nullptr;
 }
@@ -22,7 +21,7 @@ NodoListaPasajeros* NodoListaPasajeros::getSiguiente()
     return siguiente;
 }
 
-NodoListaPasajeros* NodoListaPasajeros::getSiguiente()
+NodoListaPasajeros* NodoListaPasajeros::getAnterior()
 {
     return anterior;
 }
