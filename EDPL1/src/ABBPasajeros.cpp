@@ -85,7 +85,7 @@ ABBPasajeros* ABBPasajeros::getDerecho() {
 }
 
 bool ABBPasajeros::esVacio() {
-    return raiz == nullptr;
+    return this->raiz == nullptr;
 }
 
 int ABBPasajeros::getAltura(Nodo_ABB* raiz) {
@@ -103,10 +103,13 @@ int ABBPasajeros::getAltura(Nodo_ABB* raiz) {
 // Para comprobar
 
 void ABBPasajeros::mostrarArbol(Nodo_ABB* nodo) {
-    nodo = this->raiz;
     if (nodo == nullptr) {
+        if (this->raiz == nullptr) {
+           cout << "Árbol vacío" << endl;
+        }
         return;
     }
+
     // Primero se recorre el subarbol izquierdo
     mostrarArbol(nodo->getIzq());
     // Se muestran los datos de cada nodo
@@ -145,63 +148,79 @@ void ABBPasajeros::mostrarPasajerosPorPais(string pais) {
 }
 
 void ABBPasajeros::mostrarPaises(Nodo_ABB* nodo) {
-    nodo = this->raiz;
-    if (nodo != nullptr) {
-        mostrarPaises(nodo->izquierdo);
+    if (nodo == nullptr) {
+        if (this->raiz == nullptr) {
+           cout << "Árbol vacío" << endl;
+        }
+        return;
+    }
+    else {
+        mostrarPaises(nodo->getIzq());
         if (!nodo->getListaPasajeros().esVacia()) {
             cout << "- " << nodo->getPaisDestino() << endl;
         }
-        mostrarPaises(nodo->derecho);
+        mostrarPaises(nodo->getDer());
     }
 }
 
-void ABBPasajeros::buscarMayor(Nodo_ABB* nodo, string mayorPais, int mayorPasajeros) {
-    nodo = this->raiz;
-    if (nodo != nullptr) {
-        int numPasajeros = nodo->getListaPasajeros().getLongitud();
-        if (numPasajeros > mayorPasajeros) {
-            mayorPasajeros = numPasajeros;
-            mayorPais = nodo->getPaisDestino();
+void ABBPasajeros::buscarMayor(Nodo_ABB* nodo, string& mayorPais, int& mayorPasajeros) {
+    if (nodo == nullptr) {
+        if (this->raiz == nullptr) {
+           cout << "Árbol vacío" << endl;
         }
-        buscarMayor(nodo->izquierdo, mayorPais, mayorPasajeros);
-        buscarMayor(nodo->derecho, mayorPais, mayorPasajeros);
+        return;
     }
+
+    int numPasajeros = nodo->getListaPasajeros().getLongitud();
+
+    if (numPasajeros > mayorPasajeros) {
+        mayorPasajeros = numPasajeros;
+        mayorPais = nodo->getPaisDestino();
+    }
+    buscarMayor(nodo->getIzq(), mayorPais, mayorPasajeros);
+    buscarMayor(nodo->getDer(), mayorPais, mayorPasajeros);
 }
 
-void ABBPasajeros::buscarMenor(Nodo_ABB* nodo, string menorPais, int menorPasajeros) {
-    if (nodo != nullptr) {
-        int numPasajeros = nodo->getListaPasajeros().getLongitud();
-        if (numPasajeros < menorPasajeros && numPasajeros > 0) {
-            menorPasajeros = numPasajeros;
-            menorPais = nodo->getPaisDestino();
+
+void ABBPasajeros::buscarMenor(Nodo_ABB* nodo, string& menorPais, int& menorPasajeros) {
+    if (nodo == nullptr) {
+        if (this->raiz == nullptr) {
+           cout << "Árbol vacío" << endl;
         }
-        buscarMenor(nodo->izquierdo, menorPais, menorPasajeros);
-        buscarMenor(nodo->derecho, menorPais, menorPasajeros);
+        return;
     }
+
+    int numPasajeros = nodo->getListaPasajeros().getLongitud();
+
+    if (numPasajeros < menorPasajeros && numPasajeros > 0) {
+        menorPasajeros = numPasajeros;
+        menorPais = nodo->getPaisDestino();
+    }
+    buscarMenor(nodo->getIzq(), menorPais, menorPasajeros);
+    buscarMenor(nodo->getDer(), menorPais, menorPasajeros);
 }
+
 
 void ABBPasajeros::mostrarMayor() {
-    Nodo_ABB* nodo = this->raiz;
-    if (nodo->getIzq() == nullptr && nodo->getDer() == nullptr) {
+    if (esVacio()) {
         cout << "Árbol vacío" << endl;
         return;
     }
     string mayorPais = "";
     int mayorPasajeros = 0;
-    buscarMayor(nodo, mayorPais, mayorPasajeros);
-    cout << "País con más pasajeros: " << mayorPais << " (" << mayorPasajeros << " pasajeros)" << endl;
+    buscarMayor(raiz, mayorPais, mayorPasajeros);
+    cout << "Pais con mas pasajeros: " << mayorPais << " (" << mayorPasajeros << " pasajeros)" << endl;
 }
 
 void ABBPasajeros::mostrarMenor() {
-     Nodo_ABB* nodo = this->raiz;
-    if (nodo->getIzq() == nullptr && nodo->getDer() == nullptr) {
+    if (esVacio()) {
         cout << "Árbol vacío" << endl;
         return;
     }
     string menorPais = "";
     int menorPasajeros = 999;
     buscarMenor(raiz, menorPais, menorPasajeros);
-    cout << "País con menos pasajeros: " << menorPais << " (" << menorPasajeros << " pasajeros)" << endl;
+    cout << "Pais con menos pasajeros: " << menorPais << " (" << menorPasajeros << " pasajeros)" << endl;
 }
 
 
@@ -227,7 +246,9 @@ void ABBPasajeros::tiempoMedioPais(string pais) {
 
 void ABBPasajeros::tiempoMedioTodos(Nodo_ABB* nodo) {
     if (nodo == nullptr) {
-        if (this->raiz == nullptr) cout << "Árbol vacío" << endl;
+        if (this->raiz == nullptr) {
+           cout << "Árbol vacío" << endl;
+        }
         return;
     }
 

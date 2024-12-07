@@ -481,14 +481,22 @@ case 8: {
                 if (pasajeroActual.getDuracion() == 0) {
                     cout << "SALIDA - Pasajero " << pasajeroActual.getId()
                          << " del Box " << boxActual.getIdBox() << endl;
-
-                    int tiempoEst =  tiempoTotal - pasajeroActual.getHoraInicio();
-                    pasajeroActual.setTiempoEstancia(tiempoEst);
-                    string d = pasajeroActual.getDestino();
-                    Nodo_ABB* r = abb.getRaiz();
-                    abb.insertar(r, d, pasajeroActual);
                     pasajerosProcesados++;
-                    tiempoEstanciaTotal += tiempoEst;
+                    int tiempoEstancia = tiempoTotal - pasajeroActual.getHoraInicio();
+                    pasajeroActual.setTiempoEstancia(tiempoEstancia);
+                    tiempoEstanciaTotal += tiempoEstancia;
+
+                    if (abb.esVacio()) {
+                        cout << "ABB vacío, creando nuevo nodo" << endl;
+                        abb.insertar(abb.getRaiz(), pasajeroActual.getDestino(), pasajeroActual);
+                    } else {
+                        cout << "ABB no vacío, insertando pasajero" << endl;
+                        abb.insertar(abb.getRaiz(), pasajeroActual.getDestino(), pasajeroActual);
+                    }
+
+                    cout << "Pasajero " << pasajeroActual.getId()
+                         << " añadido al árbol en país " << pasajeroActual.getDestino()
+                         << " (Tiempo estancia: " << tiempoEstancia << " min)" << endl;
 
                     if (boxActual.getCola().get_longitud() > 0) {
                         Pasajero siguiente = boxActual.getCola().desencolar();
@@ -516,7 +524,7 @@ case 8: {
     cout << "Tiempo total de simulacion: " << tiempoTotal << " minutos" << endl;
     cout << "Pasajeros procesados: " << pasajerosProcesados << endl;
     cout << "Tiempo medio de estancia: " <<
-            (pasajerosProcesados > 0 ? tiempoEstanciaTotal/pasajerosProcesados : 0)
+            (pasajerosProcesados > 0 ? (double)tiempoEstanciaTotal/pasajerosProcesados : 0)
          << " minutos" << endl;
     break;
 }
@@ -537,7 +545,7 @@ case 8: {
                 nuevo.setDestino(destino);
 
                 abb.insertar(abb.getRaiz(), nuevo.getDestino(), nuevo);
-                cout << "Pasajero añadido con éxito" << endl;
+                cout << "Pasajero añadido con exito" << endl;
                 break;
             }
 
@@ -562,9 +570,7 @@ case 8: {
             }
 
             case 13: {
-                cout << "País con más pasajeros:" << endl;
                 abb.mostrarMayor();
-                cout << "País con menos pasajeros:" << endl;
                 abb.mostrarMenor();
                 break;
             }

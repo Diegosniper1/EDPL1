@@ -20,8 +20,8 @@ class ABBPasajeros
         Nodo_ABB* buscarPais(Nodo_ABB* nodo, string pais);
         void mostrarPasajerosPorPais(string pais);
         void mostrarPaises(Nodo_ABB* nodo);
-        void buscarMayor(Nodo_ABB* nodo, string mayorPais, int mayorPasajeros);
-        void buscarMenor(Nodo_ABB* nodo, string menorPais, int menorPasajeros);
+        void buscarMayor(Nodo_ABB* nodo, string& mayorPais, int& mayorPasajeros);
+        void buscarMenor(Nodo_ABB* nodo, string& menorPais, int& menorPasajeros);
         void mostrarMayor();
         void mostrarMenor();
         void tiempoMedioPais(string pais);

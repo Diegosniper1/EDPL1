@@ -25,13 +25,13 @@ Pila Aeropuerto::crear_pila() {
     Pasajero p1 = Pasajero(1,6,"Indonesia",0,10);
     Pasajero p2 = Pasajero(2,1,"Portugal",0,15);
     Pasajero p3 = Pasajero(3,7,"Australia",5,29);
-    Pasajero p4 = Pasajero(4,5,"Sudáfrica",7,8);
+    Pasajero p4 = Pasajero(4,5,"Sudafrica",7,8);
     Pasajero p5 = Pasajero(5,7,"Australia",9,16);
     Pasajero p6 = Pasajero(6,6,"Indonesia",9,13);
     Pasajero p7 = Pasajero(7,6,"Indonesia",10,10);
     Pasajero p8 = Pasajero(8,1,"Portugal",10,15);
     Pasajero p9 = Pasajero(9,7,"Australia",15,29);
-    Pasajero p10 = Pasajero(10,5,"Sudáfrica",17,8);
+    Pasajero p10 = Pasajero(10,5,"Sudafrica",17,8);
     Pasajero p11 = Pasajero(11,7,"Australia",19,16);
     Pasajero p12 = Pasajero(12,6,"Indonesia",19,13);
 
