@@ -8,11 +8,11 @@
 	"Cola.h"
 	"Pasajero.h"
 
-1733483685 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\pasajero.h
+1733577748 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\pasajero.h
 	"Pasajero.h"
 	<string>
 
-1733483668 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pasajero.cpp
+1733577816 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\pasajero.cpp
 	"Pasajero.h"
 	<iostream>
 	<string>
@@ -188,27 +188,29 @@
 	"NodoLista.h"
 	"Box.h"
 
-1733479969 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\listapasajeros.cpp
+1733569949 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\listapasajeros.cpp
 	"ListaPasajeros.h"
 	"Pasajero.h"
+	<iostream>
 
-1733562258 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\listapasajeros.h
+1733569845 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\listapasajeros.h
 	"NodoListaPasajeros.h"
 	"Pasajero.h"
 
 1733484328 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodolistapasajeros.h
 	"Pasajero.h"
 
-1733484549 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\abbpasajeros.cpp
+1733578281 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\abbpasajeros.cpp
 	"ABBPasajeros.h"
+	<iostream>
 
-1733562258 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\abbpasajeros.h
+1733578205 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\abbpasajeros.h
 	"Nodo_ABB.h"
 
 1733562258 c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\include\nodo_abb.h
 	"ListaPasajeros.h"
 
-1733485139 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodo_abb.cpp
+1733562258 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodo_abb.cpp
 	"Nodo_ABB.h"
 	"Pasajero.h"
 

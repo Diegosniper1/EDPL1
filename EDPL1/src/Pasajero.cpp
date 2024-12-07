@@ -63,6 +63,13 @@ void Pasajero::setTiempoEstancia(int tiempoEst){
     tiempoEstancia = tiempoEst;
 }
 
+void Pasajero::setDestino(string dest){
+    destino = dest;
+}
+
+void Pasajero::setId(int id){
+    this->id = id;
+}
 std::ostream& operator<<(std::ostream& os, const Pasajero& p) {
     os << "Id: " << p.id << ", Prioridad: " << p.prioridad << ", Destino: " << p.destino;
     return os;

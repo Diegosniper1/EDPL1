@@ -524,13 +524,18 @@ case 8: {
     break;
 }
            case 9: {
-               Pasajero& nuevo = Pasajero();
+               Pasajero nuevo = Pasajero();
+               string destino;
+               int id, tiempoEstancia;
                 cout << "Introduce el id del pasajero que se quiere insertar al ABBPasajeros: " << endl;
-                cin >> nuevo.id;
+                cin >> id;
                 cout << "Ahora introduce su tiempo de estancia en el aeropuerto: " << endl;
-                cin >> nuevo.tiempoEstancia;
+                cin >> tiempoEstancia;
                 cout << "Finalmente, introduce su destino: " << endl;
-                cin >> nuevo.destino;
+                cin >> destino;
+                nuevo.setTiempoEstancia(tiempoEstancia);
+                nuevo.setId(id);
+                nuevo.setDestino(destino);
                 Nodo_ABB* raiz = abb.getRaiz();
                 abb.insertar(raiz, nuevo.getDestino(), nuevo);
                 cout << "Pasajero introducido al ABBPasajeros con exito" << endl;
@@ -548,13 +553,14 @@ case 8: {
                 string pais;
                 cout << "Introduzca el pais destino: " << endl;
                 cin >> pais;
-                abb.mostrarPasajerosPais(pais);
+                abb.mostrarPasajerosPorPais(pais);
                 break;
            }
 
            case 12: {
                cout << "Lista de destino de los pasajeros: " << endl;
-                abb.mostrarPaises();
+               Nodo_ABB* raiz = abb.getRaiz();
+                abb.mostrarPaises(raiz);
                 break;
            }
 
@@ -563,29 +569,15 @@ case 8: {
                abb.mostrarMayor();
                cout << "País con menos pasajeros: " << endl;
                abb.mostrarMenor();
-
-
-
-
-           }
-    break;
-}
-
-
-           }
-
-
+               break;
+            }
             default: {
                  cout << "No ha seleccionado una opcion, intentelo de nuevo: " << endl;
             }
-    }
-
-
-
 } while (b != 16);
 
 
-}
+
 
 
 

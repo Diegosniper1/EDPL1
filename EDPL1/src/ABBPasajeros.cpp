@@ -103,11 +103,12 @@ int ABBPasajeros::getAltura(Nodo_ABB* raiz) {
 // Para comprobar
 
 void ABBPasajeros::mostrarArbol(Nodo_ABB* nodo) {
+    nodo = this->raiz;
     if (nodo == nullptr) {
         return;
     }
     // Primero se recorre el subarbol izquierdo
-    mostrarArbol(->getIzq());
+    mostrarArbol(nodo->getIzq());
     // Se muestran los datos de cada nodo
     cout << "País: " << nodo->getPaisDestino() << endl;
     cout << "Pasajeros:" << endl;
@@ -129,7 +130,7 @@ Nodo_ABB* ABBPasajeros::buscarPais(Nodo_ABB* nodo, string pais) {
     return buscarPais(nodo->getDer(), pais);
 }
 
-void ABBPasajeros::mostrarPasajerosPais(string pais) {
+void ABBPasajeros::mostrarPasajerosPorPais(string pais) {
     Nodo_ABB* nodo = buscarPais(this->raiz, pais);
 
     if (nodo == nullptr) {
@@ -137,7 +138,7 @@ void ABBPasajeros::mostrarPasajerosPais(string pais) {
         return;
     }
 
-    cout << "\nPasajeros con destino a " << pais << ":" << endl
+    cout << "\nPasajeros con destino a " << pais << ":" << endl;
     NodoListaPasajeros* actual = nodo->getListaPasajeros().getPrimero();
     nodo->getListaPasajeros().mostrarPasajeros();
     cout << "------------------------" << endl;
@@ -146,11 +147,11 @@ void ABBPasajeros::mostrarPasajerosPais(string pais) {
 void ABBPasajeros::mostrarPaises(Nodo_ABB* nodo) {
     nodo = this->raiz;
     if (nodo != nullptr) {
-        mostrarPaises(nodo->izq);
+        mostrarPaises(nodo->izquierdo);
         if (!nodo->getListaPasajeros().esVacia()) {
             cout << "- " << nodo->getPaisDestino() << endl;
         }
-        mostrarPaises(nodo->der);
+        mostrarPaises(nodo->derecho);
     }
 }
 
@@ -162,8 +163,8 @@ void ABBPasajeros::buscarMayor(Nodo_ABB* nodo, string mayorPais, int mayorPasaje
             mayorPasajeros = numPasajeros;
             mayorPais = nodo->getPaisDestino();
         }
-        buscarMayor(nodo->izq, mayorPais, mayorPasajeros);
-        buscarMayor(nodo->der, mayorPais, mayorPasajeros);
+        buscarMayor(nodo->izquierdo, mayorPais, mayorPasajeros);
+        buscarMayor(nodo->derecho, mayorPais, mayorPasajeros);
     }
 }
 
@@ -174,8 +175,8 @@ void ABBPasajeros::buscarMenor(Nodo_ABB* nodo, string menorPais, int menorPasaje
             menorPasajeros = numPasajeros;
             menorPais = nodo->getPaisDestino();
         }
-        buscarMenor(nodo->izq, menorPais, menorPasajeros);
-        buscarMenor(nodo->der, menorPais, menorPasajeros);
+        buscarMenor(nodo->izquierdo, menorPais, menorPasajeros);
+        buscarMenor(nodo->derecho, menorPais, menorPasajeros);
     }
 }
 

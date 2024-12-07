@@ -20,6 +20,8 @@ class Pasajero
         int getId();
         int getTiempoEstancia();
         void setTiempoEstancia(int tiempoEst);
+        void setDestino(string dest);
+        void setId(int id);
 
     protected:
 
