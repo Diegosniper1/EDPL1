@@ -17,6 +17,12 @@ class ABBPasajeros
         bool esVacio();
         int getAltura(Nodo_ABB* nodo);
         void mostrarArbol(Nodo_ABB* nodo);
+        Nodo_ABB* buscarPais(Nodo_ABB* nodo, string pais);
+        void mostrarPasajerosPorPais(string pais);
+        void buscarMayor(Nodo_ABB* nodo, string mayorPais, int mayorPasajeros);
+        void buscarMenor(Nodo_ABB* nodo, string menorPais, int menorPasajeros);
+        void mostrarMayor();
+        void mostrarMenor();
 
 
 

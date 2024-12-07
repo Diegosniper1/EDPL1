@@ -22,6 +22,10 @@ ListaPasajeros::~ListaPasajeros()
         }
 }
 
+bool ListaPasajeros::esVacia() {
+    return primero == nullptr;
+}
+
 NodoListaPasajeros* ListaPasajeros::getPrimero()
 {
     return primero;
@@ -69,11 +73,11 @@ int ListaPasajeros::getTiempoMedioEstancia() {
 }
 
 void ListaPasajeros::mostrarPasajeros() {
-    NodoListaPasajeros* actual = primero;
+    NodoListaPasajeros* actual = this->getPrimero();
     while (actual != nullptr) {
         cout << "ID: " << actual->getPasajero().getId()
              << ", Tiempo estancia: " << actual->getPasajero().getTiempoEstancia()
              << " minutos" << endl;
-        actual = actual->siguiente;
+        actual = actual->getSiguiente();
     }
 }

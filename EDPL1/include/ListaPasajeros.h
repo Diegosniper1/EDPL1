@@ -15,6 +15,7 @@ class ListaPasajeros
         void insertarPasajero(Pasajero p);
         int getTiempoMedioEstancia();
         void mostrarPasajeros();
+        bool  esVacia();
 
     protected:
 

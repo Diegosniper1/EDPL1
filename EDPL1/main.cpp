@@ -524,9 +524,56 @@ case 8: {
     break;
 }
            case 9: {
-                cout << "Fin" << endl;
+               Pasajero& nuevo = Pasajero();
+                cout << "Introduce el id del pasajero que se quiere insertar al ABBPasajeros: " << endl;
+                cin >> nuevo.id;
+                cout << "Ahora introduce su tiempo de estancia en el aeropuerto: " << endl;
+                cin >> nuevo.tiempoEstancia;
+                cout << "Finalmente, introduce su destino: " << endl;
+                cin >> nuevo.destino;
+                Nodo_ABB* raiz = abb.getRaiz();
+                abb.insertar(raiz, nuevo.getDestino(), nuevo);
+                cout << "Pasajero introducido al ABBPasajeros con exito" << endl;
                 break;
-            }
+           }
+
+           case 10: {
+               cout << "Estos son los datos almacenados en ABBPasajeros: " << endl;
+               Nodo_ABB* raiz = abb.getRaiz();
+               abb.mostrarArbol(raiz);
+               break;
+           }
+
+           case 11: {
+                string pais;
+                cout << "Introduzca el pais destino: " << endl;
+                cin >> pais;
+                abb.mostrarPasajerosPais(pais);
+                break;
+           }
+
+           case 12: {
+               cout << "Lista de destino de los pasajeros: " << endl;
+                abb.mostrarPaises();
+                break;
+           }
+
+           case 13: {
+               cout << "País con más pasajeros: " << endl;
+               abb.mostrarMayor();
+               cout << "País con menos pasajeros: " << endl;
+               abb.mostrarMenor();
+
+
+
+
+           }
+    break;
+}
+
+
+           }
+
 
             default: {
                  cout << "No ha seleccionado una opcion, intentelo de nuevo: " << endl;
