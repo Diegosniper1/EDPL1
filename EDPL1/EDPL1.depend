@@ -26,11 +26,11 @@
 	"Cola.h"
 	"Pasajero.h"
 
-1733486811 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
+1733580498 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
 	"Pasajero.h"
 	<string>
 
-1733486811 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
+1733580498 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
 	"Pasajero.h"
 	<iostream>
 	<string>
@@ -217,24 +217,24 @@
 1733485189 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodolistapasajeros.cpp
 	"NodoListaPasajeros.h"
 
-1733532809 source:c:\users\diego\documents\github\edpl1\edpl1\src\abbpasajeros.cpp
+1733598849 source:c:\users\diego\documents\github\edpl1\edpl1\src\abbpasajeros.cpp
 	"ABBPasajeros.h"
 	<iostream>
 
-1733532654 c:\users\diego\documents\github\edpl1\edpl1\include\abbpasajeros.h
+1733598827 c:\users\diego\documents\github\edpl1\edpl1\include\abbpasajeros.h
 	"Nodo_ABB.h"
 
 1733512160 c:\users\diego\documents\github\edpl1\edpl1\include\nodo_abb.h
 	"ListaPasajeros.h"
 
-1733512933 c:\users\diego\documents\github\edpl1\edpl1\include\listapasajeros.h
+1733576809 c:\users\diego\documents\github\edpl1\edpl1\include\listapasajeros.h
 	"NodoListaPasajeros.h"
 	"Pasajero.h"
 
 1733486811 c:\users\diego\documents\github\edpl1\edpl1\include\nodolistapasajeros.h
 	"Pasajero.h"
 
-1733515294 source:c:\users\diego\documents\github\edpl1\edpl1\src\listapasajeros.cpp
+1733576809 source:c:\users\diego\documents\github\edpl1\edpl1\src\listapasajeros.cpp
 	"ListaPasajeros.h"
 	"Pasajero.h"
 	<iostream>

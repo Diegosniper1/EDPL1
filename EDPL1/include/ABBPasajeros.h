@@ -24,7 +24,8 @@ class ABBPasajeros
         void buscarMenor(Nodo_ABB* nodo, string menorPais, int menorPasajeros);
         void mostrarMayor();
         void mostrarMenor();
-
+        void tiempoMedioPais(string pais);
+        void tiempoMedioTodos(Nodo_ABB* nodo);
 
 
 

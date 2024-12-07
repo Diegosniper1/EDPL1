@@ -203,3 +203,48 @@ void ABBPasajeros::mostrarMenor() {
     buscarMenor(raiz, menorPais, menorPasajeros);
     cout << "País con menos pasajeros: " << menorPais << " (" << menorPasajeros << " pasajeros)" << endl;
 }
+
+
+
+void ABBPasajeros::tiempoMedioPais(string pais) {
+    Nodo_ABB* nodo = buscarPais(this->raiz, pais);
+    if (nodo != nullptr) {
+        int total = 0;
+        int count = 0;
+        NodoListaPasajeros* actual = nodo->getListaPasajeros().getPrimero();  // Usar NodoListaPasajeros
+        while (actual != nullptr) {
+            total += actual->getPasajero().getTiempoEstancia();
+            count++;
+            actual = actual->getSiguiente();
+        }
+        double tiempo = count > 0 ? (double)total/count : 0;
+        cout << "Tiempo medio de estancia para " << pais << ": "
+             << tiempo << " minutos" << endl;
+    } else {
+        cout << "País no encontrado" << endl;
+    }
+}
+
+void ABBPasajeros::tiempoMedioTodos(Nodo_ABB* nodo) {
+    if (nodo == nullptr) {
+        if (this->raiz == nullptr) cout << "Árbol vacío" << endl;
+        return;
+    }
+
+    tiempoMedioTodos(nodo->getIzq());
+
+    int total = 0;
+    int count = 0;
+    NodoListaPasajeros* actual = nodo->getListaPasajeros().getPrimero();
+    while (actual != nullptr) {
+        total += actual->getPasajero().getTiempoEstancia();
+        count++;
+        actual = actual->getSiguiente();
+    }
+    double tiempo = count > 0 ? (double)total/count : 0;
+
+    cout << nodo->getPaisDestino() << ": " << tiempo << " minutos" << endl;
+
+    tiempoMedioTodos(nodo->getDer());
+}
+

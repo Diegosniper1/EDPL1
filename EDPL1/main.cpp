@@ -282,7 +282,7 @@ void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista, ABBPasajero
     cout << "12: Mostrar los nombres de todos los paises que han sido destino de al menos un pasajero, en orden alfabetico" << endl;
     cout << "13: Mostrar el pais destino de mayor numero de pasajeros y el de menor numero" << endl;
     cout << "14: Mostrar el tiempo medio de estancia en el aeropuerto de los pasajeros con destino a un pais dado" << endl;
-    cout << "15: Mostrar el tiempo medio de estancia en el aeropuerto de los pasajeros con destino a cada uno de los paises (preorden)" << endl;
+    cout << "15: Mostrar el tiempo medio de estancia en el aeropuerto de los pasajeros con destino a cada uno de los paises" << endl; // preorden
     cout << "16: Salir" << endl;
 
     int b;
@@ -365,7 +365,6 @@ case 4: {
                 if (aux->getBox().getPasajero().getDuracion() == 0) {
                     Pasajero sale = aux->getBox().getPasajero();
 
-                    // DEBUG: Print passenger info before insertion
                     cout << "\nIntentando insertar en ABB:" << endl;
                     cout << "País: " << sale.getDestino() << endl;
                     cout << "ID Pasajero: " << sale.getId() << endl;
@@ -376,7 +375,6 @@ case 4: {
                     int tiempoEstancia = actual - sale.getHoraInicio();
                     sale.setTiempoEstancia(tiempoEstancia);
 
-                    // Modified ABB insertion with debug messages
                     if (abb.esVacio()) {
                         cout << "ABB vacío, creando nuevo nodo" << endl;
                         abb.insertar(abb.getRaiz(), sale.getDestino(), sale);
@@ -402,7 +400,6 @@ case 4: {
         }
         lista.borrarBoxes();
 
-        // Debug: Print ABB state after each minute
         cout << "Verificando ABB:" << endl;
         if (!abb.esVacio()) {
             cout << "ABB no está vacío - OK" << endl;
@@ -523,60 +520,78 @@ case 8: {
          << " minutos" << endl;
     break;
 }
-           case 9: {
-               Pasajero nuevo = Pasajero();
-               string destino;
-               int id, tiempoEstancia;
-                cout << "Introduce el id del pasajero que se quiere insertar al ABBPasajeros: " << endl;
+                       case 9: {
+                Pasajero nuevo = Pasajero();
+                string destino;
+                int id, tiempoEstancia;
+
+                cout << "ID del pasajero: ";
                 cin >> id;
-                cout << "Ahora introduce su tiempo de estancia en el aeropuerto: " << endl;
+                cout << "Tiempo de estancia: ";
                 cin >> tiempoEstancia;
-                cout << "Finalmente, introduce su destino: " << endl;
+                cout << "Destino: ";
                 cin >> destino;
+
                 nuevo.setTiempoEstancia(tiempoEstancia);
                 nuevo.setId(id);
                 nuevo.setDestino(destino);
-                Nodo_ABB* raiz = abb.getRaiz();
-                abb.insertar(raiz, nuevo.getDestino(), nuevo);
-                cout << "Pasajero introducido al ABBPasajeros con exito" << endl;
+
+                abb.insertar(abb.getRaiz(), nuevo.getDestino(), nuevo);
+                cout << "Pasajero añadido con éxito" << endl;
                 break;
-           }
+            }
 
-           case 10: {
-               cout << "Estos son los datos almacenados en ABBPasajeros: " << endl;
-               Nodo_ABB* raiz = abb.getRaiz();
-               abb.mostrarArbol(raiz);
-               break;
-           }
+            case 10: {
+                cout << "Datos en ABBPasajeros:" << endl;
+                abb.mostrarArbol(abb.getRaiz());
+                break;
+            }
 
-           case 11: {
+            case 11: {
                 string pais;
-                cout << "Introduzca el pais destino: " << endl;
+                cout << "País destino: ";
                 cin >> pais;
                 abb.mostrarPasajerosPorPais(pais);
                 break;
-           }
+            }
 
-           case 12: {
-               cout << "Lista de destino de los pasajeros: " << endl;
-               Nodo_ABB* raiz = abb.getRaiz();
-                abb.mostrarPaises(raiz);
+            case 12: {
+                cout << "Lista de destinos:" << endl;
+                abb.mostrarPaises(abb.getRaiz());
                 break;
-           }
-
-           case 13: {
-               cout << "País con más pasajeros: " << endl;
-               abb.mostrarMayor();
-               cout << "País con menos pasajeros: " << endl;
-               abb.mostrarMenor();
-               break;
             }
+
+            case 13: {
+                cout << "País con más pasajeros:" << endl;
+                abb.mostrarMayor();
+                cout << "País con menos pasajeros:" << endl;
+                abb.mostrarMenor();
+                break;
+            }
+
+            case 14: {
+                string pais;
+                cout << "Introduzca país: ";
+                cin >> pais;
+                abb.tiempoMedioPais(pais);
+                break;
+            }
+
+            case 15: {
+                abb.tiempoMedioTodos(abb.getRaiz());
+                break;
+            }
+
+
             default: {
-                 cout << "No ha seleccionado una opcion, intentelo de nuevo: " << endl;
+                if (b != 16) {
+                    cout << "Opción no válida" << endl;
+                }
+                break;
             }
-} while (b != 16);
-
-
+        }
+    } while (b != 16);
+}
 
 
 
