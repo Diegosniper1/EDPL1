@@ -1,11 +1,9 @@
 #include "ABBPasajeros.h"
 
-ABBPasajeros::ABBPasajeros()
-{
-    //ctor
-    raiz = nullptr;
-    raiz->paisDestino = "MM";
+ABBPasajeros::ABBPasajeros() {
+    raiz = new Nodo_ABB("MM");
 }
+
 
 ABBPasajeros::~ABBPasajeros()
 {

@@ -2,9 +2,18 @@
 #include "Pasajero.h"
 
 
-Nodo_ABB::Nodo_ABB()
-{
-    //ctor
+Nodo_ABB::Nodo_ABB() {
+    this->paisDestino = "";
+    this->listaP = ListaPasajeros();
+    this->izquierdo = nullptr;
+    this->derecho = nullptr;
+}
+
+Nodo_ABB::Nodo_ABB(string pais) {
+    this->paisDestino = pais;
+    this->listaP = ListaPasajeros();
+    this->izquierdo = nullptr;
+    this->derecho = nullptr;
 }
 
 Nodo_ABB::Nodo_ABB(string pais, Pasajero p)

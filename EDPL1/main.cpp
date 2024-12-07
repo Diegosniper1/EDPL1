@@ -8,11 +8,11 @@
 
 using namespace std;
 
-*\
+
 
 // Declaración de funciones
 void ejecutarMenu1(Aeropuerto& aeropuerto, Pila& pila, Cola& cola);
-void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista);
+void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista, ABBPasajeros& abb);
 
 int main() {
     Aeropuerto aeropuerto;
@@ -41,6 +41,7 @@ int main() {
                 break;
             case 2:
                 ejecutarMenu2(aeropuerto, pila, lista, abb);
+
                 break;
             case 3:
                 cout << "Programa finalizado." << endl;
@@ -318,39 +319,40 @@ void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista, ABBPasajero
                 break;
             }
 
-             case 4: {
-                int minutos;
-                cout << "Introduzca los minutos: ";
-                cin >> minutos;
+case 4: {
+    int minutos;
+    cout << "Introduzca los minutos: ";
+    cin >> minutos;
 
-                for (int actual = 0; actual <= minutos; actual++) {
-                    cout << "Minuto " << actual << ":" << endl;
+    for (int actual = 0; actual <= minutos; actual++) {
+        cout << "Minuto " << actual << ":" << endl;
 
-                // Procesar nuevas llegadas desde la pila
-                while (!pila.esVacia() && pila.getCima()->getPasajero().getHoraInicio() == actual) {
-                    Pasajero nuevo = pila.getCima()->getPasajero();
-                    pila.desapilar();
-                    lista.nuevoBox();
-                // Buscar box con menor cola
-                NodoLista* boxMenorCola = lista.getPrimero();
-                NodoLista* aux = lista.getPrimero();
+        // Procesar nuevas llegadas desde la pila
+        while (!pila.esVacia() && pila.getCima()->getPasajero().getHoraInicio() == actual) {
+            Pasajero nuevo = pila.getCima()->getPasajero();
+            pila.desapilar();
+            lista.nuevoBox();
 
-                    while (aux != nullptr) {
-                        if (aux->getBox().getTotalPasajeros() < boxMenorCola->getBox().getTotalPasajeros()) {
-                            boxMenorCola = aux;
-                        }
-                        aux = aux->getSiguiente();
-                    }
+            // Buscar box con menor cola
+            NodoLista* boxMenorCola = lista.getPrimero();
+            NodoLista* aux = lista.getPrimero();
+            while (aux != nullptr) {
+                if (aux->getBox().getTotalPasajeros() < boxMenorCola->getBox().getTotalPasajeros()) {
+                    boxMenorCola = aux;
+                }
+                aux = aux->getSiguiente();
+            }
 
             // Asignar pasajero al box
             if (boxMenorCola->getBox().esVacio() && boxMenorCola->getBox().getCola().es_vacia()) {
                 boxMenorCola->getBox().setPasajero(nuevo);
-                cout << "LLEGADA - Pasajero " << nuevo.getId() << " entra al Box " << boxMenorCola->getBox().getIdBox() << endl;
+                cout << "LLEGADA - Pasajero " << nuevo.getId()
+                     << " entra al Box " << boxMenorCola->getBox().getIdBox() << endl;
             } else {
                 boxMenorCola->getBox().getCola().encolar(nuevo);
-                cout << "LLEGADA - Pasajero " << nuevo.getId() << " entra a la cola del Box " << boxMenorCola->getBox().getIdBox() << endl;
+                cout << "LLEGADA - Pasajero " << nuevo.getId()
+                     << " entra a la cola del Box " << boxMenorCola->getBox().getIdBox() << endl;
             }
-
             lista.mostrarBoxes();
         }
 
@@ -362,30 +364,44 @@ void ejecutarMenu2(Aeropuerto& aeropuerto, Pila& pila, Lista& lista, ABBPasajero
 
                 if (aux->getBox().getPasajero().getDuracion() == 0) {
                     Pasajero sale = aux->getBox().getPasajero();
-                    cout << "\nSALIDA - Pasajero " << sale.getId() << " sale del Box " << aux->getBox().getIdBox() << endl;
-                    int tiempoEst =  actual - sale.getHoraInicio();
-                    sale.setTiempoEstancia(tiempoEst);
-                    abb.insertar(abb.raiz, sale.destino, sale)
+                    cout << "\nSALIDA - Pasajero " << sale.getId()
+                         << " sale del Box " << aux->getBox().getIdBox() << endl;
 
+                    // Calcular y establecer tiempo de estancia
+                    int tiempoEstancia = actual - sale.getHoraInicio();
+                    sale.setTiempoEstancia(tiempoEstancia);
 
+                    // Insertar en ABB
+                    if (abb.esVacio()) {
+                        abb.insertar(abb.getRaiz(), sale.getDestino(), sale);
+                    } else {
+                        if (abb.buscar(abb.getRaiz(), sale.getDestino())) {
+                            abb.getRaiz()->getListaPasajeros().insertarPasajero(sale);
+                        } else {
+                            abb.insertar(abb.getRaiz(), sale.getDestino(), sale);
+                        }
+                    }
 
+                    cout << "Pasajero " << sale.getId()
+                         << " añadido al árbol en país " << sale.getDestino()
+                         << " (Tiempo estancia: " << tiempoEstancia << " min)" << endl;
+
+                    // Procesar siguiente pasajero en cola
                     if (aux->getBox().getCola().get_longitud() > 0) {
                         Pasajero siguiente = aux->getBox().getCola().desencolar();
                         aux->getBox().setPasajero(siguiente);
-                        cout << "ENTRADA - Pasajero " << siguiente.getId() << " entra al Box " << aux->getBox().getIdBox() << endl;
+                        cout << "ENTRADA - Pasajero " << siguiente.getId()
+                             << " entra al Box " << aux->getBox().getIdBox() << endl;
                     }
-
                     lista.mostrarBoxes();
                 }
             }
             aux = aux->getSiguiente();
         }
-
         lista.borrarBoxes();
-        }
-
-        break;
-        }
+    }
+    break;
+}
 
              case 5: {
                 lista.mostrarBoxes();
@@ -462,7 +478,9 @@ case 8: {
 
                     int tiempoEst =  tiempoTotal - pasajeroActual.getHoraInicio();
                     pasajeroActual.setTiempoEstancia(tiempoEst);
-                    abb.insertar(abb.raiz, pasajeroActual.destino, pasajeroActual);
+                    string d = pasajeroActual.getDestino();
+                    Nodo_ABB* r = abb.getRaiz();
+                    abb.insertar(r, d, pasajeroActual);
                     pasajerosProcesados++;
                     tiempoEstanciaTotal += tiempoEst;
 
@@ -508,7 +526,7 @@ case 8: {
 
 
 
-}while (b != 9);
+} while (b != 16);
 
 
 }

@@ -13,6 +13,8 @@ class ListaPasajeros
         NodoListaPasajeros* getUltimo();
         int getLongitud();
         void insertarPasajero(Pasajero p);
+        int getTiempoMedioEstancia();
+        void mostrarPasajeros();
 
     protected:
 

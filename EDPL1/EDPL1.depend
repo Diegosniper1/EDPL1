@@ -26,11 +26,11 @@
 	"Cola.h"
 	"Pasajero.h"
 
-1733333939 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
+1733486811 c:\users\diego\documents\github\edpl1\edpl1\include\pasajero.h
 	"Pasajero.h"
 	<string>
 
-1730672004 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
+1733486811 source:c:\users\diego\documents\github\edpl1\edpl1\src\pasajero.cpp
 	"Pasajero.h"
 	<iostream>
 	<string>
@@ -120,7 +120,7 @@
 	"Lista.h"
 	<vector>
 
-1731395981 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
+1733486811 source:c:\users\diego\documents\github\edpl1\edpl1\src\aeropuerto.cpp
 	"Aeropuerto.h"
 	"Pila.h"
 	"NodoPila.h"
@@ -130,11 +130,12 @@
 	"Lista.h"
 	<vector>
 
-1730663296 c:\users\diego\documents\github\edpl1\edpl1\include\aeropuerto.h
+1733486811 c:\users\diego\documents\github\edpl1\edpl1\include\aeropuerto.h
 	"Pila.h"
 	"Cola.h"
 	"Box.h"
 	"Lista.h"
+	"ABBPasajeros.h"
 	<vector>
 
 1730309313 c:\users\diego\documents\github\edpl1\edpl1\include\pila.h
@@ -146,11 +147,12 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1731395990 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
+1733522319 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"
 	"Box.h"
+	"ABBPasajeros.h"
 	<vector>
 	<map>
 
@@ -211,5 +213,33 @@
 	"Pasajero.h"
 
 1733485189 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodolistapasajeros.cpp
+	"NodoListaPasajeros.h"
+
+1733512055 source:c:\users\diego\documents\github\edpl1\edpl1\src\abbpasajeros.cpp
+	"ABBPasajeros.h"
+
+1733486811 c:\users\diego\documents\github\edpl1\edpl1\include\abbpasajeros.h
+	"Nodo_ABB.h"
+
+1733512160 c:\users\diego\documents\github\edpl1\edpl1\include\nodo_abb.h
+	"ListaPasajeros.h"
+
+1733512933 c:\users\diego\documents\github\edpl1\edpl1\include\listapasajeros.h
+	"NodoListaPasajeros.h"
+	"Pasajero.h"
+
+1733486811 c:\users\diego\documents\github\edpl1\edpl1\include\nodolistapasajeros.h
+	"Pasajero.h"
+
+1733515294 source:c:\users\diego\documents\github\edpl1\edpl1\src\listapasajeros.cpp
+	"ListaPasajeros.h"
+	"Pasajero.h"
+	<iostream>
+
+1733512119 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodo_abb.cpp
+	"Nodo_ABB.h"
+	"Pasajero.h"
+
+1733486811 source:c:\users\diego\documents\github\edpl1\edpl1\src\nodolistapasajeros.cpp
 	"NodoListaPasajeros.h"
 

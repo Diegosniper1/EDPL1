@@ -6,6 +6,7 @@ class Nodo_ABB
 {
     public:
         Nodo_ABB();
+        Nodo_ABB(string pais);  // New constructor for "MM" node
         Nodo_ABB(string pais, Pasajero p);
         ~Nodo_ABB();
         ListaPasajeros& getListaPasajeros();
