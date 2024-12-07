@@ -364,29 +364,31 @@ case 4: {
 
                 if (aux->getBox().getPasajero().getDuracion() == 0) {
                     Pasajero sale = aux->getBox().getPasajero();
+
+                    // DEBUG: Print passenger info before insertion
+                    cout << "\nIntentando insertar en ABB:" << endl;
+                    cout << "País: " << sale.getDestino() << endl;
+                    cout << "ID Pasajero: " << sale.getId() << endl;
+
                     cout << "\nSALIDA - Pasajero " << sale.getId()
                          << " sale del Box " << aux->getBox().getIdBox() << endl;
 
-                    // Calcular y establecer tiempo de estancia
                     int tiempoEstancia = actual - sale.getHoraInicio();
                     sale.setTiempoEstancia(tiempoEstancia);
 
-                    // Insertar en ABB
+                    // Modified ABB insertion with debug messages
                     if (abb.esVacio()) {
+                        cout << "ABB vacío, creando nuevo nodo" << endl;
                         abb.insertar(abb.getRaiz(), sale.getDestino(), sale);
                     } else {
-                        if (abb.buscar(abb.getRaiz(), sale.getDestino())) {
-                            abb.getRaiz()->getListaPasajeros().insertarPasajero(sale);
-                        } else {
-                            abb.insertar(abb.getRaiz(), sale.getDestino(), sale);
-                        }
+                        cout << "ABB no vacío, insertando pasajero" << endl;
+                        abb.insertar(abb.getRaiz(), sale.getDestino(), sale);
                     }
 
                     cout << "Pasajero " << sale.getId()
                          << " añadido al árbol en país " << sale.getDestino()
                          << " (Tiempo estancia: " << tiempoEstancia << " min)" << endl;
 
-                    // Procesar siguiente pasajero en cola
                     if (aux->getBox().getCola().get_longitud() > 0) {
                         Pasajero siguiente = aux->getBox().getCola().desencolar();
                         aux->getBox().setPasajero(siguiente);
@@ -399,6 +401,13 @@ case 4: {
             aux = aux->getSiguiente();
         }
         lista.borrarBoxes();
+
+        // Debug: Print ABB state after each minute
+        cout << "Verificando ABB:" << endl;
+        if (!abb.esVacio()) {
+            cout << "ABB no está vacío - OK" << endl;
+            abb.mostrarArbol(abb.getRaiz());
+        }
     }
     break;
 }

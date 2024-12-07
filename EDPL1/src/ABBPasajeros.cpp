@@ -1,4 +1,5 @@
 #include "ABBPasajeros.h"
+#include<iostream>
 
 ABBPasajeros::ABBPasajeros() {
     raiz = new Nodo_ABB("MM");
@@ -97,3 +98,20 @@ int ABBPasajeros::getAltura(Nodo_ABB* nodo) {
 
     return 1 + std::max(alturaIzq, alturaDer);
 }
+
+
+// Para comprobar
+
+void ABBPasajeros::mostrarArbol(Nodo_ABB* nodo) {
+    if (nodo == nullptr) {
+        return;
+    }
+
+    mostrarArbol(nodo->getIzq());
+    cout << "País: " << nodo->getPaisDestino() << endl;
+    cout << "Pasajeros:" << endl;
+    nodo->getListaPasajeros().mostrarPasajeros();
+    cout << "------------------------" << endl;
+    mostrarArbol(nodo->getDer());
+}
+

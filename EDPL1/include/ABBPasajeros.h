@@ -16,6 +16,7 @@ class ABBPasajeros
         ABBPasajeros* getDerecho();
         bool esVacio();
         int getAltura(Nodo_ABB* nodo);
+        void mostrarArbol(Nodo_ABB* nodo);
 
 
 

@@ -147,7 +147,7 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1733522319 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
+1733534475 source:c:\users\diego\documents\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"
@@ -215,10 +215,11 @@
 1733485189 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\nodolistapasajeros.cpp
 	"NodoListaPasajeros.h"
 
-1733512055 source:c:\users\diego\documents\github\edpl1\edpl1\src\abbpasajeros.cpp
+1733532809 source:c:\users\diego\documents\github\edpl1\edpl1\src\abbpasajeros.cpp
 	"ABBPasajeros.h"
+	<iostream>
 
-1733486811 c:\users\diego\documents\github\edpl1\edpl1\include\abbpasajeros.h
+1733532654 c:\users\diego\documents\github\edpl1\edpl1\include\abbpasajeros.h
 	"Nodo_ABB.h"
 
 1733512160 c:\users\diego\documents\github\edpl1\edpl1\include\nodo_abb.h
