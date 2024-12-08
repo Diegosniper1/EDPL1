@@ -94,7 +94,7 @@
 	"NodoPila.h"
 	"Pasajero.h"
 
-1733609180 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\main.cpp
+1733611610 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\main.cpp
 	<iostream>
 	"Pila.h"
 	"Aeropuerto.h"
@@ -111,7 +111,7 @@
 	"ABBPasajeros.h"
 	<vector>
 
-1733484723 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\aeropuerto.cpp
+1733611472 source:c:\users\sgsic\onedrive\documentos\github\edpl1\edpl1\src\aeropuerto.cpp
 	"Aeropuerto.h"
 	"Pila.h"
 	"NodoPila.h"

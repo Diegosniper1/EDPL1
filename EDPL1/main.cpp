@@ -469,7 +469,7 @@ case 8: {
             pila.desapilar();
         }
 
-        // Procesar boxes
+        // Procesamos boxes
         NodoLista* aux = lista.getPrimero();
         while (aux != nullptr) {
             Box& boxActual = aux->getBox();
